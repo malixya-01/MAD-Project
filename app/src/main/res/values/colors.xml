@@ -11,6 +11,8 @@
     <color name="top_bg_gradient_startColour">#7a8afa</color>
     <color name="top_bg_gradient_endColour">#4958dc</color>
     <color name="dashboard_text">#ffffff</color>
+    <color name="dashboard_main_btns">#FF000000</color>
+
     <color name="dashboard_btn1">#c8c8fe</color>
     <color name="dashboard_btn2">#ffffff</color>
 

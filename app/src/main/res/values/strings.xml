@@ -11,5 +11,8 @@
     <string name="dashboard_username">Tylor Swift</string>
     <string name="dashboard_notification">Notifications</string>
     <string name="dashboard_contactUs">Contact us</string>
+    <string name="dashboardRequestsBtn">My Requests</string>
+    <string name="dashboardDonationsBtn">My Donations</string>
+    <string name="dashboardFundrasingsBtn">My Fundrasings</string>
 
 </resources>
