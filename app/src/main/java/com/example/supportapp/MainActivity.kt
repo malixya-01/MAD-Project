@@ -2,12 +2,16 @@ package com.example.supportapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var bottomNavView: BottomNavigationView
+
+
 
     //Initializing fragments
     val fragementRequests = RequestsFragment()
@@ -36,6 +40,9 @@ class MainActivity : AppCompatActivity() {
                 else -> true
             }
         }
+
+
+
 
 
 
