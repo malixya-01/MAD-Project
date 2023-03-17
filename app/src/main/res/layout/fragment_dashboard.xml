@@ -10,7 +10,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbarDefaultDelayBeforeFade="400">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +20,9 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:scrollbarDefaultDelayBeforeFade="400">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -56,9 +59,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:text="@string/nav_dashboard_greeting"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
                     android:textColor="@color/dashboard_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
@@ -73,7 +76,8 @@
 
                     app:layout_constraintBottom_toBottomOf="@+id/imageView3"
                     app:layout_constraintStart_toStartOf="@+id/textView"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.205" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -141,6 +145,40 @@
                     </LinearLayout>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Requsts"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/purple_top_buttons">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Donations"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/purple_top_buttons">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Fundrasings"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/purple_top_buttons">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
