@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/home"
-        android:title="Home"
-        android:icon=""/>
+    <item android:id="@+id/requests"
+        android:title="Requests"
+        android:icon="@drawable/selected_requests"/>
+
+    <item android:id="@+id/donorsads"
+        android:title="Support"
+        android:icon="@drawable/unselected_donorads"/>
+
+    <item android:id="@+id/fundraising"
+        android:title="Fundraising"
+        android:icon="@drawable/selected_requests"/>
+
+    <item android:id="@+id/notifications"
+        android:title="Notifications"
+        android:icon="@drawable/selected_requests"/>
 
 </menu>
