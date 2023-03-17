@@ -10,10 +10,10 @@
 
     <item android:id="@+id/fundraising"
         android:title="Fundraising"
-        android:icon="@drawable/selected_requests"/>
+        android:icon="@drawable/unselected_fundraising"/>
 
     <item android:id="@+id/notifications"
         android:title="Notifications"
-        android:icon="@drawable/selected_requests"/>
+        android:icon="@drawable/unselected_notification"/>
 
 </menu>
