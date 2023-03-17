@@ -2,10 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/requests"
         android:title="Requests"
-        android:icon="@drawable/selected_requests"/>
+        android:icon="@drawable/unselected_requests"/>
 
     <item android:id="@+id/donorsads"
-        android:title="Support"
+        android:title="Donations"
         android:icon="@drawable/unselected_donorads"/>
 
     <item android:id="@+id/fundraising"
