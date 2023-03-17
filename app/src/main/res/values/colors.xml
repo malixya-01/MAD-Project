@@ -17,4 +17,10 @@
     <color name="dashboard_btn2">#ffffff</color>
     <color name="navBarSelectedIcon">#4958dc</color>
 
+    <color name="toolbarTextColour">#FFFFFF</color>
+    <color name="toolbarBackgroundColour">#4958dc</color>
+
+
+
+
 </resources>
