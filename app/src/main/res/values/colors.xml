@@ -15,5 +15,6 @@
 
     <color name="dashboard_btn1">#c8c8fe</color>
     <color name="dashboard_btn2">#ffffff</color>
+    <color name="navBarSelectedIcon">#4958dc</color>
 
 </resources>

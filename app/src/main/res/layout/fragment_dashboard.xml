@@ -156,30 +156,28 @@
                 android:background="@drawable/purple_top_buttons">
 
                 <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_dashboard_requsts"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="40dp"
                     android:src="@drawable/unselected_requests"
-                    android:layout_marginStart="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.444" />
 
                 <TextView
                     android:id="@+id/tvdashboardRequests"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:text="@string/dashboardRequestsBtn"
                     android:textColor="@color/dashboard_main_btns"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.1"
-                    app:layout_constraintStart_toEndOf="@+id/imageView5"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.16000003" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -187,17 +185,17 @@
                 android:id="@+id/Donations"
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
-                android:orientation="vertical"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/purple_top_buttons">
+                android:background="@drawable/purple_top_buttons"
+                android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="54dp"
-                    android:layout_height="52dp"
-                    android:layout_marginStart="24dp"
+                    android:id="@+id/iv_dashboard_donations"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="40dp"
                     android:src="@drawable/unselected_donorads"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -209,14 +207,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/dashboardDonationsBtn"
                     android:textColor="@color/dashboard_main_btns"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.1"
-                    app:layout_constraintStart_toEndOf="@+id/imageView6"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.16000003" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -225,17 +221,17 @@
                 android:id="@+id/Fundrasings"
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
-                android:orientation="vertical"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/purple_top_buttons">
+                android:background="@drawable/purple_top_buttons"
+                android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="54dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="24dp"
+                    android:id="@+id/iv_dashboard_fundrasings"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="40dp"
                     android:src="@drawable/unselected_fundraising"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -247,14 +243,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/dashboardFundrasingsBtn"
                     android:textColor="@color/dashboard_main_btns"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.1"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.16000003" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
