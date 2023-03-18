@@ -19,10 +19,7 @@
     <string name="dashboardDonationsBtn_requestsCount">Requests : </string>
 
     <string name="insertFrToolbarTitle">New Fundraiser</string>
-
-
-
-
+    <string name="insertNewRequestToolbarTitle">New Requst</string>
 
 
 </resources>

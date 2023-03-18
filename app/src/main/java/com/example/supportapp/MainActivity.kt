@@ -5,25 +5,33 @@ import android.os.Bundle
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    /*
+    //Bottom nav bar variables
     lateinit var bottomNavView: BottomNavigationView
-
-
-
-    //Initializing fragments
     val fragementRequests = RequestsFragment()
     val fragementDonations = DonationsFragment()
     val fragementFundrasing = FundrasingFragment()
     val fragementDashboard = DashboardFragment()
+     */
 
-
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Creating reequests fragment as HostNav(home page)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.fragmentRequest) as NavHostFragment
+        navController=navHostFragment.navController
+
+        /*
         bottomNavView = findViewById(R.id.bottom_navigation)
 
         // display the requests fragment as home page
@@ -41,20 +49,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+         */
 
-
-
-
-
-
+        setupActionBarWithNavController(navController)
 
     }
 
+    //to implement correct backward navigation
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+
+
     // method to replace the layout with the requests fragment
-    private fun replaceFragment(fragment: Fragment): Boolean {
+    /*private fun replaceFragment(fragment: Fragment): Boolean {
         supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
         return true
     }
+
+     */
 
 
 }
