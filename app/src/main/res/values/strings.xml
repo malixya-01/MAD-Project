@@ -24,6 +24,7 @@
     <string name="insertFrToolbarTitle">New Fundraiser</string>
     <string name="insertNewRequestToolbarTitle">New Requst</string>
     <string name="donationsToolbarTitle">Donations</string>
+    <string name="frToolbarTitle">Fundraisings</string>
     <string name="myFundraisingsToolbarTitle">My Fundraisings</string>
     <string name="myDonationsToolbarTitle">My Donations</string>
     <string name="myRequestsToolbarTitle">My Requsts</string>

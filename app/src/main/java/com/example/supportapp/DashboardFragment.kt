@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.fragment.findNavController
 
 class DashboardFragment : Fragment() {
 
@@ -17,16 +18,27 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        var myRequetsBtn = view.findViewById<ConstraintLayout>(R.id.myRequstsBtn)
 
+        //buttons
+        var myRequetsBtn = view.findViewById<ConstraintLayout>(R.id.myRequstsBtn)
+        var myDonationsBtn = view.findViewById<ConstraintLayout>(R.id.myDonationsBtn)
+        var myFundrasingsBtn = view.findViewById<ConstraintLayout>(R.id.myFundrasingsBtn)
+
+        //rederecting
         myRequetsBtn.setOnClickListener {
-            Toast.makeText(context,"Hello, Sagoor",Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_dashboardFragment_to_myRequstsFragment)
+        }
+
+        myDonationsBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_myDonationsFragment)
+        }
+
+        myFundrasingsBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_myFundraisingsFragment)
         }
 
         return view
 
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
 

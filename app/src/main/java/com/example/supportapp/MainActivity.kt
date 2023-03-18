@@ -51,7 +51,11 @@ class MainActivity : AppCompatActivity() {
         bottomNavView.setupWithNavController(navController)
 
 
-
-
     }
+
+    //to implement correct backward navigation
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
 }

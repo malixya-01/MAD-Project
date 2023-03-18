@@ -182,7 +182,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Donations"
+                android:id="@+id/myDonationsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
                 android:layout_marginLeft="8dp"
@@ -218,7 +218,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Fundrasings"
+                android:id="@+id/myFundrasingsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
                 android:layout_marginLeft="8dp"
