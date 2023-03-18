@@ -16,14 +16,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    //Bottom nav bar variables
+    //Bottom nav bar variable
     lateinit var bottomNavView: BottomNavigationView
-    val fragementRequests = RequestsFragment()
-    val fragementDonations = DonationsFragment()
-    val fragementFundrasing = FundrasingFragment()
-    val fragementDashboard = DashboardFragment()
-
-
+    //navigation controller variable
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,46 +32,11 @@ class MainActivity : AppCompatActivity() {
         //setSupportActionBar(toolbar)
         setupActionBarWithNavController(navController)
 
+        bottomNavView = findViewById(R.id.bottom_navigation)
+        bottomNavView.setupWithNavController(navController)
 
-
-        //bottomNavView = findViewById(R.id.bottom_navigation)
-
-        // display the requests fragment as home page
-        //replaceFragment(fragementRequests)
-
-        //Connecting fragments to the nav bar
-        /*
-        bottomNavView.setOnItemSelectedListener {
-            when (it.itemId) {
-
-                R.id.requests -> replaceFragment(fragementRequests)
-                R.id.donorsads -> replaceFragment(fragementDonations)
-                R.id.fundraising -> replaceFragment(fragementFundrasing)
-                R.id.dashboard -> replaceFragment(fragementDashboard)
-                else -> true
-            }
-        }
-
-         */
 
 
 
     }
-
-    //to implement correct backward navigation
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-
-
-    // method to replace the layout with the requests fragment
-    /*private fun replaceFragment(fragment: Fragment): Boolean {
-        supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
-        return true
-    }
-
-     */
-
-
 }

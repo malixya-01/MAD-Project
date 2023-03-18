@@ -28,15 +28,16 @@
     <fragment
         android:id="@+id/donationsFragment"
         android:name="com.example.supportapp.DonationsFragment"
+        android:label="Donations"
         tools:layout="@layout/fragment_donations" />
     <fragment
         android:id="@+id/fundrasingFragment"
         android:name="com.example.supportapp.FundrasingFragment"
-        android:label="fragment_fundrasing"
+        android:label="Fundrasisings"
         tools:layout="@layout/fragment_fundrasing" />
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.example.supportapp.DashboardFragment"
-        android:label="fragment_dashboard"
+        android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard" />
 </navigation>
