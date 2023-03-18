@@ -20,7 +20,7 @@
     <color name="toolbarTextColour">#FFFFFF</color>
     <color name="toolbarBackgroundColour">#4958dc</color>
 
-
+    <color name="colorPrimary">#4958dc</color>
 
 
 </resources>

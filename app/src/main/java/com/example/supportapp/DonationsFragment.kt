@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class DonationsFragment : Fragment() {
+class DonationsFragment : Fragment(R.layout.fragment_donations) {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
