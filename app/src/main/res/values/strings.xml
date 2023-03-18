@@ -25,9 +25,12 @@
     <string name="insertNewRequestToolbarTitle">New Requst</string>
     <string name="donationsToolbarTitle">Donations</string>
     <string name="frToolbarTitle">Fundraisings</string>
+
     <string name="myFundraisingsToolbarTitle">My Fundraisings</string>
     <string name="myDonationsToolbarTitle">My Donations</string>
     <string name="myRequestsToolbarTitle">My Requsts</string>
+    <string name="viewProfileToolbarTitle">Profile</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

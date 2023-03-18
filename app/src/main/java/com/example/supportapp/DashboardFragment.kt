@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
@@ -23,6 +24,8 @@ class DashboardFragment : Fragment() {
         var myRequetsBtn = view.findViewById<ConstraintLayout>(R.id.myRequstsBtn)
         var myDonationsBtn = view.findViewById<ConstraintLayout>(R.id.myDonationsBtn)
         var myFundrasingsBtn = view.findViewById<ConstraintLayout>(R.id.myFundrasingsBtn)
+        var profileBtn = view.findViewById<ImageView>(R.id.imUserDp)
+
 
         //rederecting
         myRequetsBtn.setOnClickListener {
@@ -35,6 +38,10 @@ class DashboardFragment : Fragment() {
 
         myFundrasingsBtn.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_myFundraisingsFragment)
+        }
+
+        profileBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_viewProfileFragment)
         }
 
         return view

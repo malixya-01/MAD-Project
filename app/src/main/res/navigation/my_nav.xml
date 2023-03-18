@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_myDonationsFragment"
             app:destination="@id/myDonationsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_viewProfileFragment"
+            app:destination="@id/viewProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/myFundraisingsFragment"
@@ -65,4 +68,9 @@
         android:name="com.example.supportapp.myRequstsFragment"
         android:label="@string/myRequestsToolbarTitle"
         tools:layout="@layout/fragment_my_requsts" />
+    <fragment
+        android:id="@+id/viewProfileFragment"
+        android:name="com.example.supportapp.ViewProfileFragment"
+        android:label="@string/viewProfileToolbarTitle"
+        tools:layout="@layout/fragment_view_profile" />
 </navigation>
