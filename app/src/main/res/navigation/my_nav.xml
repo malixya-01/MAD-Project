@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    android:label="@string/donoationsTabTitle"
+    android:label="@string/donationsToolbarTitle"
     app:startDestination="@id/requestsFragment">
     <fragment
         android:id="@+id/requestsFragment"
@@ -39,5 +39,30 @@
         android:id="@+id/dashboardFragment"
         android:name="com.example.supportapp.DashboardFragment"
         android:label="Dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_myFundraisingsFragment"
+            app:destination="@id/myFundraisingsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_myRequstsFragment"
+            app:destination="@id/myRequstsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_myDonationsFragment"
+            app:destination="@id/myDonationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myFundraisingsFragment"
+        android:name="com.example.supportapp.MyFundraisingsFragment"
+        android:label="@string/myFundraisingsToolbarTitle"
+        tools:layout="@layout/fragment_my_fundraisings" />
+    <fragment
+        android:id="@+id/myDonationsFragment"
+        android:name="com.example.supportapp.myDonationsFragment"
+        android:label="@string/myDonationsToolbarTitle"
+        tools:layout="@layout/fragment_my_donations" />
+    <fragment
+        android:id="@+id/myRequstsFragment"
+        android:name="com.example.supportapp.myRequstsFragment"
+        android:label="@string/myRequestsToolbarTitle"
+        tools:layout="@layout/fragment_my_requsts" />
 </navigation>

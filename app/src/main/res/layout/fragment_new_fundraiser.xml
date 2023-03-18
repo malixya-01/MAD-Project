@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".NewFundraiserFragment"
-    android:background="@color/dashboard_bg_colour">
+    android:background="@color/app_bg_colour">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/insertFrToolbar"
