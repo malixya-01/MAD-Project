@@ -16,14 +16,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    /*
     //Bottom nav bar variables
     lateinit var bottomNavView: BottomNavigationView
     val fragementRequests = RequestsFragment()
     val fragementDonations = DonationsFragment()
     val fragementFundrasing = FundrasingFragment()
     val fragementDashboard = DashboardFragment()
-     */
+
 
     private lateinit var navController: NavController
 
@@ -39,13 +38,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController)
 
 
-        /*
-        bottomNavView = findViewById(R.id.bottom_navigation)
+
+        //bottomNavView = findViewById(R.id.bottom_navigation)
 
         // display the requests fragment as home page
-        replaceFragment(fragementRequests)
+        //replaceFragment(fragementRequests)
 
         //Connecting fragments to the nav bar
+        /*
         bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
 
