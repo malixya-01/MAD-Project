@@ -92,7 +92,7 @@
     <fragment
         android:id="@+id/newDonationFragment"
         android:name="com.example.supportapp.newDonationFragment"
-        android:label="@string/newDonationToolbarTitle"
+        android:label="Add new donation"
         tools:layout="@layout/fragment_new_donation" />
     <fragment
         android:id="@+id/viewSingleRequestFragment"
@@ -109,4 +109,24 @@
         android:name="com.example.supportapp.editARequestFragment"
         android:label="Edit request"
         tools:layout="@layout/fragment_edit_a_request" />
+    <fragment
+        android:id="@+id/viewAFrAllUsersFragment"
+        android:name="com.example.supportapp.viewAFrAllUsersFragment"
+        android:label="fragment_view_a_fr_all_users"
+        tools:layout="@layout/fragment_view_a_fr_all_users" />
+    <fragment
+        android:id="@+id/viewADonationFragment"
+        android:name="com.example.supportapp.viewADonationFragment"
+        android:label="My Donation"
+        tools:layout="@layout/fragment_view_a_donation" />
+    <fragment
+        android:id="@+id/viewADonationAllUserFragment"
+        android:name="com.example.supportapp.ViewADonationAllUserFragment"
+        android:label="Donation"
+        tools:layout="@layout/fragment_view_a_donation_all_user" />
+    <fragment
+        android:id="@+id/updateDonationFragment"
+        android:name="com.example.supportapp.UpdateDonationFragment"
+        android:label="fragment_update_donation"
+        tools:layout="@layout/fragment_update_donation" />
 </navigation>
