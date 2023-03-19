@@ -3,5 +3,8 @@
 
     <dimen name="form_items_left_right_margins">32dp</dimen>
     <dimen name="newFr_form_textBoxes_width">60dp</dimen>
+    <dimen name="submitBtnsConorRadius">10dp</dimen>
+    <dimen name="submitBtnWidth">0dp</dimen>
+    <dimen name="submitBtn_L_R_margins">24dp</dimen>
 
 </resources>
