@@ -123,10 +123,29 @@
         android:id="@+id/viewADonationAllUserFragment"
         android:name="com.example.supportapp.ViewADonationAllUserFragment"
         android:label="Donation"
-        tools:layout="@layout/fragment_view_a_donation_all_user" />
+        tools:layout="@layout/fragment_view_a_donation_all_user" >
+        <action
+            android:id="@+id/action_viewADonationAllUserFragment_to_addReqtoTheDonorFragment"
+            app:destination="@id/addReqtoTheDonorFragment" />
+    </fragment>
     <fragment
         android:id="@+id/updateDonationFragment"
         android:name="com.example.supportapp.UpdateDonationFragment"
         android:label="fragment_update_donation"
         tools:layout="@layout/fragment_update_donation" />
+    <fragment
+        android:id="@+id/addReqtoTheDonorFragment"
+        android:name="com.example.supportapp.addReqtoTheDonorFragment"
+        android:label="fragment_add_reqto_the_donor"
+        tools:layout="@layout/fragment_add_reqto_the_donor" />
+    <fragment
+        android:id="@+id/readAreqSentToDonorFragment"
+        android:name="com.example.supportapp.readAreqSentToDonorFragment"
+        android:label="fragment_read_areq_sent_to_donor"
+        tools:layout="@layout/fragment_read_areq_sent_to_donor" />
+    <fragment
+        android:id="@+id/updateReqAddedToDonorFragment"
+        android:name="com.example.supportapp.updateReqAddedToDonorFragment"
+        android:label="fragment_update_req_added_to_donor"
+        tools:layout="@layout/fragment_update_req_added_to_donor" />
 </navigation>
