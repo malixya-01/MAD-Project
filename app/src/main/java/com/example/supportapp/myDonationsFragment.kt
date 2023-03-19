@@ -16,7 +16,6 @@ import com.example.supportapp.DataClasses.myDonationsData
 class myDonationsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var searchView: SearchView
     private var mList = ArrayList<myDonationsData>()
     private lateinit var adapter: myDonationsAdapter
 
@@ -42,10 +41,9 @@ class myDonationsFragment : Fragment() {
     }
 
     private fun addDataToList(){
-        mList.add(myDonationsData("My request...", R.drawable.unselected_requests))
-        mList.add(myDonationsData("My request...", R.drawable.unselected_requests))
-        mList.add(myDonationsData("My request...", R.drawable.unselected_requests))
-        mList.add(myDonationsData("My request...", R.drawable.unselected_requests))
+        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
+        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
+        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
 
     }
 
