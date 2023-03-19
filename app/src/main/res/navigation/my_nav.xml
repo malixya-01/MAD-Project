@@ -34,7 +34,11 @@
         android:id="@+id/fundrasingFragment"
         android:name="com.example.supportapp.FundrasingFragment"
         android:label="@string/frToolbarTitle"
-        tools:layout="@layout/fragment_fundrasing" />
+        tools:layout="@layout/fragment_fundrasing" >
+        <action
+            android:id="@+id/action_fundrasingFragment_to_newFundraiserFragment"
+            app:destination="@id/newFundraiserFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.example.supportapp.DashboardFragment"
@@ -73,4 +77,9 @@
         android:name="com.example.supportapp.ViewProfileFragment"
         android:label="@string/viewProfileToolbarTitle"
         tools:layout="@layout/fragment_view_profile" />
+    <fragment
+        android:id="@+id/newFundraiserFragment"
+        android:name="com.example.supportapp.NewFundraiserFragment"
+        android:label="@string/addNewFrToolbarTitle"
+        tools:layout="@layout/fragment_new_fundraiser" />
 </navigation>

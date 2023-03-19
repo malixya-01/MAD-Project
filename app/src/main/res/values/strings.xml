@@ -31,6 +31,17 @@
     <string name="myRequestsToolbarTitle">My Requsts</string>
     <string name="viewProfileToolbarTitle">Profile</string>
 
+    <string name="addNewFrToolbarTitle">New Fundraiser</string>
+    <string name="addNewFrFormName">Name</string>
+    <string name="addNewFrFormTitle">Title</string>
+    <string name="addNewFrFormDescription">Description</string>
+    <string name="addNewFrFormAmount">Amount</string>
+    <string name="addNewFrFormCollectedAmount">Collected amount</string>
+    <string name="addNewFrFormDueDate">Before</string>
+
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

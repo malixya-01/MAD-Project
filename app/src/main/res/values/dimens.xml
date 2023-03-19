@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="form_items_left_right_margins">32dp</dimen>
+    <dimen name="newFr_form_textBoxes_width">60dp</dimen>
+
+</resources>

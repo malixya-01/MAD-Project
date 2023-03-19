@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 
 class FundrasingFragment : Fragment() {
 
@@ -12,7 +14,15 @@ class FundrasingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fundrasing, container, false)
+        val view = inflater.inflate(R.layout.fragment_fundrasing, container, false)
+
+        var newFrBtn = view.findViewById<Button>(R.id.newFrBtn)
+
+        //rederecting
+        newFrBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_fundrasingFragment_to_newFundraiserFragment)
+        }
+
+        return view
     }
 }

@@ -21,6 +21,7 @@
     <color name="toolbarBackgroundColour">#4958dc</color>
 
     <color name="colorPrimary">#4958dc</color>
+    <color name="formHintColor">#673AB7</color>
 
 
 </resources>
