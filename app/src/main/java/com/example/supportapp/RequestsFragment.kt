@@ -1,29 +1,64 @@
 package com.example.supportapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
+import android.widget.SearchView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class RequestsFragment : Fragment() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var searchView: SearchView
+    private var mList = ArrayList<RequestsData>()
+    private lateinit var adapter: RequestsAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_requests, container, false)
 
+        recyclerView = view.findViewById(R.id.recyclerView)
+        searchView = view.findViewById(R.id.searchView)
+
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(getActivity());
+        //recyclerView.layoutManager = LinearLayoutManager(this)
+        addDataToList()
+        adapter = RequestsAdapter(mList)
+        recyclerView.adapter = adapter
+
+
+
+
+
+
+        /*
         val button = view.findViewById<Button>(R.id.newReqBtn)
         button.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
-
-
+         */
         return view
     }
+
+    private fun addDataToList(){
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+    }
+
 
 }
