@@ -29,7 +29,11 @@
         android:id="@+id/donationsFragment"
         android:name="com.example.supportapp.DonationsFragment"
         android:label="Donations"
-        tools:layout="@layout/fragment_donations" />
+        tools:layout="@layout/fragment_donations" >
+        <action
+            android:id="@+id/action_donationsFragment_to_newDonationFragment"
+            app:destination="@id/newDonationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fundrasingFragment"
         android:name="com.example.supportapp.FundrasingFragment"
@@ -82,4 +86,9 @@
         android:name="com.example.supportapp.NewFundraiserFragment"
         android:label="@string/addNewFrToolbarTitle"
         tools:layout="@layout/fragment_new_fundraiser" />
+    <fragment
+        android:id="@+id/newDonationFragment"
+        android:name="com.example.supportapp.newDonationFragment"
+        android:label="@string/newDonationToolbarTitle"
+        tools:layout="@layout/fragment_new_donation" />
 </navigation>

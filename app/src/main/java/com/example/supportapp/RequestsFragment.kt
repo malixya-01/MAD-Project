@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -40,12 +42,12 @@ class RequestsFragment : Fragment() {
 
 
 
-        /*
-        val button = view.findViewById<Button>(R.id.newReqBtn)
-        button.setOnClickListener {
+
+        val btnAdd = view.findViewById<Button>(R.id.btnAdd)
+        btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
-         */
+
         return view
     }
 

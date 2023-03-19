@@ -6,5 +6,9 @@
     <dimen name="submitBtnsConorRadius">10dp</dimen>
     <dimen name="submitBtnWidth">0dp</dimen>
     <dimen name="submitBtn_L_R_margins">24dp</dimen>
+    <dimen name="add_btn_width">60dp</dimen>
+    <dimen name="add_btn_height">60dp</dimen>
+    <dimen name="addBtnBottmMargin">32</dimen>
+
 
 </resources>
