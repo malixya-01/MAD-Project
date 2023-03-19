@@ -12,15 +12,29 @@ import com.example.supportapp.R
 class RequestsAdapter(var mList: List<RequestsData>) :
     RecyclerView.Adapter<RequestsAdapter.RequestsViewHolder>() {
 
-    inner class RequestsViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
+    private lateinit var mListner : onItemClickListner
+    interface onItemClickListner{
+        fun onItemClick( position: Int)
+    }
+
+    fun setOnItemClickListner(listner: onItemClickListner){
+        mListner = listner
+    }
+
+    inner class RequestsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
         val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
+        init{
+            itemView.setOnClickListener {
+                listner.onItemClick(adapterPosition)
+            }
+        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RequestsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return RequestsViewHolder(view)
+        return RequestsViewHolder(view, mListner)
     }
 
     override fun getItemCount(): Int {

@@ -50,4 +50,13 @@
     <string name="newDonationToolbarTitle">Add new donation</string>
 
 
+    <string name="editAReqtitle">Title</string>
+    <string name="editAReqname">Name</string>
+    <string name="editAReqcity">City</string>
+    <string name="editAReqPhoneNo">Phone Number</string>
+    <string name="editAReqdescription">Description</string>
+    <string name="editAReqbtnUpdate">Update</string>
+    <string name="editAReqbtnCancel">Cancel</string>
+
+
 </resources>

@@ -5,18 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
 
-class NewRequestFragment : Fragment() {
+class ViewSingleDonorAdFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_new_request, container, false)
-
-        return view
+        return inflater.inflate(R.layout.fragment_view_single_donor_ad, container, false)
     }
+
 }

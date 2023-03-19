@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.Adapters.myRequstsAdapter
 import com.example.supportapp.DataClasses.myRequstsData
 
@@ -31,6 +33,8 @@ class myRequstsFragment : Fragment() {
         addDataToList()
         adapter = myRequstsAdapter(mList)
         recyclerView.adapter = adapter
+
+
 
 
 

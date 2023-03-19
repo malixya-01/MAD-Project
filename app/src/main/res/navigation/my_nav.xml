@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_requestsFragment_to_newRequestFragment"
             app:destination="@id/newRequestFragment" />
+        <action
+            android:id="@+id/action_requestsFragment_to_viewASingleReqAllUsersFragment2"
+            app:destination="@id/viewASingleReqAllUsersFragment2" />
     </fragment>
     <fragment
         android:id="@+id/newRequestFragment"
@@ -49,9 +52,6 @@
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard">
         <action
-            android:id="@+id/action_dashboardFragment_to_myFundraisingsFragment"
-            app:destination="@id/myFundraisingsFragment" />
-        <action
             android:id="@+id/action_dashboardFragment_to_myRequstsFragment"
             app:destination="@id/myRequstsFragment" />
         <action
@@ -60,6 +60,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_viewProfileFragment"
             app:destination="@id/viewProfileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_viewSingleRequestFragment"
+            app:destination="@id/viewSingleRequestFragment" />
     </fragment>
     <fragment
         android:id="@+id/myFundraisingsFragment"
@@ -91,4 +94,19 @@
         android:name="com.example.supportapp.newDonationFragment"
         android:label="@string/newDonationToolbarTitle"
         tools:layout="@layout/fragment_new_donation" />
+    <fragment
+        android:id="@+id/viewSingleRequestFragment"
+        android:name="com.example.supportapp.viewSingleRequestFragment"
+        android:label="My Request"
+        tools:layout="@layout/fragment_view_single_request" />
+    <fragment
+        android:id="@+id/viewASingleReqAllUsersFragment2"
+        android:name="com.example.supportapp.viewASingleReqAllUsersFragment"
+        android:label="Request"
+        tools:layout="@layout/fragment_view_a_single_req_all_users" />
+    <fragment
+        android:id="@+id/editARequestFragment2"
+        android:name="com.example.supportapp.editARequestFragment"
+        android:label="Edit request"
+        tools:layout="@layout/fragment_edit_a_request" />
 </navigation>

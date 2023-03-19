@@ -38,6 +38,12 @@ class RequestsFragment : Fragment() {
         addDataToList()
         adapter = RequestsAdapter(mList)
         recyclerView.adapter = adapter
+        adapter.setOnItemClickListner(object: RequestsAdapter.onItemClickListner{
+            override fun onItemClick(position: Int) {
+                findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
+            }
+
+        })
 
 
 
