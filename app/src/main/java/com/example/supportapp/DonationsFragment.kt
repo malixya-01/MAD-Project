@@ -44,16 +44,20 @@ class DonationsFragment : Fragment(R.layout.fragment_donations) {
     }
 
     private fun addDataToList(){
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
+
 
     }
 

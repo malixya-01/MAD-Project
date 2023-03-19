@@ -52,14 +52,17 @@ class RequestsFragment : Fragment() {
     }
 
     private fun addDataToList(){
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need food", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
     }
 
 
