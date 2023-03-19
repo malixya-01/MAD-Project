@@ -10,6 +10,8 @@ import android.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.supportapp.Adapters.DonationsAdapter
+import com.example.supportapp.DataClasses.DonationsData
 
 class DonationsFragment : Fragment(R.layout.fragment_donations) {
 

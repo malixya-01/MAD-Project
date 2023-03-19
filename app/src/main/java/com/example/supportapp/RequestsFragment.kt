@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.supportapp.Adapters.RequestsAdapter
+import com.example.supportapp.DataClasses.RequestsData
 
 class RequestsFragment : Fragment() {
 

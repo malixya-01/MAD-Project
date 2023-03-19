@@ -1,4 +1,4 @@
-package com.example.supportapp
+package com.example.supportapp.Adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.supportapp.DataClasses.DonationsData
+import com.example.supportapp.R
 
 
 class DonationsAdapter(var mList: List<DonationsData>) :
