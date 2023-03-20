@@ -12,15 +12,33 @@ import com.example.supportapp.R
 class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
     RecyclerView.Adapter<MyFundraisingsAdapter.MyFundraisingsViewHolder>() {
 
-    inner class MyFundraisingsViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
+
+
+    private lateinit var mListner : onItemClickListner
+
+    //Setting up onClick listner interface
+    interface onItemClickListner{
+        fun onItemClick( position: Int)
+    }
+
+    fun setOnItemClickListner(listner: onItemClickListner){
+        mListner = listner
+    }
+
+    inner class MyFundraisingsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
         val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
+        init{
+            itemView.setOnClickListener {
+                listner.onItemClick(adapterPosition)
+            }
+        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyFundraisingsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return MyFundraisingsViewHolder(view)
+        return MyFundraisingsViewHolder(view, mListner)
     }
 
     override fun getItemCount(): Int {
@@ -31,6 +49,4 @@ class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
         holder.logo.setImageResource(mList[position].logo)
         holder.titleTv.text = mList[position].title
     }
-
-
 }

@@ -95,7 +95,7 @@
         android:text="Update My Post" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnDlt"
         app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

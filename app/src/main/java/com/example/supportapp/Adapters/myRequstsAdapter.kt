@@ -12,15 +12,33 @@ import com.example.supportapp.R
 class myRequstsAdapter(var mList: List<myRequstsData>) :
     RecyclerView.Adapter<myRequstsAdapter.myRequstsViewHolder>() {
 
-    inner class myRequstsViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
+
+
+    private lateinit var mListner : onItemClickListner
+
+    //Setting up onClick listner interface
+    interface onItemClickListner{
+        fun onItemClick( position: Int)
+    }
+
+    fun setOnItemClickListner(listner: onItemClickListner){
+        mListner = listner
+    }
+
+    inner class myRequstsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
         val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
+        init{
+            itemView.setOnClickListener {
+                listner.onItemClick(adapterPosition)
+            }
+        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myRequstsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return myRequstsViewHolder(view)
+        return myRequstsViewHolder(view, mListner)
     }
 
     override fun getItemCount(): Int {
@@ -31,6 +49,4 @@ class myRequstsAdapter(var mList: List<myRequstsData>) :
         holder.logo.setImageResource(mList[position].logo)
         holder.titleTv.text = mList[position].title
     }
-
-
 }

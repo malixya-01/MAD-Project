@@ -181,6 +181,6 @@
     <fragment
         android:id="@+id/updateFrFragment"
         android:name="com.example.supportapp.UpdateFrFragment"
-        android:label="fragment_update_fr"
+        android:label="Edit Fundraiser"
         tools:layout="@layout/fragment_update_fr" />
 </navigation>

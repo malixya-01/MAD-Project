@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.DonationsAdapter
+import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.Adapters.myDonationsAdapter
 import com.example.supportapp.DataClasses.DonationsData
 import com.example.supportapp.DataClasses.myDonationsData
@@ -35,7 +37,13 @@ class myDonationsFragment : Fragment() {
         adapter = myDonationsAdapter(mList)
         recyclerView.adapter = adapter
 
+        //Setting onclick on recyclerView each item
+        adapter.setOnItemClickListner(object: myDonationsAdapter.onItemClickListner{
+            override fun onItemClick(position: Int) {
+                findNavController().navigate(R.id.action_myDonationsFragment_to_viewADonationFragment)
+            }
 
+        })
 
         return view
     }

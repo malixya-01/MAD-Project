@@ -116,7 +116,7 @@ android:layout_marginEnd="16dp"
 app:cardCornerRadius="10dp"/>
 
 <Button
-android:id="@+id/button2"
+android:id="@+id/btnDlt"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:text="Delete My Request"
