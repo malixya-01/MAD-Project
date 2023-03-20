@@ -1,4 +1,4 @@
-package com.example.supportapp
+package com.example.supportapp.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,22 +8,22 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.Adapters.RequestsAdapter
-import com.example.supportapp.Adapters.myRequstsAdapter
-import com.example.supportapp.DataClasses.myRequstsData
+import com.example.supportapp.Adapters.myDonationsAdapter
+import com.example.supportapp.DataClasses.myDonationsData
+import com.example.supportapp.R
 
-class myRequstsFragment : Fragment() {
+class myDonationsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private var mList = ArrayList<myRequstsData>()
-    private lateinit var adapter: myRequstsAdapter
+    private var mList = ArrayList<myDonationsData>()
+    private lateinit var adapter: myDonationsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_my_requsts, container, false)
+        var view = inflater.inflate(R.layout.fragment_my_donations, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
 
@@ -31,28 +31,25 @@ class myRequstsFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
 
         addDataToList()
-        adapter = myRequstsAdapter(mList)
+        adapter = myDonationsAdapter(mList)
         recyclerView.adapter = adapter
 
         //Setting onclick on recyclerView each item
-        adapter.setOnItemClickListner(object: myRequstsAdapter.onItemClickListner{
+        adapter.setOnItemClickListner(object: myDonationsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_myRequstsFragment_to_viewSingleRequestFragment)
+                findNavController().navigate(R.id.action_myDonationsFragment_to_viewADonationFragment)
             }
 
         })
 
-
-
-
-
         return view
     }
 
-    private fun addDataToList() {
-        mList.add(myRequstsData("My requests...", R.drawable.unselected_requests))
-        mList.add(myRequstsData("My requests...", R.drawable.unselected_requests))
-        mList.add(myRequstsData("My requests...", R.drawable.unselected_requests))
+    private fun addDataToList(){
+        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
+        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
+        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
+
     }
 
 }

@@ -25,7 +25,7 @@
     <string name="dashboardDonationsBtn_requestsCount">Requests : </string>
 
 
-    <!--Toolbars Strings strings-->
+    <!--Toolbars Strings-->
     <string name="insertFrToolbarTitle">New Fundraiser</string>
     <string name="insertNewRequestToolbarTitle">New Requst</string>
     <string name="donationsToolbarTitle">Donations</string>
@@ -43,6 +43,7 @@
     <string name="addNewFrFormAmount">Amount</string>
     <string name="addNewFrFormCollectedAmount">Collected amount</string>
     <string name="addNewFrFormDueDate">Before</string>
+    <string name="sendAReqToDonor">Send a request</string>
 
 
     <string name="add_btn_text">+</string>

@@ -8,12 +8,12 @@
     app:startDestination="@id/requestsFragment">
     <fragment
         android:id="@+id/viewASingleReqAllUsersFragment2"
-        android:name="com.example.supportapp.viewARequestAllUsersFragment"
+        android:name="com.example.supportapp.Fragments.viewARequestAllUsersFragment"
         android:label="Request"
         tools:layout="@layout/fragment_view_a_single_req_all_users" />
     <fragment
         android:id="@+id/newRequestFragment"
-        android:name="com.example.supportapp.NewRequestFragment"
+        android:name="com.example.supportapp.Fragments.NewRequestFragment"
         android:label="New request"
         tools:layout="@layout/fragment_new_request"/>
     <action
@@ -29,7 +29,7 @@
         app:popUpToInclusive="true" />
     <fragment
         android:id="@+id/requestsFragment"
-        android:name="com.example.supportapp.RequestsFragment"
+        android:name="com.example.supportapp.Fragments.RequestsFragment"
         android:label="Requests"
         tools:layout="@layout/fragment_requests">
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/donationsFragment"
-        android:name="com.example.supportapp.DonationsFragment"
+        android:name="com.example.supportapp.Fragments.DonationsFragment"
         android:label="Donations"
         tools:layout="@layout/fragment_donations" >
         <action
@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/fundrasingFragment"
-        android:name="com.example.supportapp.FundrasingFragment"
+        android:name="com.example.supportapp.Fragments.FundrasingFragment"
         android:label="@string/frToolbarTitle"
         tools:layout="@layout/fragment_fundrasing" >
         <action
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.supportapp.DashboardFragment"
+        android:name="com.example.supportapp.Fragments.DashboardFragment"
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard">
         <action
@@ -83,7 +83,7 @@
     </fragment>
     <fragment
         android:id="@+id/myFundraisingsFragment"
-        android:name="com.example.supportapp.MyFundraisingsFragment"
+        android:name="com.example.supportapp.Fragments.MyFundraisingsFragment"
         android:label="@string/myFundraisingsToolbarTitle"
         tools:layout="@layout/fragment_my_fundraisings" >
         <action
@@ -92,7 +92,7 @@
     </fragment>
     <fragment
         android:id="@+id/myDonationsFragment"
-        android:name="com.example.supportapp.myDonationsFragment"
+        android:name="com.example.supportapp.Fragments.myDonationsFragment"
         android:label="@string/myDonationsToolbarTitle"
         tools:layout="@layout/fragment_my_donations" >
         <action
@@ -101,7 +101,7 @@
     </fragment>
     <fragment
         android:id="@+id/myRequstsFragment"
-        android:name="com.example.supportapp.myRequstsFragment"
+        android:name="com.example.supportapp.Fragments.myRequstsFragment"
         android:label="@string/myRequestsToolbarTitle"
         tools:layout="@layout/fragment_my_requsts" >
         <action
@@ -110,22 +110,22 @@
     </fragment>
     <fragment
         android:id="@+id/viewProfileFragment"
-        android:name="com.example.supportapp.ViewProfileFragment"
+        android:name="com.example.supportapp.Fragments.ViewProfileFragment"
         android:label="@string/viewProfileToolbarTitle"
         tools:layout="@layout/fragment_view_profile" />
     <fragment
         android:id="@+id/newFundraiserFragment"
-        android:name="com.example.supportapp.NewFundraiserFragment"
+        android:name="com.example.supportapp.Fragments.NewFundraiserFragment"
         android:label="@string/addNewFrToolbarTitle"
         tools:layout="@layout/fragment_new_fundraiser" />
     <fragment
         android:id="@+id/newDonationFragment"
-        android:name="com.example.supportapp.newDonationFragment"
+        android:name="com.example.supportapp.Fragments.newDonationFragment"
         android:label="Add new donation"
         tools:layout="@layout/fragment_new_donation" />
     <fragment
         android:id="@+id/viewSingleRequestFragment"
-        android:name="com.example.supportapp.viewaRequestFragment"
+        android:name="com.example.supportapp.Fragments.viewaRequestFragment"
         android:label="My Request"
         tools:layout="@layout/fragment_view_a_request" >
         <action
@@ -134,17 +134,17 @@
     </fragment>
     <fragment
         android:id="@+id/editARequestFragment2"
-        android:name="com.example.supportapp.editARequestFragment"
+        android:name="com.example.supportapp.Fragments.editARequestFragment"
         android:label="Edit request"
         tools:layout="@layout/fragment_edit_a_request" />
     <fragment
         android:id="@+id/viewAFrAllUsersFragment"
-        android:name="com.example.supportapp.viewAFrAllUsersFragment"
+        android:name="com.example.supportapp.Fragments.viewAFrAllUsersFragment"
         android:label="fragment_view_a_fr_all_users"
         tools:layout="@layout/fragment_view_a_fr_all_users" />
     <fragment
         android:id="@+id/viewADonationFragment"
-        android:name="com.example.supportapp.viewADonationFragment"
+        android:name="com.example.supportapp.Fragments.viewADonationFragment"
         android:label="My Donation"
         tools:layout="@layout/fragment_view_a_donation" >
         <action
@@ -153,7 +153,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewADonationAllUserFragment"
-        android:name="com.example.supportapp.ViewADonationAllUserFragment"
+        android:name="com.example.supportapp.Fragments.ViewADonationAllUserFragment"
         android:label="Donation"
         tools:layout="@layout/fragment_view_a_donation_all_user" >
         <action
@@ -162,17 +162,17 @@
     </fragment>
     <fragment
         android:id="@+id/updateDonationFragment"
-        android:name="com.example.supportapp.UpdateDonationFragment"
+        android:name="com.example.supportapp.Fragments.UpdateDonationFragment"
         android:label="fragment_update_donation"
         tools:layout="@layout/fragment_update_donation" />
     <fragment
         android:id="@+id/addReqtoTheDonorFragment"
-        android:name="com.example.supportapp.addReqtoTheDonorFragment"
-        android:label="fragment_add_reqto_the_donor"
+        android:name="com.example.supportapp.Fragments.addReqtoTheDonorFragment"
+        android:label="@string/sendAReqToDonor"
         tools:layout="@layout/fragment_add_reqto_the_donor" />
     <fragment
         android:id="@+id/viewAFrFragment"
-        android:name="com.example.supportapp.viewAFrFragment"
+        android:name="com.example.supportapp.Fragments.viewAFrFragment"
         android:label="My Fundraiser"
         tools:layout="@layout/fragment_view_a_fr">
         <action
@@ -181,7 +181,7 @@
     </fragment>
     <fragment
         android:id="@+id/updateFrFragment"
-        android:name="com.example.supportapp.UpdateFrFragment"
+        android:name="com.example.supportapp.Fragments.UpdateFrFragment"
         android:label="Edit Fundraiser"
         tools:layout="@layout/fragment_update_fr" />
 </navigation>

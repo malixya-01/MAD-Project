@@ -1,18 +1,16 @@
-package com.example.supportapp
+package com.example.supportapp.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.MyFundraisingsAdapter
-import com.example.supportapp.Adapters.myDonationsAdapter
 import com.example.supportapp.DataClasses.MyFundraisingsData
-import com.example.supportapp.DataClasses.myDonationsData
+import com.example.supportapp.R
 
 class MyFundraisingsFragment : Fragment() {
 

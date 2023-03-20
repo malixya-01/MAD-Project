@@ -1,4 +1,4 @@
-package com.example.supportapp
+package com.example.supportapp.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.DataClasses.RequestsData
+import com.example.supportapp.R
 
 class RequestsFragment : Fragment() {
 

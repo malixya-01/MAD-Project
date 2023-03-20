@@ -1,4 +1,4 @@
-package com.example.supportapp
+package com.example.supportapp.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,8 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.FundraisingAdapter
-import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.DataClasses.FundraisingData
+import com.example.supportapp.R
 
 class FundrasingFragment : Fragment() {
 
