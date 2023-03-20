@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.FundraisingAdapter
+import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.DataClasses.FundraisingData
 
 class FundrasingFragment : Fragment() {
@@ -33,6 +34,8 @@ class FundrasingFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
 
         addDataToList()
+
+
         adapter = FundraisingAdapter(mList)
         recyclerView.adapter = adapter
 
@@ -41,6 +44,16 @@ class FundrasingFragment : Fragment() {
         btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_fundrasingFragment_to_newFundraiserFragment)
         }
+
+        //Setting onclick on recyclerView each item
+        adapter.setOnItemClickListner(object: FundraisingAdapter.onItemClickListner{
+            override fun onItemClick(position: Int) {
+                findNavController().navigate(R.id.action_fundrasingFragment_to_viewAFrAllUsersFragment)
+            }
+
+        })
+
+
 
         return view
     }

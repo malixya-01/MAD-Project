@@ -45,7 +45,7 @@ class RequestsFragment : Fragment() {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: RequestsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                //findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
+                findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
             }
 
         })
