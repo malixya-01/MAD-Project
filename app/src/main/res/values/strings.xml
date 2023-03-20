@@ -59,4 +59,13 @@
     <string name="editAReqbtnCancel">Cancel</string>
 
 
+    <string name="frTitle">Title :Donate CT scanner</string>
+    <string name="frName">Name :Leo Club Sliit</string>
+    <string name="frDes">Description: Leo club of SLIIT is collecting money to donate CT scanner.</string>
+    <string name="frTotAmt">Total amount : 2000000</string>
+    <string name="frCollectedAmt">Collected amount : 100000</string>
+    <string name="frBankDetails">Bank details : BOC Malabe  11234568</string>
+    <string name="btnUpdate">Update</string>
+
+
 </resources>

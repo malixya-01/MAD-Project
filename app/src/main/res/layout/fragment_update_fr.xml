@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".viewSingleRequestFragment">
+    tools:context=".UpdateFrFragment">
 
 
 
@@ -20,10 +20,10 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:text="Title : "
+            android:text="@string/frTitle"
             android:textColor="#686262"
             android:textSize="20sp" />
 
@@ -43,7 +43,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:text="Name : "
+            android:text="@string/frName"
             android:textColor="#686262"
             android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginStart="10dp"
-            android:text="Description :"
+            android:text="@string/frDes"
             android:textColor="#686262"
             android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
@@ -81,7 +81,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:text="Total Amount :"
+            android:text="@string/frTotAmt"
             android:textColor="#686262"
             android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
@@ -100,7 +100,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:text="Collected amount :"
+            android:text="@string/frCollectedAmt"
             android:textColor="#686262"
             android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
@@ -119,7 +119,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:text="Bank Details"
+            android:text="@string/frBankDetails"
             android:textColor="#686262"
             android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
@@ -131,17 +131,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Update"
+        android:text="@string/btnUpdate"
         app:cardCornerRadius="10dp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Delete"
-        app:cardCornerRadius="10dp" />
 
 </LinearLayout>

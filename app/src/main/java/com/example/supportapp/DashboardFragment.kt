@@ -37,7 +37,7 @@ class DashboardFragment : Fragment() {
         }
 
         myFundrasingsBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboardFragment_to_viewSingleRequestFragment)
+            findNavController().navigate(R.id.action_dashboardFragment_to_myFundraisingsFragment)
         }
 
         profileBtn.setOnClickListener {
