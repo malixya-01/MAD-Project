@@ -17,7 +17,7 @@ class viewAFrFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_view_a_fr, container, false)
 
-        val updateBtn = view.findViewById<Button>(R.id.updateBtn)
+        val updateBtn = view.findViewById<Button>(R.id.btnRequest)
         updateBtn.setOnClickListener {
             findNavController().navigate(R.id.action_viewAFrFragment_to_updateFrFragment)
         }

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/app_bg_colour"
     tools:context=".UpdateFrFragment">
 
 
@@ -125,7 +126,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/updateBtn"
+        android:id="@+id/btnRequest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

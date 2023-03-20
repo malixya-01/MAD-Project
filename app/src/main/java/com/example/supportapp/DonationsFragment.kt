@@ -41,7 +41,7 @@ class DonationsFragment : Fragment(R.layout.fragment_donations) {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: DonationsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2 )
+                findNavController().navigate(R.id.action_donationsFragment_to_viewADonationAllUserFragment)
             }
 
         })

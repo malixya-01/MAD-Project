@@ -7,6 +7,11 @@
     <string name="nav_fundraising">Fundraisings</string>
     <string name="nav_notifications">Notifications</string>
 
+    <!--Navigation drawer strings-->
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+
+
     <!--Dashboard strings-->
     <string name="nav_dashboard">Dashboard</string>
     <string name="nav_dashboard_greeting">Hello,</string>

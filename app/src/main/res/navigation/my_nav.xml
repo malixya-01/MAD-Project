@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
     android:label="@string/myFundraisingsToolbarTitle"
+    android:background="@color/app_bg_colour"
     app:startDestination="@id/requestsFragment">
     <fragment
         android:id="@+id/viewASingleReqAllUsersFragment2"
-        android:name="com.example.supportapp.viewASingleReqAllUsersFragment"
+        android:name="com.example.supportapp.viewARequestAllUsersFragment"
         android:label="Request"
         tools:layout="@layout/fragment_view_a_single_req_all_users" />
     <fragment
@@ -124,9 +125,9 @@
         tools:layout="@layout/fragment_new_donation" />
     <fragment
         android:id="@+id/viewSingleRequestFragment"
-        android:name="com.example.supportapp.viewSingleRequestFragment"
+        android:name="com.example.supportapp.viewaRequestFragment"
         android:label="My Request"
-        tools:layout="@layout/fragment_view_single_request" >
+        tools:layout="@layout/fragment_view_a_request" >
         <action
             android:id="@+id/action_viewSingleRequestFragment_to_editARequestFragment2"
             app:destination="@id/editARequestFragment2" />
@@ -172,8 +173,8 @@
     <fragment
         android:id="@+id/viewAFrFragment"
         android:name="com.example.supportapp.viewAFrFragment"
-        android:label="fragment_view_a_fr"
-        tools:layout="@layout/fragment_view_a_fr" >
+        android:label="My Fundraiser"
+        tools:layout="@layout/fragment_view_a_fr">
         <action
             android:id="@+id/action_viewAFrFragment_to_updateFrFragment"
             app:destination="@id/updateFrFragment" />
