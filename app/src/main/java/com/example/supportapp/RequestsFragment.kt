@@ -34,22 +34,21 @@ class RequestsFragment : Fragment() {
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
-        //recyclerView.layoutManager = LinearLayoutManager(this)
+
+        //add data to data class
         addDataToList()
+
+        //Passing data to adapter
         adapter = RequestsAdapter(mList)
         recyclerView.adapter = adapter
+
+        //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: RequestsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
+                //findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
             }
 
         })
-
-
-
-
-
-
 
         val btnAdd = view.findViewById<Button>(R.id.btnAdd)
         btnAdd.setOnClickListener {

@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.DonationsAdapter
+import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.DataClasses.DonationsData
 
 class DonationsFragment : Fragment(R.layout.fragment_donations) {
@@ -36,6 +37,14 @@ class DonationsFragment : Fragment(R.layout.fragment_donations) {
         addDataToList()
         adapter = DonationsAdapter(mList)
         recyclerView.adapter = adapter
+
+        //Setting onclick on recyclerView each item
+        adapter.setOnItemClickListner(object: DonationsAdapter.onItemClickListner{
+            override fun onItemClick(position: Int) {
+                findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2 )
+            }
+
+        })
 
         val btnAdd = view.findViewById<Button>(R.id.btnAdd)
         btnAdd.setOnClickListener {

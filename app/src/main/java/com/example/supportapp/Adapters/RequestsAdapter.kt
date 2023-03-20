@@ -12,7 +12,11 @@ import com.example.supportapp.R
 class RequestsAdapter(var mList: List<RequestsData>) :
     RecyclerView.Adapter<RequestsAdapter.RequestsViewHolder>() {
 
+
+
     private lateinit var mListner : onItemClickListner
+
+    //Setting up onClick listner interface
     interface onItemClickListner{
         fun onItemClick( position: Int)
     }

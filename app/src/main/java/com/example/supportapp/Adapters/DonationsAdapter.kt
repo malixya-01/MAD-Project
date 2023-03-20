@@ -13,15 +13,36 @@ import com.example.supportapp.R
 class DonationsAdapter(var mList: List<DonationsData>) :
     RecyclerView.Adapter<DonationsAdapter.DonationsViewHolder>() {
 
-    inner class DonationsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private lateinit var mListner : onItemClickListner
+
+    //Setting up onClick listner interface
+    interface onItemClickListner{
+        fun onItemClick( position: Int)
+    }
+
+    fun setOnItemClickListner(listner: onItemClickListner){
+        mListner = listner
+    }
+
+    inner class DonationsViewHolder(itemView: View, listner: onItemClickListner) : RecyclerView.ViewHolder(itemView) {
         val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv: TextView = itemView.findViewById(R.id.titleTv)
+
+        init{
+            itemView.setOnClickListener {
+                listner.onItemClick(adapterPosition)
+            }
+        }
+
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonationsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return DonationsViewHolder(view)
+
+
+
+        return DonationsViewHolder(view, mListner)
     }
 
     override fun getItemCount(): Int {
