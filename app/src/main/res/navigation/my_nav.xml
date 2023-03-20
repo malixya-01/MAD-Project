@@ -69,9 +69,6 @@
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard">
         <action
-            android:id="@+id/action_dashboardFragment_to_myRequstsFragment"
-            app:destination="@id/myRequstsFragment" />
-        <action
             android:id="@+id/action_dashboardFragment_to_myDonationsFragment"
             app:destination="@id/myDonationsFragment" />
         <action
@@ -80,6 +77,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_myFundraisingsFragment"
             app:destination="@id/myFundraisingsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_myRequestsFragment"
+            app:destination="@id/myRequestsFragment" />
     </fragment>
     <fragment
         android:id="@+id/myFundraisingsFragment"
@@ -98,15 +98,6 @@
         <action
             android:id="@+id/action_myDonationsFragment_to_viewADonationFragment"
             app:destination="@id/viewADonationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/myRequstsFragment"
-        android:name="com.example.supportapp.Fragments.myRequstsFragment"
-        android:label="@string/myRequestsToolbarTitle"
-        tools:layout="@layout/fragment_my_requsts" >
-        <action
-            android:id="@+id/action_myRequstsFragment_to_viewSingleRequestFragment"
-            app:destination="@id/viewSingleRequestFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewProfileFragment"
@@ -184,4 +175,9 @@
         android:name="com.example.supportapp.Fragments.UpdateFrFragment"
         android:label="Edit Fundraiser"
         tools:layout="@layout/fragment_update_fr" />
+    <fragment
+        android:id="@+id/myRequestsFragment"
+        android:name="com.example.supportapp.Fragments.myRequestsFragment"
+        android:label="@string/myRequestsToolbarTitle"
+        tools:layout="@layout/fragment_my_requsts" />
 </navigation>

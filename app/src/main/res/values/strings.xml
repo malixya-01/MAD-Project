@@ -46,6 +46,7 @@
     <string name="sendAReqToDonor">Send a request</string>
 
 
+
     <string name="add_btn_text">+</string>
 
 
@@ -72,6 +73,11 @@
     <string name="frCollectedAmt">Collected amount : 100000</string>
     <string name="frBankDetails">Bank details : BOC Malabe  11234568</string>
     <string name="btnUpdate">Update</string>
+
+
+    <!--Tablelayouts tab strings-->
+    <string name="pubReqs">Published Requests</string>
+    <string name="sentReqs">Sent Requests</string>
 
 
 </resources>

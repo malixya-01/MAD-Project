@@ -8,22 +8,22 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.Adapters.myRequstsAdapter
+import com.example.supportapp.Adapters.myPublishedReqsAdapter
 import com.example.supportapp.DataClasses.myRequstsData
 import com.example.supportapp.R
 
-class myRequstsFragment : Fragment() {
+class myPublishedReqsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<myRequstsData>()
-    private lateinit var adapter: myRequstsAdapter
+    private lateinit var adapter: myPublishedReqsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_my_requsts, container, false)
+        var view = inflater.inflate(R.layout.fragment_my_published_reqs, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
 
@@ -31,13 +31,13 @@ class myRequstsFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
 
         addDataToList()
-        adapter = myRequstsAdapter(mList)
+        adapter = myPublishedReqsAdapter(mList)
         recyclerView.adapter = adapter
 
         //Setting onclick on recyclerView each item
-        adapter.setOnItemClickListner(object: myRequstsAdapter.onItemClickListner{
+        adapter.setOnItemClickListner(object: myPublishedReqsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_myRequstsFragment_to_viewSingleRequestFragment)
+                //findNavController().navigate(R.id.action_myRequstsFragment_to_viewSingleRequestFragment)
             }
 
         })

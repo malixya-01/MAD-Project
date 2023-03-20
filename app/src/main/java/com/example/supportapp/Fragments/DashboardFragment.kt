@@ -29,7 +29,7 @@ class DashboardFragment : Fragment() {
 
         //rederecting
         myRequetsBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboardFragment_to_myRequstsFragment)
+            findNavController().navigate(R.id.action_dashboardFragment_to_myRequestsFragment)
         }
 
         myDonationsBtn.setOnClickListener {

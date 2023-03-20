@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.DataClasses.myRequstsData
 import com.example.supportapp.R
 
-class myRequstsAdapter(var mList: List<myRequstsData>) :
-    RecyclerView.Adapter<myRequstsAdapter.myRequstsViewHolder>() {
+class myPublishedReqsAdapter(var mList: List<myRequstsData>) :
+    RecyclerView.Adapter<myPublishedReqsAdapter.myRequstsViewHolder>() {
 
 
 
