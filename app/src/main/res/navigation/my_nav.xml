@@ -183,24 +183,22 @@
         <action
             android:id="@+id/action_myRequestsFragment_to_viewSingleRequestFragment"
             app:destination="@id/viewSingleRequestFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/myPublishedReqsFragment"
-        android:name="com.example.supportapp.Fragments.myPublishedReqsFragment"
-        android:label="@string/myPubReqs"
-        tools:layout="@layout/fragment_my_published_reqs"/>
-    <fragment
-        android:id="@+id/mySentReqsFragment"
-        android:name="com.example.supportapp.Fragments.mySentReqsFragment"
-        android:label="@string/mySentReqs"
-        tools:layout="@layout/fragment_my_sent_reqs">
         <action
-            android:id="@+id/action_mySentReqsFragment_to_viewAMySentReqFragment"
-            app:destination="@id/viewAMySentReqFragment" />
+            android:id="@+id/action_myRequestsFragment_to_readAreqSentToDonorFragment"
+            app:destination="@id/readAreqSentToDonorFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewAMySentReqFragment"
         android:name="com.example.supportapp.viewAMySentReqFragment"
-        android:label="@string/mySentReq"
+        android:label="@string/editSentReqToDonor"
         tools:layout="@layout/fragment_view_a_my_sent_req" />
+    <fragment
+        android:id="@+id/readAreqSentToDonorFragment"
+        android:name="com.example.supportapp.Fragments.readAreqSentToDonorFragment"
+        android:label="@string/viewSentReqToDonor"
+        tools:layout="@layout/fragment_read_areq_sent_to_donor">
+        <action
+            android:id="@+id/action_readAreqSentToDonorFragment_to_viewAMySentReqFragment"
+            app:destination="@id/viewAMySentReqFragment" />
+    </fragment>
 </navigation>

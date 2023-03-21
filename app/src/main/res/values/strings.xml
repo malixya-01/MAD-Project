@@ -36,7 +36,9 @@
     <string name="myRequestsToolbarTitle">My Requsts</string>
     <string name="viewProfileToolbarTitle">Profile</string>
 
-    <string name="sendAReqToDonor">Send a request</string>
+    <string name="sendAReqToDonor">Send a Request</string>
+    <string name="editSentReqToDonor">Edit Request</string>
+    <string name="viewSentReqToDonor">View Request</string>
 
     <string name="myPubReqs">Published Requests</string>
     <string name="mySentReqs">Sent Requests</string>

@@ -34,6 +34,7 @@ class myPublishedReqsFragment : Fragment() {
         addDataToList()
         adapter = myPublishedReqsAdapter(mList)
 
+        //setting up listner
         adapter.setOnItemClickListener(object : myPublishedReqsAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 val navController = Navigation.findNavController(requireActivity(), R.id.viewPager)
@@ -48,9 +49,9 @@ class myPublishedReqsFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(myPublishedReqsData("My requests...", R.drawable.unselected_requests))
-        mList.add(myPublishedReqsData("My requests...", R.drawable.unselected_requests))
-        mList.add(myPublishedReqsData("My requests...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My request 1...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My request 2...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My request 3...", R.drawable.unselected_requests))
     }
 
 }

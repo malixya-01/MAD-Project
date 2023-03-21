@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.supportapp.R
 
 class viewaRequestFragment : Fragment() {
@@ -19,7 +20,7 @@ class viewaRequestFragment : Fragment() {
 
         var btnUpdate = view.findViewById<Button>(R.id.btnRequest)
         btnUpdate.setOnClickListener {
-            //findNavController().navigate(R.id.action_viewSingleRequestFragment_to_editARequestFragment2)
+            findNavController().navigate(R.id.action_viewSingleRequestFragment_to_editARequestFragment2)
         }
 
 
