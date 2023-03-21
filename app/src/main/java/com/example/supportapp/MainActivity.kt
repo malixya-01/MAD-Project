@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentRequest) as NavHostFragment
         navController=navHostFragment.navController
 
+
+        //removing back button from main destinations
         appBarConfiguration = AppBarConfiguration(
             //passing top level destinations
             setOf(

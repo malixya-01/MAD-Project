@@ -179,16 +179,16 @@
         android:id="@+id/myRequestsFragment"
         android:name="com.example.supportapp.Fragments.myRequestsFragment"
         android:label="@string/myRequestsToolbarTitle"
-        tools:layout="@layout/fragment_my_requsts" />
+        tools:layout="@layout/fragment_my_requsts" >
+        <action
+            android:id="@+id/action_myRequestsFragment_to_viewSingleRequestFragment"
+            app:destination="@id/viewSingleRequestFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myPublishedReqsFragment"
         android:name="com.example.supportapp.Fragments.myPublishedReqsFragment"
         android:label="@string/myPubReqs"
-        tools:layout="@layout/fragment_my_published_reqs">
-        <action
-            android:id="@+id/action_myPublishedReqsFragment_to_viewSingleRequestFragment"
-            app:destination="@id/viewSingleRequestFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_my_published_reqs"/>
     <fragment
         android:id="@+id/mySentReqsFragment"
         android:name="com.example.supportapp.Fragments.mySentReqsFragment"

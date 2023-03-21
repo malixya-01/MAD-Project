@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,15 +33,16 @@ class myPublishedReqsFragment : Fragment() {
 
         addDataToList()
         adapter = myPublishedReqsAdapter(mList)
+
+        adapter.setOnItemClickListener(object : myPublishedReqsAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val navController = Navigation.findNavController(requireActivity(), R.id.viewPager)
+                navController.navigate(R.id.action_myRequestsFragment_to_viewSingleRequestFragment)
+            }
+        })
+
         recyclerView.adapter = adapter
 
-        //Setting onclick on recyclerView each item
-        adapter.setOnItemClickListner(object: myPublishedReqsAdapter.onItemClickListner{
-            override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_myPublishedReqsFragment_to_viewSingleRequestFragment)
-            }
-
-        })
 
         return view
     }

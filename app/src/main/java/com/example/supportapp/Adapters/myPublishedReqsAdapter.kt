@@ -12,25 +12,23 @@ import com.example.supportapp.R
 class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
     RecyclerView.Adapter<myPublishedReqsAdapter.myPublishedReqsViewHolder>() {
 
+    private var listener: OnItemClickListener? = null
 
-
-    private lateinit var mListner : onItemClickListner
-
-    //Setting up onClick listner interface
-    interface onItemClickListner{
-        fun onItemClick( position: Int)
+    fun setOnItemClickListener(listener: OnItemClickListener?) {
+        this.listener = listener
     }
 
-    fun setOnItemClickListner(listner: onItemClickListner){
-        mListner = listner
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
 
-    inner class myPublishedReqsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
+    inner class myPublishedReqsViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
         val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
+
         init{
             itemView.setOnClickListener {
-                listner.onItemClick(adapterPosition)
+                listener?.onItemClick(adapterPosition)
             }
         }
 
@@ -38,7 +36,7 @@ class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myPublishedReqsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return myPublishedReqsViewHolder(view, mListner)
+        return myPublishedReqsViewHolder(view)
     }
 
     override fun getItemCount(): Int {
