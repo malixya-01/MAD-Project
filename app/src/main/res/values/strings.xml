@@ -36,6 +36,16 @@
     <string name="myRequestsToolbarTitle">My Requsts</string>
     <string name="viewProfileToolbarTitle">Profile</string>
 
+    <string name="sendAReqToDonor">Send a request</string>
+
+    <string name="myPubReqs">Published Requests</string>
+    <string name="mySentReqs">Sent Requests</string>
+    <string name="mySentReq">Sent Request</string>
+    <string name="myPubReq">Published Request</string>
+    <string name="myPubReqEdit">Edit Requests</string>
+
+
+
     <string name="addNewFrToolbarTitle">New Fundraiser</string>
     <string name="addNewFrFormName">Name</string>
     <string name="addNewFrFormTitle">Title</string>
@@ -43,7 +53,6 @@
     <string name="addNewFrFormAmount">Amount</string>
     <string name="addNewFrFormCollectedAmount">Collected amount</string>
     <string name="addNewFrFormDueDate">Before</string>
-    <string name="sendAReqToDonor">Send a request</string>
 
 
 
@@ -76,8 +85,8 @@
 
 
     <!--Tablelayouts tab strings-->
-    <string name="pubReqs">Published Requests</string>
-    <string name="sentReqs">Sent Requests</string>
+    <string name="pubReqs">Published</string>
+    <string name="sentReqs">Sent</string>
 
 
 </resources>

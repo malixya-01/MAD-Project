@@ -117,8 +117,8 @@
     <fragment
         android:id="@+id/viewSingleRequestFragment"
         android:name="com.example.supportapp.Fragments.viewaRequestFragment"
-        android:label="My Request"
-        tools:layout="@layout/fragment_view_a_request" >
+        android:label="@string/myPubReq"
+        tools:layout="@layout/fragment_view_a_request">
         <action
             android:id="@+id/action_viewSingleRequestFragment_to_editARequestFragment2"
             app:destination="@id/editARequestFragment2" />
@@ -126,7 +126,7 @@
     <fragment
         android:id="@+id/editARequestFragment2"
         android:name="com.example.supportapp.Fragments.editARequestFragment"
-        android:label="Edit request"
+        android:label="@string/myPubReqEdit"
         tools:layout="@layout/fragment_edit_a_request" />
     <fragment
         android:id="@+id/viewAFrAllUsersFragment"
@@ -180,4 +180,27 @@
         android:name="com.example.supportapp.Fragments.myRequestsFragment"
         android:label="@string/myRequestsToolbarTitle"
         tools:layout="@layout/fragment_my_requsts" />
+    <fragment
+        android:id="@+id/myPublishedReqsFragment"
+        android:name="com.example.supportapp.Fragments.myPublishedReqsFragment"
+        android:label="@string/myPubReqs"
+        tools:layout="@layout/fragment_my_published_reqs">
+        <action
+            android:id="@+id/action_myPublishedReqsFragment_to_viewSingleRequestFragment"
+            app:destination="@id/viewSingleRequestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mySentReqsFragment"
+        android:name="com.example.supportapp.Fragments.mySentReqsFragment"
+        android:label="@string/mySentReqs"
+        tools:layout="@layout/fragment_my_sent_reqs">
+        <action
+            android:id="@+id/action_mySentReqsFragment_to_viewAMySentReqFragment"
+            app:destination="@id/viewAMySentReqFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAMySentReqFragment"
+        android:name="com.example.supportapp.viewAMySentReqFragment"
+        android:label="@string/mySentReq"
+        tools:layout="@layout/fragment_view_a_my_sent_req" />
 </navigation>

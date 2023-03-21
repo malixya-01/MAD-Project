@@ -7,7 +7,6 @@
     tools:context=".Fragments.ViewProfileFragment"
     android:background="@color/app_bg_colour">
 
-
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
@@ -20,4 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

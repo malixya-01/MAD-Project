@@ -9,13 +9,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.myPublishedReqsAdapter
-import com.example.supportapp.DataClasses.myRequstsData
+import com.example.supportapp.DataClasses.myPublishedReqsData
 import com.example.supportapp.R
 
 class myPublishedReqsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private var mList = ArrayList<myRequstsData>()
+    private var mList = ArrayList<myPublishedReqsData>()
     private lateinit var adapter: myPublishedReqsAdapter
 
     override fun onCreateView(
@@ -37,22 +37,18 @@ class myPublishedReqsFragment : Fragment() {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: myPublishedReqsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                //findNavController().navigate(R.id.action_myRequstsFragment_to_viewSingleRequestFragment)
+                findNavController().navigate(R.id.action_myPublishedReqsFragment_to_viewSingleRequestFragment)
             }
 
         })
-
-
-
-
 
         return view
     }
 
     private fun addDataToList() {
-        mList.add(myRequstsData("My requests...", R.drawable.unselected_requests))
-        mList.add(myRequstsData("My requests...", R.drawable.unselected_requests))
-        mList.add(myRequstsData("My requests...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My requests...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My requests...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My requests...", R.drawable.unselected_requests))
     }
 
 }

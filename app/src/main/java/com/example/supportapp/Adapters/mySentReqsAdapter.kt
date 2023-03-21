@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.DataClasses.myPublishedReqsData
+import com.example.supportapp.DataClasses.mySentReqsData
 import com.example.supportapp.R
 
-class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
-    RecyclerView.Adapter<myPublishedReqsAdapter.myPublishedReqsViewHolder>() {
+class mySentReqsAdapter(var mList: List<mySentReqsData>) :
+    RecyclerView.Adapter<mySentReqsAdapter.mySentReqsViewHolder>() {
 
 
 
@@ -25,7 +25,7 @@ class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
         mListner = listner
     }
 
-    inner class myPublishedReqsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
+    inner class mySentReqsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
         val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
         init{
@@ -36,16 +36,16 @@ class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myPublishedReqsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): mySentReqsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
-        return myPublishedReqsViewHolder(view, mListner)
+        return mySentReqsViewHolder(view, mListner)
     }
 
     override fun getItemCount(): Int {
         return mList.size
     }
 
-    override fun onBindViewHolder(holder: myPublishedReqsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: mySentReqsViewHolder, position: Int) {
         holder.logo.setImageResource(mList[position].logo)
         holder.titleTv.text = mList[position].title
     }
