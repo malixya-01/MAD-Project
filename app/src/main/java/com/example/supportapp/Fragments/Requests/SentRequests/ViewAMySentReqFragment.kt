@@ -1,4 +1,4 @@
-package com.example.supportapp.Fragments.Requests.RequestFromDonors
+package com.example.supportapp.Fragments.Requests.SentRequests
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

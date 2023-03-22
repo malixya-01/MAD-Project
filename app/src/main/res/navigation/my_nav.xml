@@ -131,7 +131,7 @@
     <fragment
         android:id="@+id/viewAFrAllUsersFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.viewAFrAllUsersFragment"
-        android:label="fragment_view_a_fr_all_users"
+        android:label="@string/viewAFundraiserToolbarTitle"
         tools:layout="@layout/fragment_view_a_fr_all_users" />
     <fragment
         android:id="@+id/viewADonationFragment"
@@ -158,7 +158,7 @@
         tools:layout="@layout/fragment_update_donation" />
     <fragment
         android:id="@+id/addReqtoTheDonorFragment"
-        android:name="com.example.supportapp.Fragments.Requests.RequestFromDonors.addReqtoTheDonorFragment"
+        android:name="com.example.supportapp.Fragments.Requests.SentRequests.addReqtoTheDonorFragment"
         android:label="@string/sendAReqToDonor"
         tools:layout="@layout/fragment_add_reqto_the_donor" />
     <fragment
@@ -177,7 +177,7 @@
         tools:layout="@layout/fragment_update_fr" />
     <fragment
         android:id="@+id/myRequestsFragment"
-        android:name="com.example.supportapp.Fragments.Requests.Dashboard.myRequestsFragment"
+        android:name="com.example.supportapp.Fragments.Requests.DashboardTabs.myRequestsFragment"
         android:label="@string/myRequestsToolbarTitle"
         tools:layout="@layout/fragment_my_requsts" >
         <action
@@ -189,12 +189,12 @@
     </fragment>
     <fragment
         android:id="@+id/viewAMySentReqFragment"
-        android:name="com.example.supportapp.Fragments.Requests.RequestFromDonors.viewAMySentReqFragment"
+        android:name="com.example.supportapp.Fragments.Requests.SentRequests.viewAMySentReqFragment"
         android:label="@string/editSentReqToDonor"
         tools:layout="@layout/fragment_view_a_my_sent_req" />
     <fragment
         android:id="@+id/readAreqSentToDonorFragment"
-        android:name="com.example.supportapp.Fragments.Requests.RequestFromDonors.readAreqSentToDonorFragment"
+        android:name="com.example.supportapp.Fragments.Requests.SentRequests.readAreqSentToDonorFragment"
         android:label="@string/viewSentReqToDonor"
         tools:layout="@layout/fragment_read_areq_sent_to_donor">
         <action

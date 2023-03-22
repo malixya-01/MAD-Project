@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/app_bg_colour"
-    tools:context=".Fragments.Requests.RequestFromDonors.viewAMySentReqFragment">
+    tools:context=".Fragments.Requests.SentRequests.viewAMySentReqFragment">
 
     <TextView
         android:id="@+id/textView9"
