@@ -38,12 +38,12 @@
 
     <string name="sendAReqToDonor">Send a Request</string>
     <string name="editSentReqToDonor">Edit Request</string>
-    <string name="viewSentReqToDonor">View Request</string>
+    <string name="viewSentReqToDonor">My Sent Request</string>
 
     <string name="myPubReqs">Published Requests</string>
     <string name="mySentReqs">Sent Requests</string>
     <string name="mySentReq">Sent Request</string>
-    <string name="myPubReq">Published Request</string>
+    <string name="myPubReq">My Published Request</string>
     <string name="myPubReqEdit">Edit Requests</string>
 
 

@@ -3,9 +3,9 @@ package com.example.supportapp.Adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.supportapp.Fragments.Requests.myPublishedReqsFragment
-import com.example.supportapp.Fragments.Requests.myRequestsFragment
-import com.example.supportapp.Fragments.Requests.mySentReqsFragment
+import com.example.supportapp.Fragments.Requests.Dashboard.myPublishedReqsFragment
+import com.example.supportapp.Fragments.Requests.Dashboard.myRequestsFragment
+import com.example.supportapp.Fragments.Requests.Dashboard.mySentReqsFragment
 
 internal class myRequestsAdapter(var context: myRequestsFragment, fm: FragmentManager, var totalTabs: Int) : FragmentPagerAdapter(fm) {
 

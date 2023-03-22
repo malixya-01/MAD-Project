@@ -8,12 +8,12 @@
     app:startDestination="@id/requestsFragment">
     <fragment
         android:id="@+id/viewASingleReqAllUsersFragment2"
-        android:name="com.example.supportapp.Fragments.Requests.viewARequestAllUsersFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewARequestAllUsersFragment"
         android:label="Request"
         tools:layout="@layout/fragment_view_a_single_req_all_users" />
     <fragment
         android:id="@+id/newRequestFragment"
-        android:name="com.example.supportapp.Fragments.Requests.NewRequestFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.NewRequestFragment"
         android:label="New request"
         tools:layout="@layout/fragment_new_request"/>
     <action
@@ -29,7 +29,7 @@
         app:popUpToInclusive="true" />
     <fragment
         android:id="@+id/requestsFragment"
-        android:name="com.example.supportapp.Fragments.Requests.RequestsFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.RequestsFragment"
         android:label="Requests"
         tools:layout="@layout/fragment_requests">
         <action
@@ -116,7 +116,7 @@
         tools:layout="@layout/fragment_new_donation" />
     <fragment
         android:id="@+id/viewSingleRequestFragment"
-        android:name="com.example.supportapp.Fragments.Requests.viewaRequestFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewaRequestFragment"
         android:label="@string/myPubReq"
         tools:layout="@layout/fragment_view_a_request">
         <action
@@ -125,7 +125,7 @@
     </fragment>
     <fragment
         android:id="@+id/editARequestFragment2"
-        android:name="com.example.supportapp.Fragments.Requests.editARequestFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.editARequestFragment"
         android:label="@string/myPubReqEdit"
         tools:layout="@layout/fragment_edit_a_request" />
     <fragment
@@ -158,7 +158,7 @@
         tools:layout="@layout/fragment_update_donation" />
     <fragment
         android:id="@+id/addReqtoTheDonorFragment"
-        android:name="com.example.supportapp.Fragments.Requests.addReqtoTheDonorFragment"
+        android:name="com.example.supportapp.Fragments.Requests.RequestFromDonors.addReqtoTheDonorFragment"
         android:label="@string/sendAReqToDonor"
         tools:layout="@layout/fragment_add_reqto_the_donor" />
     <fragment
@@ -177,7 +177,7 @@
         tools:layout="@layout/fragment_update_fr" />
     <fragment
         android:id="@+id/myRequestsFragment"
-        android:name="com.example.supportapp.Fragments.Requests.myRequestsFragment"
+        android:name="com.example.supportapp.Fragments.Requests.Dashboard.myRequestsFragment"
         android:label="@string/myRequestsToolbarTitle"
         tools:layout="@layout/fragment_my_requsts" >
         <action
@@ -189,12 +189,12 @@
     </fragment>
     <fragment
         android:id="@+id/viewAMySentReqFragment"
-        android:name="com.example.supportapp.Fragments.Requests.viewAMySentReqFragment"
+        android:name="com.example.supportapp.Fragments.Requests.RequestFromDonors.viewAMySentReqFragment"
         android:label="@string/editSentReqToDonor"
         tools:layout="@layout/fragment_view_a_my_sent_req" />
     <fragment
         android:id="@+id/readAreqSentToDonorFragment"
-        android:name="com.example.supportapp.Fragments.Requests.readAreqSentToDonorFragment"
+        android:name="com.example.supportapp.Fragments.Requests.RequestFromDonors.readAreqSentToDonorFragment"
         android:label="@string/viewSentReqToDonor"
         tools:layout="@layout/fragment_read_areq_sent_to_donor">
         <action

@@ -1,4 +1,4 @@
-package com.example.supportapp.Fragments.Requests
+package com.example.supportapp.Fragments.Requests.PublishedRequests
 
 import android.os.Bundle
 import android.view.LayoutInflater

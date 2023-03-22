@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_bg_colour"
-    tools:context=".Fragments.Requests.myRequestsFragment">
+    tools:context=".Fragments.Requests.Dashboard.myRequestsFragment">
 
 
 

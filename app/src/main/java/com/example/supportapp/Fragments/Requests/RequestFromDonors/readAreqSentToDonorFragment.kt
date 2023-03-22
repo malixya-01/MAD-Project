@@ -1,4 +1,4 @@
-package com.example.supportapp.Fragments.Requests
+package com.example.supportapp.Fragments.Requests.RequestFromDonors
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,20 +9,19 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.supportapp.R
 
-class viewaRequestFragment : Fragment() {
+class readAreqSentToDonorFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_view_a_request, container, false)
+        val view = inflater.inflate(R.layout.fragment_read_areq_sent_to_donor, container, false)
 
-        var btnUpdate = view.findViewById<Button>(R.id.btnRequest)
-        btnUpdate.setOnClickListener {
-            findNavController().navigate(R.id.action_viewSingleRequestFragment_to_editARequestFragment2)
+        val btnEdit = view.findViewById<Button>(R.id.btnEdit)
+        btnEdit.setOnClickListener {
+            findNavController().navigate(R.id.action_readAreqSentToDonorFragment_to_viewAMySentReqFragment)
         }
-
 
 
         return view
