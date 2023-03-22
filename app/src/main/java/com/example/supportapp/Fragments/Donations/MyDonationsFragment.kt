@@ -1,4 +1,4 @@
-package com.example.supportapp.Fragments.Donations
+package com.example.supportapp.Fragments.Donations.MyDonationsTabs
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.example.supportapp.Fragments.Requests.DashboardTabs
+package com.example.supportapp.Fragments.Requests.MyRequestsTabs
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

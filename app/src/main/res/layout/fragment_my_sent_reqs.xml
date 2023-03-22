@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Requests.DashboardTabs.mySentReqsFragment"
+    tools:context=".Fragments.Requests.MyRequestsTabs.mySentReqsFragment"
     android:background="@color/app_bg_colour">
 
 

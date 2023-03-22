@@ -92,7 +92,7 @@
     </fragment>
     <fragment
         android:id="@+id/myDonationsFragment"
-        android:name="com.example.supportapp.Fragments.Donations.myDonationsFragment"
+        android:name="com.example.supportapp.Fragments.Donations.MyDonationsTabs.myDonationsFragment"
         android:label="@string/myDonationsToolbarTitle"
         tools:layout="@layout/fragment_my_donations" >
         <action
@@ -177,7 +177,7 @@
         tools:layout="@layout/fragment_update_fr" />
     <fragment
         android:id="@+id/myRequestsFragment"
-        android:name="com.example.supportapp.Fragments.Requests.DashboardTabs.myRequestsFragment"
+        android:name="com.example.supportapp.Fragments.Requests.MyRequestsTabs.myRequestsFragment"
         android:label="@string/myRequestsToolbarTitle"
         tools:layout="@layout/fragment_my_requsts" >
         <action
