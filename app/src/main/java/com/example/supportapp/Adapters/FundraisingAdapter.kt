@@ -25,8 +25,9 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
 
 
     inner class FundraisingViewHolder(itemView: View, listner: FundraisingAdapter.onItemClickListner) :RecyclerView.ViewHolder(itemView) {
-        val logo: ImageView = itemView.findViewById(R.id.logoIv)
-        val titleTv : TextView = itemView.findViewById(R.id.titleTv)
+        val title: TextView = itemView.findViewById(R.id.tvTitle)
+        val location: TextView = itemView.findViewById(R.id.tvLocation)
+        val des: TextView = itemView.findViewById(R.id.tvDes)
 
         init{
             itemView.setOnClickListener {
@@ -46,8 +47,9 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
     }
 
     override fun onBindViewHolder(holder: FundraisingViewHolder, position: Int) {
-        holder.logo.setImageResource(mList[position].logo)
-        holder.titleTv.text = mList[position].title
+        holder.title.text = mList[position].title
+        holder.location.text = mList[position].location
+        holder.des.text = mList[position].description
     }
 
 

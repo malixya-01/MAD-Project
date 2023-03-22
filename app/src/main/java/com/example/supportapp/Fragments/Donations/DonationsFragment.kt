@@ -55,20 +55,10 @@ class DonationsFragment : Fragment(R.layout.fragment_donations) {
     }
 
     private fun addDataToList(){
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-        mList.add(DonationsData("I can donate ...", R.drawable.unselected_donorads))
-
+        mList.add(DonationsData("I can donate ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(DonationsData("I can donate ...", "Kandy", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(DonationsData("I can donate ...", "Negombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(DonationsData("I can donate ...", "Negombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
 
     }
 

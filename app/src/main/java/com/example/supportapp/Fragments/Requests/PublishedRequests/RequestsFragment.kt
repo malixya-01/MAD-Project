@@ -60,17 +60,15 @@ class RequestsFragment : Fragment() {
     }
 
     private fun addDataToList(){
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
-        mList.add(RequestsData("Need ...", R.drawable.unselected_requests))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(RequestsData("I need food ...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
     }
 
 

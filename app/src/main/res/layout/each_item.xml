@@ -34,9 +34,11 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tvTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/donTitle"
+                    android:textStyle="bold"
                     android:textColor="#ffff"
                     android:textSize="24sp" />
 
@@ -53,21 +55,23 @@
 
 
                     <TextView
+                        android:id="@+id/tvLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/donLocation"
-                        android:textSize="14sp"
                         android:layout_marginLeft="6dp"
-                        />
+                        android:text="@string/donLocation"
+                        android:textColor="#9FFFFFFF"
+                        android:textSize="14sp" />
 
 
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/donDes"
-                    android:layout_width="306dp"
+                    android:id="@+id/tvDes"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/donDes"
+                    android:textColor="#9FFFFFFF"
                     android:maxLines="4"
                     android:layout_marginTop="4dp"
                     android:layout_marginLeft="1dp"

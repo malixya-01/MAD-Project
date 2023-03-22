@@ -46,8 +46,12 @@ class MyFundraisingsFragment : Fragment() {
     }
 
     private fun addDataToList(){
-         mList.add(MyFundraisingsData("My Fundraising 1", R.drawable.unselected_fundraising))
-         mList.add(MyFundraisingsData("My Fundraising 2", R.drawable.unselected_fundraising))
+         mList.add(MyFundraisingsData("My Fundraising 1", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+         mList.add(MyFundraisingsData("My Fundraising 2", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+         mList.add(MyFundraisingsData("My Fundraising 3", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+         mList.add(MyFundraisingsData("My Fundraising 4", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+         mList.add(MyFundraisingsData("My Fundraising 5", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+
     }
 
 
