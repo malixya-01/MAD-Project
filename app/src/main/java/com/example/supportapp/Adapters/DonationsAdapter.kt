@@ -3,7 +3,6 @@ package com.example.supportapp.Adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.DataClasses.DonationsData
@@ -26,6 +25,7 @@ class DonationsAdapter(var mList: List<DonationsData>) :
 
     inner class DonationsViewHolder(itemView: View, listner: onItemClickListner) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.tvTitle)
+        val username: TextView = itemView.findViewById(R.id.tvUserName)
         val location: TextView = itemView.findViewById(R.id.tvLocation)
         val des: TextView = itemView.findViewById(R.id.tvDes)
 
@@ -37,7 +37,7 @@ class DonationsAdapter(var mList: List<DonationsData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonationsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_req_and_don, parent, false)
 
 
 
@@ -50,6 +50,7 @@ class DonationsAdapter(var mList: List<DonationsData>) :
 
     override fun onBindViewHolder(holder: DonationsViewHolder, position: Int) {
         holder.title.text = mList[position].title
+        holder.username.text = mList[position].username
         holder.location.text = mList[position].location
         holder.des.text = mList[position].description
     }

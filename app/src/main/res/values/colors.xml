@@ -12,6 +12,9 @@
 
 
     <color name="app_bg_colour">#e8e8f9</color>
+
+
+
     <color name="top_bg_gradient_startColour">#7a8afa</color>
     <color name="top_bg_gradient_endColour">#4958dc</color>
     <color name="dashboard_text">#ffffff</color>
@@ -19,7 +22,7 @@
 
     <color name="dashboard_btn1">#c8c8fe</color>
     <color name="dashboard_btn2">#ffffff</color>
-    <color name="navBarSelectedIcon">#4958dc</color>
+    <color name="SelectedIcon">#4958dc</color>
 
     <color name="toolbarTextColour">#FFFFFF</color>
     <color name="toolbarBackgroundColour">#4958dc</color>

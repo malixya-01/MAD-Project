@@ -27,6 +27,7 @@ class RequestsAdapter(var mList: List<RequestsData>) :
 
     inner class RequestsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.tvTitle)
+        val username: TextView = itemView.findViewById(R.id.tvUserName)
         val location: TextView = itemView.findViewById(R.id.tvLocation)
         val des: TextView = itemView.findViewById(R.id.tvDes)
         init{
@@ -38,7 +39,7 @@ class RequestsAdapter(var mList: List<RequestsData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RequestsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_req_and_don, parent, false)
         return RequestsViewHolder(view, mListner)
     }
 
@@ -48,6 +49,7 @@ class RequestsAdapter(var mList: List<RequestsData>) :
 
     override fun onBindViewHolder(holder: RequestsViewHolder, position: Int) {
         holder.title.text = mList[position].title
+        holder.username.text = mList[position].username
         holder.location.text = mList[position].location
         holder.des.text = mList[position].description
     }

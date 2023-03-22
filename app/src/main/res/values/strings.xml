@@ -105,7 +105,9 @@
     <string name="frCollectedAmt">Collected amount : 100000</string>
     <string name="frBankDetails">Bank details : BOC Malabe  11234568</string>
 
+    <!--Donations CardView -->
     <string name="donTitle">I can donate ...</string>
+    <string name="donName">Saman Kumara</string>
     <string name="donDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
     <string name="donLocation">Colombo</string>
 
