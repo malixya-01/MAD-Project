@@ -17,7 +17,7 @@ class ViewADonationAllUserFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_view_a_donation_all_user, container, false)
 
-        val btnRequest =view.findViewById<Button>(R.id.btnRequest)
+        val btnRequest =view.findViewById<Button>(R.id.btnUpdateSentReq)
         btnRequest.setOnClickListener {
             findNavController().navigate(R.id.action_viewADonationAllUserFragment_to_addReqtoTheDonorFragment)
         }

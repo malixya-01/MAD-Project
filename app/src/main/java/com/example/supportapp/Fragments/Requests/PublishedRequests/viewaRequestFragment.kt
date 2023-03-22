@@ -18,8 +18,8 @@ class viewaRequestFragment : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_view_a_request, container, false)
 
-        var btnUpdate = view.findViewById<Button>(R.id.btnRequest)
-        btnUpdate.setOnClickListener {
+        var btnEditReq = view.findViewById<Button>(R.id.btnUpdateSentReq)
+        btnEditReq.setOnClickListener {
             findNavController().navigate(R.id.action_viewSingleRequestFragment_to_editARequestFragment2)
         }
 

@@ -188,17 +188,17 @@
             app:destination="@id/readAreqSentToDonorFragment" />
     </fragment>
     <fragment
-        android:id="@+id/viewAMySentReqFragment"
-        android:name="com.example.supportapp.Fragments.Requests.SentRequests.viewAMySentReqFragment"
-        android:label="@string/editSentReqToDonor"
-        tools:layout="@layout/fragment_view_a_my_sent_req" />
-    <fragment
         android:id="@+id/readAreqSentToDonorFragment"
         android:name="com.example.supportapp.Fragments.Requests.SentRequests.readAreqSentToDonorFragment"
         android:label="@string/viewSentReqToDonor"
         tools:layout="@layout/fragment_read_areq_sent_to_donor">
         <action
-            android:id="@+id/action_readAreqSentToDonorFragment_to_viewAMySentReqFragment"
-            app:destination="@id/viewAMySentReqFragment" />
+            android:id="@+id/action_readAreqSentToDonorFragment_to_updateReqAddedToDonorFragment"
+            app:destination="@id/updateReqAddedToDonorFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/updateReqAddedToDonorFragment"
+        android:name="com.example.supportapp.Fragments.Requests.SentRequests.updateReqAddedToDonorFragment"
+        android:label="@string/editSentReqToDonor"
+        tools:layout="@layout/fragment_update_req_added_to_donor" />
 </navigation>

@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
     <Button
-        android:id="@+id/btnRequest"
+        android:id="@+id/btnUpdateSentReq"
         android:layout_width="@dimen/submitBtnWidth"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/submitBtn_L_R_margins"

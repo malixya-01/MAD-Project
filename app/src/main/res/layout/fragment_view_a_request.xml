@@ -106,15 +106,15 @@
         android:textSize="20sp" />
 </androidx.cardview.widget.CardView>
 
-<Button
-android:id="@+id/btnRequest"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:text="@string/btnUpdate"
-android:layout_marginStart="16dp"
-android:layout_marginTop="16dp"
-android:layout_marginEnd="16dp"
-app:cardCornerRadius="10dp"/>
+    <Button
+        android:id="@+id/btnUpdateSentReq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/btnEdit"
+        app:cardCornerRadius="10dp" />
 
 <Button
 android:id="@+id/btnDlt"

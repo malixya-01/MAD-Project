@@ -106,16 +106,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/btnEdit" />
-
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/btnCancel" />
+            android:text="@string/btnUpdate" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

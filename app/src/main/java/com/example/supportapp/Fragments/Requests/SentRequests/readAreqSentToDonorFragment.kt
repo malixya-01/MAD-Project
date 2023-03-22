@@ -20,7 +20,7 @@ class readAreqSentToDonorFragment : Fragment() {
 
         val btnEdit = view.findViewById<Button>(R.id.btnEdit)
         btnEdit.setOnClickListener {
-            findNavController().navigate(R.id.action_readAreqSentToDonorFragment_to_viewAMySentReqFragment)
+            findNavController().navigate(R.id.action_readAreqSentToDonorFragment_to_updateReqAddedToDonorFragment)
         }
 
 
