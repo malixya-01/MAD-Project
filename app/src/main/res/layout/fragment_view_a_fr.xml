@@ -1,149 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/app_bg_colour"
-    tools:context=".Fragments.Fundraisings.viewAFrFragment">
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
 
 
-
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp" >
+        android:layout_height="match_parent"
+        android:background="@color/app_bg_colour"
+        android:orientation="vertical"
+        tools:context=".Fragments.Fundraisings.viewAFrFragment">
 
-        <TextView
-            android:id="@+id/textView1"
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/frTitle"
-            android:textColor="#686262"
-            android:textSize="20sp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="10dp">
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/donSampleDataTitle"
+                android:textColor="#686262"
+                android:textSize="20sp" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp" >
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView2"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/frName"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="10dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/gravity"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="8dp">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/donSampleDataName"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView5"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/frDes"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginStart="10dp"
-            android:text="@string/frDes"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="8dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="2dp" >
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/frDes"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView3"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/frTotAmt"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="2dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp" >
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/frTotAmt"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView4"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/frCollectedAmt"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="2dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp" >
+            <TextView
+                android:id="@+id/tvCollectedAmt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/frCollectedAmt"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/tvBank"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/frBankDetails"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="10dp">
 
-    <Button
-        android:id="@+id/btnUpdateSentReq"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Update"
-        app:cardCornerRadius="10dp" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/frContactNumber"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btnDlt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Delete"
-        app:cardCornerRadius="10dp" />
 
-</LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="10dp">
 
+            <TextView
+                android:id="@+id/tvWeb"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/frWebSite"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/frEmail"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/frBankDetails"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="8dp">
+
+            <TextView
+                android:id="@+id/tvBankDetails"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/frBankDetails"
+                android:textColor="#686262"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/btnUpdateSentReq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/btnEdit"
+            app:cardCornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/btnDlt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Delete"
+            app:cardCornerRadius="10dp" />
+
+
+    </LinearLayout>
+</ScrollView>

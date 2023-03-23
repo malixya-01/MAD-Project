@@ -69,13 +69,7 @@
     <string name="newDonationToolbarTitle">Add new donation</string>
 
 
-    <string name="editAReqtitle">Title</string>
-    <string name="editAReqname">Name</string>
-    <string name="editAReqcity">City</string>
-    <string name="editAReqPhoneNo">Phone Number</string>
-    <string name="editAReqdescription">Description</string>
-    <string name="editAReqbtnUpdate">Update</string>
-    <string name="editAReqbtnCancel">Cancel</string>
+
 
 
 
@@ -98,7 +92,7 @@
     <string name="requestSampleDataContactNumber">073225462</string>
     <string name="requestSampleDataDes">There are 8 members in my family. we need dry food. If any one can help us, we will really appreciate it.</string>
 
-    <string name="frTitle">Donate CT scanner</string>
+    <string name="frTitle">Donate a CT scanner to Apeksha hospital</string>
     <string name="frName">Leo Club Sliit</string>
     <string name="frDes">Leo club of SLIIT is collecting money to donate CT scanner.</string>
     <string name="frTotAmt">2000000</string>
@@ -119,6 +113,26 @@
     <string name="donSampleDataCity">Hambanthota</string>
     <string name="dontSampleDataContactNumber">073225462</string>
     <string name="donSampleDataDes">I can provide dry food for 100 people. Send me a request.</string>
+
+    <!-- Form Hints-->
+    <string name="FrTitle">Title</string>
+    <string name="FrUserName">Name</string>
+    <string name="FrDes">Description</string>
+    <string name="FrTotAmt">Expected Amount</string>
+    <string name="FrCurrAmt">Collected Amount</string>
+    <string name="FrConatctNo">Contact Number</string>
+    <string name="FrEmail">Email</string>
+    <string name="FrWebsite">Web Site</string>
+    <string name="FrBankDetails">Bank Details</string>
+
+
+    <string name="editAReqtitle">Title</string>
+    <string name="editAReqname">Name</string>
+    <string name="editAReqcity">City</string>
+    <string name="editAReqPhoneNo">Phone Number</string>
+    <string name="editAReqdescription">Description</string>
+    <string name="editAReqbtnUpdate">Update</string>
+    <string name="editAReqbtnCancel">Cancel</string>
 
 
 
