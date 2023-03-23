@@ -105,6 +105,24 @@
     <string name="frCollectedAmt">Collected amount : 100000</string>
     <string name="frBankDetails">Bank details : BOC Malabe  11234568</string>
 
+    <string name="senrReqSampleDataTitle">Dry food donation</string>
+    <string name="senrReqSampleDataName">Minoli Hansika</string>
+    <string name="senrReqSampleDataCity">Galle</string>
+    <string name="senrReqtSampleDataContactNumber">073225462</string>
+    <string name="senrReqSampleDataDes">I do not have enough money to feed my children. Could you help me with my food needs.</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--Donations CardView -->
     <string name="donTitle">I can donate ...</string>
     <string name="donName">Saman Kumara</string>
