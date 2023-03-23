@@ -63,7 +63,7 @@
 
 
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="SubmitBtn">Submit</string>
     <string name="searchBarQueryHint">Search Here...</string>
@@ -76,12 +76,17 @@
 
 
 
+    <!-- Buttons -->
     <string name="btnUpdate">Update</string>
     <string name="btnAdd">Submit</string>
     <string name="btnEdit">Edit</string>
     <string name="btnDelete">Delete</string>
     <string name="btnCancel">Cancel</string>
     <string name="add_btn_text">+</string>
+
+    <string name="btnSupport">Support</string>
+
+
 
 
     <!--Tablelayouts tab strings-->
@@ -94,6 +99,8 @@
     <string name="requestSampleDataCity">Galle</string>
     <string name="requestSampleDataContactNumber">073225462</string>
     <string name="requestSampleDataDes">There are 8 members in my family. we need dry food. If any one can help us, we will really appreciate it.</string>
+    <string name="requestSampleDataBankDetails">BOC Malabe  Account Number : 11234568</string>
+
 
     <string name="frTitle">Donate a CT scanner to Apeksha hospital</string>
     <string name="frName">Leo Club Sliit</string>
@@ -118,6 +125,14 @@
     <string name="donSampleDataDes">I can provide dry food for 100 people. Send me a request.</string>
 
     <!-- Form Hints-->
+
+    <string name="reqHintTitle">Title</string>
+    <string name="reqHintName">Name</string>
+    <string name="reqHintCity">City</string>
+    <string name="reqHintContactNumber">Contact Number</string>
+    <string name="reqHintDes">Description</string>
+    <string name="reqHintBankDetails">Bank Details</string>
+
 
     <string name="donHintTitle">Title</string>
     <string name="donHintName">Donor Name</string>
