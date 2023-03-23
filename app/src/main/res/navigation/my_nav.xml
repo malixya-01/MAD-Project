@@ -10,7 +10,11 @@
         android:id="@+id/viewASingleReqAllUsersFragment2"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewARequestAllUsersFragment"
         android:label="Request"
-        tools:layout="@layout/fragment_view_a_single_req_all_users" />
+        tools:layout="@layout/fragment_view_a_single_req_all_users" >
+        <action
+            android:id="@+id/action_viewASingleReqAllUsersFragment2_to_supportMsgToReqFragment"
+            app:destination="@id/supportMsgToReqFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newRequestFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.NewRequestFragment"
@@ -201,4 +205,9 @@
         android:name="com.example.supportapp.Fragments.Requests.SentRequests.updateReqAddedToDonorFragment"
         android:label="@string/editMyDonToolbarTitle"
         tools:layout="@layout/fragment_update_req_added_to_donor" />
+    <fragment
+        android:id="@+id/supportMsgToReqFragment"
+        android:name="com.example.supportapp.Fragments.Donations.supportMsgToReqFragment"
+        android:label="@string/sendSupMsg"
+        tools:layout="@layout/fragment_support_msg_to_req" />
 </navigation>

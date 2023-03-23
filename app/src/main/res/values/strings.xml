@@ -37,6 +37,8 @@
     <string name="myRequestsToolbarTitle">My Requsts</string>
     <string name="editMyDonToolbarTitle">Edit My Donation</string>
     <string name="viewProfileToolbarTitle">Profile</string>
+    <string name="sendSupMsg">Support Message</string>
+
 
     <string name="sendAReqToDonor">Send a Request</string>
     <string name="editSentReqToDonor">Edit Request</string>
@@ -49,7 +51,6 @@
     <string name="myPubReqEdit">Edit Requests</string>
 
 
-
     <string name="addNewFrToolbarTitle">New Fundraiser</string>
     <string name="addNewFrFormName">Name</string>
     <string name="addNewFrFormTitle">Title</string>
@@ -59,21 +60,10 @@
     <string name="addNewFrFormDueDate">Before</string>
 
 
-
-
-
-
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="SubmitBtn">Submit</string>
     <string name="searchBarQueryHint">Search Here...</string>
     <string name="newDonationToolbarTitle">Add new donation</string>
-
-
-
-
-
-
 
 
     <!-- Buttons -->
@@ -85,7 +75,8 @@
     <string name="add_btn_text">+</string>
 
     <string name="btnSupport">Support</string>
-
+    <string name="btnRequest">Request</string>
+    <string name="btnSend">Send</string>
 
 
 
@@ -125,7 +116,6 @@
     <string name="donSampleDataDes">I can provide dry food for 100 people. Send me a request.</string>
 
     <!-- Form Hints-->
-
     <string name="reqHintTitle">Title</string>
     <string name="reqHintName">Name</string>
     <string name="reqHintCity">City</string>
@@ -161,15 +151,14 @@
     <string name="editAReqbtnCancel">Cancel</string>
 
 
+    <string name="reqFromDonHintName">Name</string>
+    <string name="reqFromDonHintCity">City</string>
+    <string name="reqFromDonContactNumber">Contact Number</string>
+    <string name="reqFromDonHintMsg">Message</string>
 
-
-
-
-
-
-
-
-
+    <string name="supReqHintName">Name</string>
+    <string name="supReqContactNumber">Contact Number</string>
+    <string name="supReqHintMsg">Message</string>
 
 
     <!--Donations CardView -->
@@ -177,13 +166,6 @@
     <string name="donName">Saman Kumara</string>
     <string name="donDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
     <string name="donLocation">Colombo</string>
-
-
-
-
-
-
-
 
 
 </resources>
