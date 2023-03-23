@@ -1,4 +1,4 @@
-package com.example.supportapp.Fragments.Requests.PublishedRequests
+package com.example.supportapp.Fragments.Requests.MyRequestsTabs
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -48,10 +48,9 @@ class myPublishedReqsFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(myPublishedReqsData("My request 1...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
-        mList.add(myPublishedReqsData("My request 2...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
-        mList.add(myPublishedReqsData("My request 3...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
-        mList.add(myPublishedReqsData("My request 4...", "Colombo", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(myPublishedReqsData("My request 1...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My request 2...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My request 3...", R.drawable.unselected_requests))
     }
 
 }

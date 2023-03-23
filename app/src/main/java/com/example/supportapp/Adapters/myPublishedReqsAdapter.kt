@@ -23,9 +23,8 @@ class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
     }
 
     inner class myPublishedReqsViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(R.id.tvTitle)
-        val location: TextView = itemView.findViewById(R.id.tvLocation)
-        val des: TextView = itemView.findViewById(R.id.tvDes)
+        val logo: ImageView = itemView.findViewById(R.id.logoIv)
+        val titleTv : TextView = itemView.findViewById(R.id.titleTv)
 
         init{
             itemView.setOnClickListener {
@@ -36,7 +35,7 @@ class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myPublishedReqsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_reqs_and_dons, parent, false)
         return myPublishedReqsViewHolder(view)
     }
 
@@ -45,8 +44,7 @@ class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
     }
 
     override fun onBindViewHolder(holder: myPublishedReqsViewHolder, position: Int) {
-        holder.title.text = mList[position].title
-        holder.location.text = mList[position].location
-        holder.des.text = mList[position].description
+        holder.logo.setImageResource(mList[position].logo)
+        holder.titleTv.text = mList[position].title
     }
 }
