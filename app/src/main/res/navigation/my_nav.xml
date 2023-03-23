@@ -154,7 +154,7 @@
     <fragment
         android:id="@+id/updateDonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.UpdateDonationFragment"
-        android:label="fragment_update_donation"
+        android:label="@string/editMyDonToolbarTitle"
         tools:layout="@layout/fragment_update_donation" />
     <fragment
         android:id="@+id/addReqtoTheDonorFragment"
@@ -199,6 +199,6 @@
     <fragment
         android:id="@+id/updateReqAddedToDonorFragment"
         android:name="com.example.supportapp.Fragments.Requests.SentRequests.updateReqAddedToDonorFragment"
-        android:label="@string/editSentReqToDonor"
+        android:label="@string/editMyDonToolbarTitle"
         tools:layout="@layout/fragment_update_req_added_to_donor" />
 </navigation>

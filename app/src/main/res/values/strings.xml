@@ -35,6 +35,7 @@
     <string name="viewAFundraiserToolbarTitle">View Fundraiser</string>
     <string name="myDonationsToolbarTitle">My Donations</string>
     <string name="myRequestsToolbarTitle">My Requsts</string>
+    <string name="editMyDonToolbarTitle">Edit My Donation</string>
     <string name="viewProfileToolbarTitle">Profile</string>
 
     <string name="sendAReqToDonor">Send a Request</string>
@@ -59,7 +60,7 @@
 
 
 
-    <string name="add_btn_text">+</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -76,9 +77,11 @@
 
 
     <string name="btnUpdate">Update</string>
+    <string name="btnAdd">Submit</string>
     <string name="btnEdit">Edit</string>
     <string name="btnDelete">Delete</string>
     <string name="btnCancel">Cancel</string>
+    <string name="add_btn_text">+</string>
 
 
     <!--Tablelayouts tab strings-->
@@ -115,6 +118,14 @@
     <string name="donSampleDataDes">I can provide dry food for 100 people. Send me a request.</string>
 
     <!-- Form Hints-->
+
+    <string name="donHintTitle">Title</string>
+    <string name="donHintName">Donor Name</string>
+    <string name="donHintCity">City</string>
+    <string name="donHintContactNumber">Contact Number</string>
+    <string name="donHintDes">Description</string>
+
+
     <string name="FrTitle">Title</string>
     <string name="FrUserName">Name</string>
     <string name="FrDes">Description</string>
