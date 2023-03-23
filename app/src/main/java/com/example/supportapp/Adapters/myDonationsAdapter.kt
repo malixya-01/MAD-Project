@@ -26,9 +26,8 @@ class myDonationsAdapter(var mList: List<myDonationsData>) :
     }
 
     inner class myDonationsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(R.id.tvTitle)
-        val location: TextView = itemView.findViewById(R.id.tvLocation)
-        val des: TextView = itemView.findViewById(R.id.tvDes)
+        val logo: ImageView = itemView.findViewById(R.id.logoIv)
+        val titleTv : TextView = itemView.findViewById(R.id.titleTv)
         init{
             itemView.setOnClickListener {
                 listner.onItemClick(adapterPosition)
@@ -38,7 +37,7 @@ class myDonationsAdapter(var mList: List<myDonationsData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myDonationsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_reqs_and_dons, parent, false)
         return myDonationsViewHolder(view, mListner)
     }
 
@@ -47,8 +46,7 @@ class myDonationsAdapter(var mList: List<myDonationsData>) :
     }
 
     override fun onBindViewHolder(holder: myDonationsViewHolder, position: Int) {
-        holder.title.text = mList[position].title
-        holder.location.text = mList[position].location
-        holder.des.text = mList[position].description
+        holder.logo.setImageResource(mList[position].logo)
+        holder.titleTv.text = mList[position].title
     }
 }
