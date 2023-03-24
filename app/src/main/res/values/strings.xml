@@ -97,7 +97,7 @@
 
     <string name="frTitle">Donate a CT scanner to Apeksha hospital</string>
     <string name="frName">Leo Club Sliit</string>
-    <string name="frDes">Leo club of SLIIT is collecting money to donate CT scanner.</string>
+    <string name="frDes">We are organizing a fundraiser to donate a CT scanner to the Maharagama Apeksha Cancer Hospital in Sri Lanka. The fundraiser is being organized by the Leo Club of the SLIIT, and we are seeking support from the community to help us achieve our goal.Our fundraising goal is to raise Rs. 200,000 in total, and so far we have collected Rs. 90,000. We still have a long way to go to reach our goal, and we are seeking contributions from anyone who is willing to help us.If you would like to contribute to our cause, please visit our fundraiser page [insert link to fundraiser page]. Your contribution will go towards the purchase of a CT scanner that will make a significant difference in the lives of those in need at the Maharagama Apeksha Cancer Hospital. Thank you in advance for your support and generosity. If you have any questions or need any further information about the fundraiser, please feel free to reach out to us.</string>
     <string name="frTotAmt">2000000</string>
     <string name="frCollectedAmt">100000</string>
     <string name="frContactNumber">073225462</string>
@@ -107,6 +107,7 @@
 
     <string name="senrReqSampleDataTitle">Dry food donation</string>
     <string name="senrReqSampleDataName">Minoli Hansika</string>
+    <string name="senrReqSampleDataPubDate">2023/03/10</string>
     <string name="senrReqSampleDataCity">Galle</string>
     <string name="senrReqtSampleDataContactNumber">073225462</string>
     <string name="senrReqSampleDataDes">I do not have enough money to feed my children. Could you help me with my food needs.</string>
