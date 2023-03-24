@@ -216,7 +216,7 @@
         app:fabSize="mini"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
-        app:srcCompat="@drawable/unselected_saved_icon" />
+        app:srcCompat="@drawable/unselected_bookmark" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
