@@ -217,6 +217,20 @@
         android:layout_marginRight="@dimen/viewLay_FAB_edit_margin_right"
         android:backgroundTint="@color/editFabBg"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/viewDonors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:srcCompat="@drawable/donors"
+        app:fabSize="normal"
+        app:layout_anchor="@id/nestedScrollView"
+        app:layout_anchorGravity="end|bottom"
+        android:layout_marginRight="@dimen/viewLay_FAB_viewDonors_margin_right"
+        android:layout_marginBottom="@dimen/viewLay_FAB_viewDonors_margin_bottom"
+        android:backgroundTint="@color/editFabBg"/>
+
 
 
 
