@@ -42,5 +42,9 @@
     <color name="editFabBg">#FFFFFF</color>
     <color name="editFabIconColor">#9458FF</color>
 
+    <color name="viewAPostAllUsersOptionBtn">#5A00FA</color>
+
+
+
 
 </resources>

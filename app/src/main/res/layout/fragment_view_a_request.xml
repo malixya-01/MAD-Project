@@ -123,9 +123,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginStart="@dimen/viewLay_details_Container_margin_start"
+                android:layout_marginTop="@dimen/viewLay_details_Container_margin_top"
+                android:layout_marginEnd="@dimen/viewLay_details_Container_margin_end"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
