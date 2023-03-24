@@ -249,7 +249,8 @@
         app:fabSize="mini"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
-        app:srcCompat="@drawable/delete" />
+        app:srcCompat="@drawable/delete"
+        app:tint="@color/deleteFabIconColor"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/updateBtn"
@@ -258,6 +259,7 @@
         android:baselineAlignBottom="false"
         android:clickable="true"
         app:srcCompat="@drawable/edit"
+        app:tint="@color/editFabIconColor"
         app:fabSize="mini"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"

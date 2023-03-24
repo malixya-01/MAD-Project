@@ -37,10 +37,13 @@
 
     <!--View layouts-->
     <color name="viewLayTitle">#FFFFFF</color>
-    <color name="viewLayIconsColour">#857FFF</color>
+
     <color name="viewLayFontColour">#686262</color>
     <color name="editFabBg">#FFFFFF</color>
-    <color name="editFabIconColor">#9458FF</color>
+
+    <color name="viewLayIconsColour">#857FFF</color>
+    <color name="deleteFabIconColor">#C50000</color>
+    <color name="editFabIconColor">#000000</color>
 
     <color name="viewAPostAllUsersOptionBtn">#5A00FA</color>
 
