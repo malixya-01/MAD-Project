@@ -1,3 +1,3 @@
 package com.example.supportapp.DataClasses
 
-data class myPublishedReqsData(val title: String, val logo: Int)
+data class myPublishedReqsData(val title: String, val date:String, val count: String)

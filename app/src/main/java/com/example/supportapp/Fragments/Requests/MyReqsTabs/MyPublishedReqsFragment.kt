@@ -48,9 +48,10 @@ class myPublishedReqsFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(myPublishedReqsData("My request 1...", R.drawable.unselected_requests))
-        mList.add(myPublishedReqsData("My request 2...", R.drawable.unselected_requests))
-        mList.add(myPublishedReqsData("My request 3...", R.drawable.unselected_requests))
+        mList.add(myPublishedReqsData("My request 1...", "2022/10/30", "10"))
+        mList.add(myPublishedReqsData("My request 2...", "2022/10/30", "10"))
+        mList.add(myPublishedReqsData("My request 3...", "2022/10/30", "10"))
+        mList.add(myPublishedReqsData("My request 4...", "2022/10/30", "10"))
     }
 
 }
