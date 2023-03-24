@@ -1,134 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/app_bg_colour"
+    android:background="?attr/colorPrimary"
     tools:context=".Fragments.Donations.viewADonationFragment">
 
-
-
-
-
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp" >
+        android:layout_height="150dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.SupportApp">
 
-        <TextView
-            android:id="@+id/textView1"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/donSampleDataTitle"
-            android:textColor="#686262"
-            android:textSize="20sp" />
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="@string/donSampleDataTitle"
+            app:expandedTitleTextColor="@color/viewLayTitle"
+            app:collapsedTitleTextColor="@color/viewLayTitle">
 
-    </androidx.cardview.widget.CardView>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
 
-    <androidx.cardview.widget.CardView
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp" >
+        android:layout_height="match_parent"
+        android:background="@drawable/layou_bg"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <TextView
-            android:id="@+id/textView2"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/donSampleDataName"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="2dp" >
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/donSampleDataCity"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp" >
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
-            android:text="@string/dontSampleDataContactNumber"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/gravity"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="8dp">
+            <ImageView
+                android:id="@+id/imDP"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginStart="10dp"
-            android:text="@string/donSampleDataDes"
-            android:textColor="#686262"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/donSampleDataName"
+                android:textSize="@dimen/viewLay_userName_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imDP"
+                app:layout_constraintTop_toTopOf="@+id/imDP" />
 
-    <Button
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/donSampleDataPubDate"
+                android:textSize="@dimen/viewLay_date_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLoc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvName"
+                app:layout_constraintTop_toTopOf="@+id/tvName"
+                app:layout_constraintVertical_bias="0.31" />
+
+            <ImageView
+                android:id="@+id/imLocIcon"
+                android:layout_width="@dimen/viewLay_location_icon_width"
+                android:layout_height="@dimen/viewLay_location_icon_height"
+                android:layout_marginTop="@dimen/viewLay_location_icon_margin_top"
+                android:src="@drawable/baseline_location_on_24"
+                app:layout_constraintBottom_toBottomOf="@+id/imDP"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donSampleDataCity"
+                android:textSize="@dimen/viewLay_city_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/imLocIcon"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintStart_toEndOf="@+id/imLocIcon"
+                app:layout_constraintTop_toTopOf="@+id/imLocIcon"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tvDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/donSampleDataDes"
+                android:textColor="@color/viewLayFontColour"
+                android:textSize="@dimen/viewLay_des_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/viewLay_details_Container_margin_start"
+                android:layout_marginTop="@dimen/viewLay_details_Container_margin_top"
+                android:layout_marginEnd="@dimen/viewLay_details_Container_margin_end"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDes">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp">
+
+                    <ImageView
+                        android:id="@+id/imPhone"
+                        android:layout_width="@dimen/viewLay_phone_icon_width"
+                        android:layout_height="@dimen/viewLay_phone_icon_height"
+                        android:src="@drawable/phone" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/dontSampleDataContactNumber"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/viewLay_phone_text_size"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnDltReq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/viewLay_FAB_dlt_margin_right"
+        android:backgroundTint="@color/editFabBg"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="end|bottom"
+        app:srcCompat="@drawable/delete" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnEdit"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/btnEdit"
-        app:cardCornerRadius="10dp" />
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:srcCompat="@drawable/edit"
+        app:fabSize="mini"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="end|bottom"
+        android:layout_marginRight="@dimen/viewLay_FAB_edit_margin_right"
+        android:backgroundTint="@color/editFabBg"/>
 
-    <Button
-        android:id="@+id/btnDlt"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/viewReqs"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="10dp"/>
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:srcCompat="@drawable/requests"
+        app:fabSize="normal"
+        app:layout_anchor="@id/nestedScrollView"
+        app:layout_anchorGravity="end|bottom"
+        android:layout_marginRight="@dimen/viewLay_FAB_viewDonors_margin_right"
+        android:layout_marginBottom="@dimen/viewLay_FAB_viewDonors_margin_bottom"
+        android:backgroundTint="@color/editFabBg"/>
 
 
 
-</LinearLayout>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

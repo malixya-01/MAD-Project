@@ -112,10 +112,11 @@
     <string name="senrReqSampleDataDes">I do not have enough money to feed my children. Could you help me with my food needs.</string>
 
     <string name="donSampleDataTitle">Dry food donation</string>
-    <string name="donSampleDataName">Mahinda Rajapaksha</string>
-    <string name="donSampleDataCity">Hambanthota</string>
+    <string name="donSampleDataName">Hirunika Premachandra</string>
+    <string name="donSampleDataPubDate">2023/03/10</string>
+    <string name="donSampleDataCity">Kolonnawa</string>
     <string name="dontSampleDataContactNumber">073225462</string>
-    <string name="donSampleDataDes">I can provide dry food for 100 people. Send me a request.</string>
+    <string name="donSampleDataDes">"I have some dry food items that I would like to donate to those in need. The items include rice, dhal, milk powder, biscuits, and other non-perishable items. I am willing to donate these items to anyone who needs them, and I am happy to deliver them to the person in need. If you or someone you know is in need of these items, please let me know, and I will do my best to help. I understand that times are tough, and I want to do my part in helping the community during these challenging times. Thank you for considering my offer, and please let me know if you have any questions or need any further information from me."</string>
 
     <!-- Form Hints-->
     <string name="reqHintTitle">Title</string>

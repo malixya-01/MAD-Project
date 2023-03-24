@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.supportapp.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class viewADonationFragment : Fragment() {
@@ -18,7 +19,7 @@ class viewADonationFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_view_a_donation, container, false)
 
-        val btnEdit = view.findViewById<Button>(R.id.btnEdit)
+        val btnEdit = view.findViewById<FloatingActionButton>(R.id.btnEdit)
 
         btnEdit.setOnClickListener {
             findNavController().navigate(R.id.action_viewADonationFragment_to_updateDonationFragment)
