@@ -35,7 +35,11 @@
 
     <color name="tabLaoytBgColor">#FFFFFF</color>
 
+    <!--View layouts-->
 
+    <color name="viewLayTitle">#FFFFFF</color>
+    <color name="editFabBg">#FFFFFF</color>
+    <color name="editFabIconColor">#9458FF</color>
 
 
 </resources>
