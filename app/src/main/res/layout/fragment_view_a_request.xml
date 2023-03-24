@@ -35,9 +35,11 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/layou_bg"
+        app:layout_anchorGravity="bottom|center"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
 
@@ -62,7 +64,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="@string/requestSampleDataName"
-                android:textSize="18sp"
+                android:textSize="@dimen/viewLay_userName_text_size"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imDP"
                 app:layout_constraintTop_toTopOf="@+id/imDP" />
 
@@ -72,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="76dp"
                 android:text="@string/requestSampleDataPubDate"
+                android:textSize="@dimen/viewLay_date_text_size"
                 app:layout_constraintBottom_toBottomOf="@+id/tvLoc"
                 app:layout_constraintStart_toEndOf="@+id/tvName"
                 app:layout_constraintTop_toTopOf="@+id/tvName"
@@ -79,23 +83,24 @@
 
             <ImageView
                 android:id="@+id/imLocIcon"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="@dimen/viewLay_location_icon_width"
+                android:layout_height="@dimen/viewLay_location_icon_height"
+                android:layout_marginTop="@dimen/viewLay_location_icon_margin_top"
                 android:src="@drawable/baseline_location_on_24"
                 app:layout_constraintBottom_toBottomOf="@+id/imDP"
                 app:layout_constraintStart_toStartOf="@+id/tvName"
-                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/senrReqSampleDataCity"
-                android:textSize="14sp"
+                android:textSize="@dimen/viewLay_city_text_size"
                 app:layout_constraintBottom_toBottomOf="@+id/imLocIcon"
                 app:layout_constraintEnd_toEndOf="@+id/tvName"
-                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintHorizontal_bias="0.118"
                 app:layout_constraintStart_toEndOf="@+id/imLocIcon"
                 app:layout_constraintTop_toTopOf="@+id/imLocIcon"
                 app:layout_constraintVertical_bias="1.0" />
@@ -108,30 +113,99 @@
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="24dp"
                 android:text="@string/requestSampleDataDes"
-                android:textColor="#686262"
-                android:textSize="18sp"
+                android:textColor="@color/viewLayFontColour"
+                android:textSize="@dimen/viewLay_des_text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp">
+
+                    <ImageView
+                        android:id="@+id/imPhone"
+                        android:layout_width="@dimen/viewLay_phone_icon_width"
+                        android:layout_height="@dimen/viewLay_phone_icon_height"
+                        android:src="@drawable/phone" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/requestSampleDataContactNumber"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/viewLay_phone_text_size"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="60dp">
+
+                    <ImageView
+                        android:id="@+id/imBank"
+                        android:layout_width="@dimen/viewLay_bank_icon_width"
+                        android:layout_height="@dimen/viewLay_bank_icon_height"
+                        android:src="@drawable/bank"
+                        android:layout_marginTop="@dimen/viewLay_bank_icon_margin_top"/>
+
+                    <TextView
+                        android:id="@+id/tvBankDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/requestSampleDataBankDetails"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/viewLay_bank_text_size"
+
+                        />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnDltReq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/viewLay_FAB_dlt_margin_right"
+        android:backgroundTint="@color/editFabBg"
         android:baselineAlignBottom="false"
         android:clickable="true"
-        app:srcCompat="@drawable/delete"
         app:fabSize="mini"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
-        android:layout_marginRight="30dp"
-        android:backgroundTint="@color/editFabBg"/>
+        app:srcCompat="@drawable/delete" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnEditReq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:baselineAlignBottom="false"
@@ -140,7 +214,7 @@
         app:fabSize="mini"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
-        android:layout_marginRight="80dp"
+        android:layout_marginRight="@dimen/viewLay_FAB_edit_margin_right"
         android:backgroundTint="@color/editFabBg"/>
 
 

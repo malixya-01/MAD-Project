@@ -91,8 +91,8 @@
     <string name="requestSampleDataPubDate">2023/03/10</string>
     <string name="requestSampleDataCity">Galle</string>
     <string name="requestSampleDataContactNumber">073225462</string>
-    <string name="requestSampleDataDes">There are 8 members in my family. we need dry food. If any one can help us, we will really appreciate it.</string>
-    <string name="requestSampleDataBankDetails">BOC Malabe  Account Number : 11234568</string>
+    <string name="requestSampleDataDes">"I am in need of dry food items that can be stored without refrigeration and can be consumed without cooking since I cannot afford to buy food due to the ongoing economic crisis. Specifically, I am looking for non-perishable items such as rice, dhal, milk powder, biscuits, and other similar items. Any donations of such items would be greatly appreciated and help me get through this difficult time. Thank you in advance for your support and kindness. If you have any questions or need any further information from me, please feel free to ask."</string>
+    <string name="requestSampleDataBankDetails">BOC Malabe branch\nName: Minoli Hansika\nAcc Num: 11234568</string>
 
 
     <string name="frTitle">Donate a CT scanner to Apeksha hospital</string>

@@ -23,6 +23,29 @@
     <dimen name="cv_uname_location_text_size">14sp</dimen>
     <dimen name="cv_des_text_size">14sp</dimen>
 
+    <!-- ViewLay dimens -->
+    <dimen name="viewLay_userName_text_size">18sp</dimen>
+    <dimen name="viewLay_city_text_size">18sp</dimen>
+    <dimen name="viewLay_date_text_size">14sp</dimen>
+    <dimen name="viewLay_des_text_size">18sp</dimen>
+    <dimen name="viewLay_phone_text_size">16sp</dimen>
+    <dimen name="viewLay_bank_text_size">16sp</dimen>
+
+    <dimen name="viewLay_bank_icon_width">35dp</dimen>
+    <dimen name="viewLay_bank_icon_height">35dp</dimen>
+    <dimen name="viewLay_bank_icon_margin_top">6dp</dimen>
+
+    <dimen name="viewLay_phone_icon_width">35dp</dimen>
+    <dimen name="viewLay_phone_icon_height">35dp</dimen>
+
+    <dimen name="viewLay_location_icon_width">20dp</dimen>
+    <dimen name="viewLay_location_icon_height">20dp</dimen>
+    <dimen name="viewLay_location_icon_margin_top">4dp</dimen>
+
+    <dimen name="viewLay_FAB_dlt_margin_right">30dp</dimen>
+    <dimen name="viewLay_FAB_edit_margin_right">80dp</dimen>
+
+
 
 
 

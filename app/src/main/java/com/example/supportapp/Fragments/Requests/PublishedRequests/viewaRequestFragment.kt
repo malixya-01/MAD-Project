@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.supportapp.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class viewaRequestFragment : Fragment() {
 
@@ -17,12 +18,12 @@ class viewaRequestFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_view_a_request, container, false)
-/*
-        var btnEditReq = view.findViewById<Button>(R.id.btnSup)
+
+        var btnEditReq = view.findViewById<FloatingActionButton>(R.id.btnEditReq)
         btnEditReq.setOnClickListener {
             findNavController().navigate(R.id.action_viewSingleRequestFragment_to_editARequestFragment2)
         }
-*/
+
 
 
         return view
