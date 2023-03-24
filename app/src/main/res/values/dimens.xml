@@ -35,9 +35,10 @@
     <dimen name="viewLay_bank_icon_height">35dp</dimen>
     <dimen name="viewLay_bank_icon_margin_top">6dp</dimen>
 
-    <dimen name="viewLay_details_Container_margin_top">48dp</dimen>
-    <dimen name="viewLay_details_Container_margin_start">24dp</dimen>
+    <dimen name="viewLay_details_Container_margin_top">32dp</dimen>
+    <dimen name="viewLay_details_Container_margin_start">40dp</dimen>
     <dimen name="viewLay_details_Container_margin_end">24dp</dimen>
+    <dimen name="viewLay_details_Container_margin_bottom">24dp</dimen>
 
 
 

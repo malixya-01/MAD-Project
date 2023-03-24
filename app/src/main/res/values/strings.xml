@@ -95,15 +95,17 @@
     <string name="requestSampleDataBankDetails">BOC Malabe branch\nName: Minoli Hansika\nAcc Num: 11234568</string>
 
 
-    <string name="frTitle">Donate a CT scanner to Apeksha hospital</string>
+    <string name="frTitle">Donate a CT scanner</string>
     <string name="frName">Leo Club Sliit</string>
-    <string name="frDes">We are organizing a fundraiser to donate a CT scanner to the Maharagama Apeksha Cancer Hospital in Sri Lanka. The fundraiser is being organized by the Leo Club of the SLIIT, and we are seeking support from the community to help us achieve our goal.Our fundraising goal is to raise Rs. 200,000 in total, and so far we have collected Rs. 90,000. We still have a long way to go to reach our goal, and we are seeking contributions from anyone who is willing to help us.If you would like to contribute to our cause, please visit our fundraiser page [insert link to fundraiser page]. Your contribution will go towards the purchase of a CT scanner that will make a significant difference in the lives of those in need at the Maharagama Apeksha Cancer Hospital. Thank you in advance for your support and generosity. If you have any questions or need any further information about the fundraiser, please feel free to reach out to us.</string>
+    <string name="frPubDate">2023/03/10</string>
+    <string name="frDes">The Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to the Maharagama Apeksha Cancer Hospital. The hospital provides essential cancer care to patients who cannot afford it, and we believe that the donation of a CT scanner will help improve the quality of care for these patients.\n\nOur fundraising goal is to raise Rs. 200,000 in total, and we have already collected Rs. 90,000. However, we still have a long way to go to reach our goal, and we are seeking contributions from anyone who is willing to help us.\n\n\nBy donating to our fundraiser, you can play a vital role in helping us provide better care to cancer patients in Sri Lanka. Your contribution will go towards the purchase of a CT scanner that will make a significant difference in the lives of those in need at the Maharagama Apeksha Cancer Hospital.\n\nTo contribute, please visit our fundraiser page [insert link to fundraiser page]. We appreciate any support you can provide, no matter how small. Together, we can make difference and help those who are i need.\n\nThank you in advance for your generosity and support. If you have any questions or need any further information about the fundraiser, please feel free to reach out to us.</string>
+    <string name="frCity">Island wide</string>
     <string name="frTotAmt">2000000</string>
     <string name="frCollectedAmt">100000</string>
     <string name="frContactNumber">073225462</string>
     <string name="frEmail">leo@sliit.lk</string>
     <string name="frWebSite">leo.sliit.lk</string>
-    <string name="frBankDetails">BOC Malabe  Account Number : 11234568</string>
+    <string name="frBankDetails">BOC Malabe branch\nName: Leo Sliit\nAcc Num: 11234568</string>
 
     <string name="senrReqSampleDataTitle">Dry food donation</string>
     <string name="senrReqSampleDataName">Minoli Hansika</string>
