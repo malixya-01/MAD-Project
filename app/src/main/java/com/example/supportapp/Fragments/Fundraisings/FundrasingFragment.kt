@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.FundraisingAdapter
 import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FundrasingFragment : Fragment() {
 
@@ -40,7 +41,7 @@ class FundrasingFragment : Fragment() {
         recyclerView.adapter = adapter
 
 
-        val btnAdd = view.findViewById<Button>(R.id.btnAdd)
+        val btnAdd = view.findViewById<FloatingActionButton>(R.id.btnAdd)
         btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_fundrasingFragment_to_newFundraiserFragment)
         }

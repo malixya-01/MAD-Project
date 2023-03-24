@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RequestsFragment : Fragment() {
 
@@ -51,7 +52,7 @@ class RequestsFragment : Fragment() {
 
         })
 
-        val btnAdd = view.findViewById<Button>(R.id.btnAdd)
+        val btnAdd = view.findViewById<FloatingActionButton>(R.id.btnAdd)
         btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
