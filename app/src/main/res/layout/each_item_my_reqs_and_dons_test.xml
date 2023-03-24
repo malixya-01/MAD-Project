@@ -16,8 +16,8 @@
 
         <TextView
             android:id="@+id/titleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="Language"
             android:textColor="@color/black"
@@ -40,8 +40,8 @@
 
         <ImageView
             android:id="@+id/imDonors"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginEnd="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,10 +54,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
             android:layout_marginEnd="4dp"
             android:text="5"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imDonors"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imDonors"

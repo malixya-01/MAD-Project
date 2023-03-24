@@ -46,9 +46,11 @@ class myDonationsFragment : Fragment() {
     }
 
     private fun addDataToList(){
-        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
-        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
-        mList.add(myDonationsData("My donations...", R.drawable.unselected_requests))
+        mList.add(myDonationsData("My donation 1...", "2022/10/30", "10"))
+        mList.add(myDonationsData("My donation 2...", "2022/10/30", "15"))
+        mList.add(myDonationsData("My donation 3...", "2022/10/30", "5"))
+        mList.add(myDonationsData("My donation 4...", "2022/10/30", "20"))
+
 
     }
 
