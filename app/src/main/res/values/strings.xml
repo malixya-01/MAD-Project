@@ -85,8 +85,10 @@
     <string name="sentReqs">Sent</string>
 
     <!--Sample data strings-->
+
     <string name="requestSampleDataTitle">I need dry food</string>
     <string name="requestSampleDataName">Minoli Hansika</string>
+    <string name="requestSampleDataPubDate">2023/03/10</string>
     <string name="requestSampleDataCity">Galle</string>
     <string name="requestSampleDataContactNumber">073225462</string>
     <string name="requestSampleDataDes">There are 8 members in my family. we need dry food. If any one can help us, we will really appreciate it.</string>
@@ -166,6 +168,10 @@
     <string name="donName">Saman Kumara</string>
     <string name="donDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
     <string name="donLocation">Colombo</string>
+
+
+
+
 
 
 </resources>
