@@ -41,7 +41,7 @@ class viewAFrFragment : Fragment() {
             findNavController().navigate(R.id.action_viewAFrFragment_to_viewAllDonorsToAFrFragment)
         }
 
-        val deleteBtn = view.findViewById<FloatingActionButton>(R.id.btnDltReq)
+        val deleteBtn = view.findViewById<FloatingActionButton>(R.id.btnDlt)
         deleteBtn.setOnClickListener {
             showDeleteConfirmationDialog()
         }
