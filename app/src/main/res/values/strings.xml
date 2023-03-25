@@ -173,6 +173,18 @@
     <string name="donDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
     <string name="donLocation">Colombo</string>
 
+    <!--Donations CardView -->
+    <string name="frCardTitle">Little Hearts</string>
+    <string name="frCardName">Manusath Derana</string>
+    <string name="frCardLocation">Island wide</string>
+    <string name="frCardReqAmt">210000</string>
+    <string name="frCardDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+
+
+
+
+
+
     <!--Saved Items toast messages -->
     <string name="itemAdded">Post added to saved</string>
     <string name="itemRemoved">Post removed from saved</string>
