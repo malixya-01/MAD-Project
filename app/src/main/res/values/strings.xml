@@ -54,9 +54,9 @@
     <string name="addNewFrToolbarTitle">New Fundraiser</string>
     <string name="sendSupMsgToAFrToolbarTitle">Support Fundraiser</string>
 
-    <string name="viewAllDonorsToAReqToolbarTitle">View all donors</string>
-    <string name="viewAllRequestsToolbarTitle">View all requests</string>
-    <string name="viewAllDonorsToAFrToolbarTitle">View all donors</string>
+    <string name="viewAllDonorsToAReqToolbarTitle">Willing to support</string>
+    <string name="viewAllRequestsToolbarTitle">Expecting help</string>
+    <string name="viewAllDonorsToAFrToolbarTitle">Willing to support</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
