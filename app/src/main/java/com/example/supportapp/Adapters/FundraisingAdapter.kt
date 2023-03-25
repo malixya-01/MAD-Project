@@ -14,6 +14,8 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
 
     private lateinit var mListner : onItemClickListner
 
+
+
     //Setting up onClick listner interface
     interface onItemClickListner{
         fun onItemClick( position: Int)
@@ -30,8 +32,7 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
         val location: TextView = itemView.findViewById(R.id.tvLocation)
         val reqAmt: TextView = itemView.findViewById(R.id.tvReqAmt)
         val des: TextView = itemView.findViewById(R.id.tvDes)
-
-
+        var ic_verified: ImageView = itemView.findViewById(R.id.ivVerified)
 
         init{
             itemView.setOnClickListener {
@@ -56,6 +57,13 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
         holder.location.text = mList[position].location
         holder.reqAmt.text = mList[position].reqAmt
         holder.des.text = mList[position].description
+
+        //verification status logic
+        holder.ic_verified.setVisibility(View.GONE);
+        if (mList[position].verStatus == true) {
+            holder.ic_verified.setVisibility(View.VISIBLE);
+        }
+
     }
 
 

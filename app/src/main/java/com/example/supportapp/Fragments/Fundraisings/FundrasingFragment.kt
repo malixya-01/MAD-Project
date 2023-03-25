@@ -60,9 +60,9 @@ class FundrasingFragment : Fragment() {
     }
 
     private fun addDataToList(){
-        mList.add(FundraisingData("Little Hearts","Manusath Derana","Colombo",  "150000", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
-        mList.add(FundraisingData("Fundraiser 2","Gammadda", "Kandy", "170000", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
-        mList.add(FundraisingData("Fundraiser 3","Dialog", "Galle", "10000", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
-        mList.add(FundraisingData("Fundraiser 4","Mobitel", "Negombo","275000",  "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."))
+        mList.add(FundraisingData("Little Hearts","Manusath Derana","Colombo",  "150000", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", true))
+        mList.add(FundraisingData("Fundraiser 2","Gammadda", "Kandy", "170000", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", false))
+        mList.add(FundraisingData("Fundraiser 3","Dialog", "Galle", "10000", "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", true))
+        mList.add(FundraisingData("Fundraiser 4","Mobitel", "Negombo","275000",  "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", false))
     }
 }
