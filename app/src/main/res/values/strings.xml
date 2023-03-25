@@ -84,7 +84,6 @@
     <string name="sentReqs">Sent</string>
 
     <!--Sample data strings-->
-
     <string name="requestSampleDataTitle">I need dry food</string>
     <string name="requestSampleDataName">Minoli Hansika</string>
     <string name="requestSampleDataPubDate">2023/03/10</string>
@@ -184,6 +183,11 @@
     <!--Saved Items toast messages -->
     <string name="itemAdded">Post added to saved</string>
     <string name="itemRemoved">Post removed from saved</string>
+
+    <!--Delete dialog box text -->
+    <string name="dltBoxMsg">Are you sure you want to delete this item ?</string>
+
+
 
 
 </resources>
