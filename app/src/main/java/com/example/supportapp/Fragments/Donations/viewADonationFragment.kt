@@ -20,9 +20,14 @@ class viewADonationFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_view_a_donation, container, false)
 
         val btnEdit = view.findViewById<FloatingActionButton>(R.id.btnEdit)
-
         btnEdit.setOnClickListener {
             findNavController().navigate(R.id.action_viewADonationFragment_to_updateDonationFragment)
+        }
+
+
+        val viewReqs = view.findViewById<FloatingActionButton>(R.id.viewReqs)
+        viewReqs.setOnClickListener {
+            findNavController().navigate(R.id.action_viewADonationFragment_to_viewAllReqsFragment)
         }
 
         return view

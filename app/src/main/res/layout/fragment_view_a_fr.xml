@@ -336,7 +336,7 @@
         android:backgroundTint="@color/editFabBg"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/viewReqs"
+        android:id="@+id/viewDonors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:baselineAlignBottom="false"

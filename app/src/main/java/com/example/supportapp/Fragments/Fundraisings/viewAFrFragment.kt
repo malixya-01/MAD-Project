@@ -16,11 +16,6 @@ class viewAFrFragment : Fragment() {
     // variables to function progress bar
     lateinit var progressBar: ProgressBar
 
-
-
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +31,11 @@ class viewAFrFragment : Fragment() {
         val updateBtn = view.findViewById<FloatingActionButton>(R.id.updateBtn)
         updateBtn.setOnClickListener {
             findNavController().navigate(R.id.action_viewAFrFragment_to_updateFrFragment)
+        }
+
+        val viewDonors = view.findViewById<FloatingActionButton>(R.id.viewDonors)
+        viewDonors.setOnClickListener {
+            findNavController().navigate(R.id.action_viewAFrFragment_to_viewAllDonorsToAFrFragment)
         }
 
         return view

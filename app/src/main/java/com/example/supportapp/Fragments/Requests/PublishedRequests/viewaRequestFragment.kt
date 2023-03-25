@@ -24,6 +24,11 @@ class viewaRequestFragment : Fragment() {
             findNavController().navigate(R.id.action_viewSingleRequestFragment_to_editARequestFragment2)
         }
 
+        val viewDonors = view.findViewById<FloatingActionButton>(R.id.viewDonors)
+        viewDonors.setOnClickListener {
+            findNavController().navigate(R.id.action_viewSingleRequestFragment_to_viewAllDonorsFragment)
+        }
+
 
 
         return view
