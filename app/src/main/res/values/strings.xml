@@ -79,7 +79,6 @@
     <string name="btnSend">Send</string>
 
 
-
     <!--Tablelayouts tab strings-->
     <string name="pubReqs">Published</string>
     <string name="sentReqs">Sent</string>
@@ -182,18 +181,9 @@
     <string name="frCardDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
 
 
-
-
-
-
     <!--Saved Items toast messages -->
     <string name="itemAdded">Post added to saved</string>
     <string name="itemRemoved">Post removed from saved</string>
-
-
-
-
-
 
 
 </resources>
