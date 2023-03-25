@@ -50,6 +50,10 @@
     <color name="addFabBg">#FFFFFF</color>
     <color name="addFabIconColor">#000000</color>
 
+    <!--Progres bar-->
+    <color name="progressBarBg">#c8c8fe</color>
+    <color name="progressBarProgress">#857FFF</color>
+
 
 
 
