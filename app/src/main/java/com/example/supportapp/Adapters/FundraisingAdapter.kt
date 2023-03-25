@@ -30,6 +30,7 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
         val title: TextView = itemView.findViewById(R.id.tvTitle)
         val username: TextView = itemView.findViewById(R.id.tvUserName)
         val location: TextView = itemView.findViewById(R.id.tvLocation)
+        val totAmt: TextView = itemView.findViewById(R.id.tvTotAmt)
         val reqAmt: TextView = itemView.findViewById(R.id.tvReqAmt)
         val des: TextView = itemView.findViewById(R.id.tvDes)
         var ic_verified: ImageView = itemView.findViewById(R.id.ivVerified)
@@ -55,6 +56,7 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
         holder.title.text = mList[position].title
         holder.username.text = mList[position].username
         holder.location.text = mList[position].location
+        holder.totAmt.text = mList[position].totAmt
         holder.reqAmt.text = mList[position].reqAmt
         holder.des.text = mList[position].description
 
