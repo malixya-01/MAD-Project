@@ -1,10 +1,12 @@
-package com.example.supportapp
+package com.example.supportapp.Fragments.Fundraisings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.supportapp.R
+
 class sendSupportMsgToAFrFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
