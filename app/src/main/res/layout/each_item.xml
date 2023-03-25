@@ -62,10 +62,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="6dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginRight="8dp"
                         android:text="@string/frCardName"
                         android:textColor="#9FFFFFFF"
                         android:textSize="@dimen/cv_uname_location_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_verified"
+                        android:layout_marginTop="3dp"/>
 
                 </LinearLayout>
 
