@@ -43,7 +43,7 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FundraisingViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_fundraisings, parent, false)
         return FundraisingViewHolder(view, mListner)
     }
 
