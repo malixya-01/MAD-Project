@@ -113,7 +113,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
                 android:orientation="vertical"
-                android:padding="16dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -128,6 +131,49 @@
                     android:progressDrawable="@drawable/custom_progressbar_bg"
                     />
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_req_amt"
+                        android:tint="@color/viewLayIconsColour"/>
+
+
+                    <TextView
+                        android:id="@+id/tvReqAmt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="@string/frCardReqAmt"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/cv_uname_location_text_size" />
+
+                    <TextView
+                        android:id="@+id/tvDevider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:text="/"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvTotAmt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/frCardTotAmt"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -136,7 +182,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:text="@string/frDes"
                 android:textColor="@color/viewLayFontColour"
