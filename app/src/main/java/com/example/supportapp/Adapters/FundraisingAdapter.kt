@@ -28,7 +28,10 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
         val title: TextView = itemView.findViewById(R.id.tvTitle)
         val username: TextView = itemView.findViewById(R.id.tvUserName)
         val location: TextView = itemView.findViewById(R.id.tvLocation)
+        val reqAmt: TextView = itemView.findViewById(R.id.tvReqAmt)
         val des: TextView = itemView.findViewById(R.id.tvDes)
+
+
 
         init{
             itemView.setOnClickListener {
@@ -39,7 +42,7 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FundraisingViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_req_and_don, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)
         return FundraisingViewHolder(view, mListner)
     }
 
@@ -51,6 +54,7 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
         holder.title.text = mList[position].title
         holder.username.text = mList[position].username
         holder.location.text = mList[position].location
+        holder.reqAmt.text = mList[position].reqAmt
         holder.des.text = mList[position].description
     }
 
