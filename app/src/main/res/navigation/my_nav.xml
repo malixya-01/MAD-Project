@@ -136,7 +136,11 @@
         android:id="@+id/viewAFrAllUsersFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.viewAFrAllUsersFragment"
         android:label="@string/viewAFundraiserToolbarTitle"
-        tools:layout="@layout/fragment_view_a_fr_all_users" />
+        tools:layout="@layout/fragment_view_a_fr_all_users" >
+        <action
+            android:id="@+id/action_viewAFrAllUsersFragment_to_sendSupportMsgToAFrFragment"
+            app:destination="@id/sendSupportMsgToAFrFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewADonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.viewADonationFragment"
@@ -210,4 +214,9 @@
         android:name="com.example.supportapp.Fragments.Donations.supportMsgToReqFragment"
         android:label="@string/sendSupMsg"
         tools:layout="@layout/fragment_support_msg_to_req" />
+    <fragment
+        android:id="@+id/sendSupportMsgToAFrFragment"
+        android:name="com.example.supportapp.sendSupportMsgToAFrFragment"
+        android:label="@string/sendSupMsgToAFrToolbarTitle"
+        tools:layout="@layout/fragment_send_support_msg_to_a_fr" />
 </navigation>

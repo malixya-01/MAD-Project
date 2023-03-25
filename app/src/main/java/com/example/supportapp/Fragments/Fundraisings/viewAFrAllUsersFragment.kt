@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -49,12 +50,11 @@ class viewAFrAllUsersFragment : Fragment() {
         progressBar.progress = 210000
 
 
-/*
         val btnSup = view.findViewById<Button>(R.id.btnSup)
         btnSup.setOnClickListener {
-            findNavController().navigate(R.id.action_viewAFrFragment_to_updateFrFragment)
+            findNavController().navigate(R.id.action_viewAFrAllUsersFragment_to_sendSupportMsgToAFrFragment)
         }
-*/
+
 
 
 
