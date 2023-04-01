@@ -64,6 +64,9 @@
     <string name="searchBarQueryHint">Search Here...</string>
     <string name="newDonationToolbarTitle">Add new donation</string>
 
+    <string name="savedItemsToolbarTitle">Saved Itemes</string>
+    <string name="notificationsToolbarTitle">Notifications</string>
+
 
     <!-- Buttons -->
     <string name="btnUpdate">Update</string>

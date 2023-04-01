@@ -246,11 +246,11 @@
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="com.example.supportapp.Fragments.Other.NotificationsFragment"
-        android:label="fragment_notifications"
+        android:label="@string/notificationsToolbarTitle"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/savedItemesFragment"
         android:name="com.example.supportapp.Fragments.Other.SavedItemesFragment"
-        android:label="fragment_saved_itemes"
+        android:label="@string/savedItemsToolbarTitle"
         tools:layout="@layout/fragment_saved_itemes" />
 </navigation>
