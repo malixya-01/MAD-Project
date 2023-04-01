@@ -243,4 +243,14 @@
         android:name="com.example.supportapp.Fragments.Fundraisings.viewAllDonorsToAFrFragment"
         android:label="@string/viewAllDonorsToAFrToolbarTitle"
         tools:layout="@layout/fragment_view_all_donors_to_a_fr" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.supportapp.Fragments.Other.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/savedItemesFragment"
+        android:name="com.example.supportapp.Fragments.Other.SavedItemesFragment"
+        android:label="fragment_saved_itemes"
+        tools:layout="@layout/fragment_saved_itemes" />
 </navigation>

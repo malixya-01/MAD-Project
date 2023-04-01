@@ -3,6 +3,7 @@ package com.example.supportapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -57,6 +58,23 @@ class MainActivity : AppCompatActivity() {
     //to implement correct backward navigation
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.notify -> {
+                // Navigate to notifications frag
+                navController.navigate(R.id.notificationsFragment)
+                true
+            }
+
+            R.id.Saved -> {
+                // Navigate to saved itemes frag
+                navController.navigate(R.id.savedItemesFragment)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 }
