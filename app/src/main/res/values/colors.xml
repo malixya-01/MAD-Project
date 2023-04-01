@@ -54,6 +54,9 @@
     <color name="progressBarBg">#c8c8fe</color>
     <color name="progressBarProgress">#857FFF</color>
 
+    <!--Tool bar-->
+    <color name="toolbarIconColour">#000000</color>
+
 
 
 
