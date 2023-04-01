@@ -48,7 +48,7 @@
     <color name="viewAPostAllUsersOptionBtn">#5A00FA</color>
 
     <color name="addFabBg">#FFFFFF</color>
-    <color name="addFabIconColor">#000000</color>
+    <color name="addFabIconColor">#4958dc</color>
 
     <!--Progres bar-->
     <color name="progressBarBg">#c8c8fe</color>
