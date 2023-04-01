@@ -2,6 +2,7 @@ package com.example.supportapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -24,10 +25,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Creating reequests fragment as HostNav(home page)
+        //Setting up navHost fragment
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragsContainer) as NavHostFragment
         navController=navHostFragment.navController
-
 
         //removing back button from main destinations
         appBarConfiguration = AppBarConfiguration(
@@ -46,7 +46,12 @@ class MainActivity : AppCompatActivity() {
         bottomNavView = findViewById(R.id.bottom_navigation)
         bottomNavView.setupWithNavController(navController)
 
+    }
 
+    //adding toolbar  menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
     }
 
     //to implement correct backward navigation
