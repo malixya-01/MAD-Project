@@ -6,15 +6,13 @@
         android:id="@+id/notify"
         android:title="Notifications"
         android:icon="@drawable/ic_notifications"
-        app:showAsAction="ifRoom"
-        android:iconTint="@color/toolbarIconColour"/>
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/Saved"
         android:title="Saved Items"
         android:icon="@drawable/ic_bookmarks"
-        app:showAsAction="ifRoom"
-        android:iconTint="@color/toolbarIconColour"/>
+        app:showAsAction="ifRoom" />
 
 
 
