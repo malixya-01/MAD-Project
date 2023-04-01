@@ -240,7 +240,7 @@
         tools:layout="@layout/fragment_view_all_reqs" />
     <fragment
         android:id="@+id/viewAllDonorsToAFrFragment"
-        android:name="com.example.supportapp.viewAllDonorsToAFrFragment"
+        android:name="com.example.supportapp.Fragments.Fundraisings.viewAllDonorsToAFrFragment"
         android:label="@string/viewAllDonorsToAFrToolbarTitle"
         tools:layout="@layout/fragment_view_all_donors_to_a_fr" />
 </navigation>
