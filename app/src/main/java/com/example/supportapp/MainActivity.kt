@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.requestsFragment,
                 R.id.donationsFragment,
                 R.id.fundrasingFragment,
-                R.id.dashboardFragment
+                R.id.dashboardFragment,
+                R.id.savedItemesFragment,
+                R.id.notificationsFragment
             )
         )
 
@@ -55,11 +57,7 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    //to implement correct backward navigation
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-
+    //toggle toolbar icon click
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.notify -> {
@@ -76,5 +74,13 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
+    //to implement correct backward navigation
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+
 
 }
