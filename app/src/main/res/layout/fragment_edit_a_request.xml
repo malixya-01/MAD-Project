@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/app_bg_colour"
     android:orientation="vertical"
-    tools:context=".Fragments.Requests.PublishedRequests.editARequestFragment">
+    tools:context="com.example.Fragments.Requests.PublishedRequests.editARequestFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:background="@color/app_bg_colour"
         android:orientation="vertical"
-        tools:context=".Fragments.Fundraisings.UpdateFrFragment">
+        tools:context="com.example.Fragments.Fundraisings.UpdateFrFragment">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

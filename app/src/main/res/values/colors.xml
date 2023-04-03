@@ -7,4 +7,57 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lavender">#8692f7</color>
+
+
+
+    <color name="app_bg_colour">#e8e8f9</color>
+
+
+
+    <color name="top_bg_gradient_startColour">#7a8afa</color>
+    <color name="top_bg_gradient_endColour">#4958dc</color>
+    <color name="dashboard_text">#ffffff</color>
+    <color name="dashboard_main_btns">#FF000000</color>
+
+    <color name="dashboard_btn1">#c8c8fe</color>
+    <color name="dashboard_btn2">#ffffff</color>
+    <color name="SelectedIcon">#4958dc</color>
+
+    <color name="toolbarTextColour">#FFFFFF</color>
+    <color name="toolbarBackgroundColour">#4958dc</color>
+
+    <color name="colorPrimary">#4958dc</color>
+    <color name="formHintColor">#673AB7</color>
+    <color name="submitBtns">#9C27B0</color>
+    <color name="add_buttons">#4958dc</color>
+
+
+    <color name="tabLaoytBgColor">#FFFFFF</color>
+
+    <!--View layouts-->
+    <color name="viewLayTitle">#FFFFFF</color>
+
+    <color name="viewLayFontColour">#686262</color>
+    <color name="editFabBg">#FFFFFF</color>
+
+    <color name="viewLayIconsColour">#857FFF</color>
+    <color name="deleteFabIconColor">#FF0000</color>
+    <color name="editFabIconColor">#F0373737</color>
+
+    <color name="viewAPostAllUsersOptionBtn">#5A00FA</color>
+
+    <color name="addFabBg">#FFFFFF</color>
+    <color name="addFabIconColor">#4958dc</color>
+
+    <!--Progres bar-->
+    <color name="progressBarBg">#c8c8fe</color>
+    <color name="progressBarProgress">#857FFF</color>
+
+    <!--Tool bar-->
+    <color name="toolbarIconColour">#F0FFFFFF</color>
+
+
+
+
 </resources>

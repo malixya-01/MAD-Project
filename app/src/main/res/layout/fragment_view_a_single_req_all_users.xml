@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary"
-    tools:context=".Fragments.Requests.PublishedRequests.viewARequestAllUsersFragment">
+    tools:context="com.example.Fragments.Requests.PublishedRequests.viewARequestAllUsersFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
