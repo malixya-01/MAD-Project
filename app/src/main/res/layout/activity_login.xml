@@ -38,7 +38,7 @@
         android:drawablePadding="@dimen/eTdrawablePadding"
         android:ems="10"
         android:hint="Emaill"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -54,7 +54,7 @@
         android:drawablePadding="@dimen/eTdrawablePadding"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,5 +69,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
         app:srcCompat="@drawable/btn_arraw1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
