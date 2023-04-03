@@ -12,6 +12,9 @@
         android:theme="@style/Theme.SupportApp"
         tools:targetApi="31">
         <activity
+            android:name=".forgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".createAccountActivity"
             android:exported="false" />
         <activity

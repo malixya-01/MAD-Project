@@ -190,5 +190,8 @@
     <!--Delete dialog box text -->
     <string name="dltBoxMsg">Are you sure you want to delete this item ?</string>
 
+    <!--Other features strings -->
+    <string name="forgotPasswordTv">Enter your Email address \nto get a password reset\nlink to your email address.</string>
+
 
 </resources>
