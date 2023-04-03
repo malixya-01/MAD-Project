@@ -57,6 +57,9 @@
     <!--Tool bar-->
     <color name="toolbarIconColour">#F0FFFFFF</color>
 
+    <!--Other features-->
+    <color name="optionsTextColur">#3b608c</color>
+
 
 
 
