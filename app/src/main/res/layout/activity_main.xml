@@ -7,35 +7,24 @@
     tools:context=".MainActivity">
 
 
-    <!--Navigation bar implementation
+
+    <!--Navigation bar implementation-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/container"
         android:layout_above="@+id/bottom_navigation"/>
- -->
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragsContainer"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        app:defaultNavHost="true"
-        android:layout_above="@+id/bottom_navigation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:navGraph="@navigation/my_nav" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu"
         />
+
+
+
+
 
 </RelativeLayout>

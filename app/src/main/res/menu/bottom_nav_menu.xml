@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/requestsFragment"
+    <item android:id="@+id/requests"
         android:title="@string/nav_requests"
         android:icon="@drawable/unselected_requests"/>
 
-    <item android:id="@+id/donationsFragment"
+    <item android:id="@+id/donorsads"
         android:title="@string/nav_donorsads"
         android:icon="@drawable/unselected_donorads"/>
 
-    <item android:id="@+id/fundrasingFragment"
+    <item android:id="@+id/fundraising"
         android:title="@string/nav_fundraising"
         android:icon="@drawable/unselected_fundraising"/>
 
-    <item android:id="@+id/dashboardFragment"
+    <item android:id="@+id/dashboard"
         android:title="@string/nav_dashboard"
         android:icon="@drawable/unselected_dashboard"/>
 
