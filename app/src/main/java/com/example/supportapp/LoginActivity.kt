@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_login)
 
-        //set onclick listner to login btn
+        //set onclick listner on login button
         var loginBtn = findViewById<ImageView>(R.id.loginBtn)
         loginBtn.setOnClickListener() {
             intent = Intent(applicationContext, MainActivity::class.java)
