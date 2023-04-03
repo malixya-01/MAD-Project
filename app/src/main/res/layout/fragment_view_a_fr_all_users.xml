@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".Fragments.Fundraisings.viewAFrAllUsersFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.SupportApp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="@string/frTitle"
+            app:expandedTitleTextColor="@color/viewLayTitle"
+            app:collapsedTitleTextColor="@color/viewLayTitle">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layou_bg"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imDP"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/frName"
+                android:textSize="@dimen/viewLay_userName_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imDP"
+                app:layout_constraintTop_toTopOf="@+id/imDP" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/frPubDate"
+                android:textSize="@dimen/viewLay_date_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLoc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvName"
+                app:layout_constraintTop_toTopOf="@+id/tvName"
+                app:layout_constraintVertical_bias="0.31" />
+
+            <ImageView
+                android:id="@+id/imLocIcon"
+                android:layout_width="@dimen/viewLay_location_icon_width"
+                android:layout_height="@dimen/viewLay_location_icon_height"
+                android:layout_marginTop="@dimen/viewLay_location_icon_margin_top"
+                android:src="@drawable/baseline_location_on_24"
+                app:layout_constraintBottom_toBottomOf="@+id/imDP"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/frCity"
+                android:textSize="@dimen/viewLay_city_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/imLocIcon"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintStart_toEndOf="@+id/imLocIcon"
+                app:layout_constraintTop_toTopOf="@+id/imLocIcon"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <LinearLayout
+                android:id="@+id/progressBarContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ProgressBar
+                    android:id="@+id/frProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="250000"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/custom_progressbar_bg"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_req_amt"
+                        app:tint="@color/viewLayIconsColour"/>
+
+
+                    <TextView
+                        android:id="@+id/tvReqAmt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="@string/frCardReqAmt"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/cv_uname_location_text_size" />
+
+                    <TextView
+                        android:id="@+id/tvDevider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:text="/"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvTotAmt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/frCardTotAmt"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/frDes"
+                android:textColor="@color/viewLayFontColour"
+                android:textSize="@dimen/viewLay_des_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressBarContainer" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/viewLay_details_Container_margin_start"
+                android:layout_marginTop="@dimen/viewLay_details_Container_margin_top"
+                android:layout_marginEnd="@dimen/viewLay_details_Container_margin_end"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDes">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imPhone"
+                        android:layout_width="@dimen/viewLay_phone_icon_width"
+                        android:layout_height="@dimen/viewLay_phone_icon_height"
+                        android:src="@drawable/phone" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/dontSampleDataContactNumber"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/viewLay_phone_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imWeb"
+                        android:layout_width="@dimen/viewLay_phone_icon_width"
+                        android:layout_height="@dimen/viewLay_phone_icon_height"
+                        android:src="@drawable/web_icon" />
+
+                    <TextView
+                        android:id="@+id/tvWeb"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/frWebSite"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/viewLay_phone_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imEmail"
+                        android:layout_width="@dimen/viewLay_phone_icon_width"
+                        android:layout_height="@dimen/viewLay_phone_icon_height"
+                        android:src="@drawable/email_icon" />
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/frEmail"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/viewLay_phone_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imBank"
+                        android:layout_width="@dimen/viewLay_phone_icon_width"
+                        android:layout_height="@dimen/viewLay_phone_icon_height"
+                        android:layout_marginTop="@dimen/viewLay_bank_icon_margin_top"
+                        android:src="@drawable/bank" />
+
+                    <TextView
+                        android:id="@+id/tvBankDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/frBankDetails"
+                        android:textColor="@color/viewLayFontColour"
+                        android:textSize="@dimen/viewLay_bank_text_size" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/viewLay_all_users_options_btn_marginStart"
+                    android:layout_marginTop="@dimen/viewLay_all_users_options_btn_marginTop"
+                    android:layout_marginEnd="@dimen/viewLay_all_users_options_btn_marginEnd"
+                    android:layout_marginBottom="@dimen/viewLay_all_users_options_btn_marginBottom"
+                    android:text="@string/btnSupport"
+                    android:backgroundTint="@color/viewAPostAllUsersOptionBtn"
+                    />
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/viewLay_FAB_dlt_margin_right"
+        android:backgroundTint="@color/editFabBg"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="end|bottom"
+        app:srcCompat="@drawable/unselected_bookmark" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
