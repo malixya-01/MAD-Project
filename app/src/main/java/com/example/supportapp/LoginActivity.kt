@@ -32,6 +32,13 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //set onclick listner on tvForgotPwd tv
+        var tvForgotPwd = findViewById<TextView>(R.id.tvForgotPwd)
+        tvForgotPwd.setOnClickListener() {
+            intent = Intent(applicationContext, forgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
 
