@@ -67,6 +67,9 @@
     <dimen name="add_Fab_margin_bottom">48dp</dimen>
     <dimen name="add_Fab_margin_right">48dp</dimen>
 
+    <!-- Other activities editText drawable padding -->
+    <dimen name="eTdrawablePadding">10dp</dimen>
+
 
 
 
