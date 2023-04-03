@@ -25,7 +25,7 @@
                 android:scrollbarDefaultDelayBeforeFade="400">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/loginBtn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:src="@drawable/top_background_gradient"
@@ -49,9 +49,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="40dp"
                     android:src="@drawable/profile"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/loginBtn"
                     app:layout_constraintVertical_bias="0.394" />
 
                 <TextView
@@ -88,11 +88,11 @@
                     android:background="@drawable/white_top_buttons"
                     android:elevation="4dp"
                     android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2">
+                    app:layout_constraintTop_toBottomOf="@+id/loginBtn">
 
                     <LinearLayout
                         android:layout_width="match_parent"
