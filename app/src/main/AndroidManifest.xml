@@ -12,7 +12,7 @@
         android:theme="@style/Theme.SupportApp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.MainActivity"
+            android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter>
