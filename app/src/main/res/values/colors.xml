@@ -42,6 +42,7 @@
     <color name="editFabBg">#FFFFFF</color>
 
     <color name="viewLayIconsColour">#857FFF</color>
+
     <color name="deleteFabIconColor">#FF0000</color>
     <color name="editFabIconColor">#F0373737</color>
 
@@ -59,6 +60,7 @@
 
     <!--Other features-->
     <color name="optionsTextColur">#3b608c</color>
+    <color name="formIconsColour">#6672FE</color>
 
 
 
