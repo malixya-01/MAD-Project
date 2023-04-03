@@ -3,6 +3,7 @@ package com.example.supportapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -23,6 +24,15 @@ class LoginActivity : AppCompatActivity() {
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
+
+        //set onclick listner on register tv
+        var tvRegister = findViewById<TextView>(R.id.tvRegister)
+        tvRegister.setOnClickListener() {
+            intent = Intent(applicationContext, createAccountActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
 
 
