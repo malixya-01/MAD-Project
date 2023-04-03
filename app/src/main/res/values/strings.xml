@@ -1,11 +1,18 @@
 <resources>
     <string name="app_name">SupportApp</string>
+
+    <!--Bottom navigation strings-->
     <string name="nav_requests">Requests</string>
     <string name="nav_donorsads">Donations</string>
     <string name="nav_fundraising">Fundraisings</string>
     <string name="nav_notifications">Notifications</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Navigation drawer strings-->
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+
+
+    <!--Dashboard strings-->
     <string name="nav_dashboard">Dashboard</string>
     <string name="nav_dashboard_greeting">Hello,</string>
     <string name="dashboard_username">Tylor Swift</string>
@@ -14,9 +21,175 @@
     <string name="dashboardRequestsBtn">My Requests</string>
     <string name="dashboardDonationsBtn">My Donations</string>
     <string name="dashboardFundrasingsBtn">My Fundrasings</string>
-
     <string name="dashboardRequestsBtn_donorCount">Donors : </string>
     <string name="dashboardDonationsBtn_requestsCount">Requests : </string>
+
+
+    <!--Toolbars Strings-->
+    <string name="insertFrToolbarTitle">New Fundraiser</string>
+    <string name="insertNewRequestToolbarTitle">New Requst</string>
+    <string name="donationsToolbarTitle">Donations</string>
+    <string name="frToolbarTitle">Fundraisings</string>
+
+    <string name="myFundraisingsToolbarTitle">My Fundraisings</string>
+    <string name="viewAFundraiserToolbarTitle">View Fundraiser</string>
+    <string name="myDonationsToolbarTitle">My Donations</string>
+    <string name="myRequestsToolbarTitle">My Requsts</string>
+    <string name="editMyDonToolbarTitle">Edit My Donation</string>
+    <string name="viewProfileToolbarTitle">Profile</string>
+    <string name="sendSupMsg">Support Message</string>
+
+
+    <string name="sendAReqToDonor">Send a Request</string>
+    <string name="editSentReqToDonor">Edit Request</string>
+    <string name="viewSentReqToDonor">My Sent Request</string>
+
+    <string name="myPubReqs">Published Requests</string>
+    <string name="mySentReqs">Sent Requests</string>
+    <string name="mySentReq">Sent Request</string>
+    <string name="myPubReq">My Published Request</string>
+    <string name="myPubReqEdit">Edit Requests</string>
+
+
+    <string name="addNewFrToolbarTitle">New Fundraiser</string>
+    <string name="sendSupMsgToAFrToolbarTitle">Support Fundraiser</string>
+
+    <string name="viewAllDonorsToAReqToolbarTitle">Willing to support</string>
+    <string name="viewAllRequestsToolbarTitle">Expecting help</string>
+    <string name="viewAllDonorsToAFrToolbarTitle">Willing to support</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="searchBarQueryHint">Search Here...</string>
+    <string name="newDonationToolbarTitle">Add new donation</string>
+
+    <string name="savedItemsToolbarTitle">Saved Itemes</string>
+    <string name="notificationsToolbarTitle">Notifications</string>
+
+
+    <!-- Buttons -->
+    <string name="btnUpdate">Update</string>
+    <string name="btnAdd">Submit</string>
+    <string name="btnEdit">Edit</string>
+    <string name="btnDelete">Delete</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="add_btn_text">+</string>
+
+    <string name="btnSupport">Support</string>
+    <string name="btnRequest">Request</string>
+    <string name="btnSend">Send</string>
+    <string name="SubmitBtn">Submit</string>
+
+
+    <!--Tablelayouts tab strings-->
+    <string name="pubReqs">Published</string>
+    <string name="sentReqs">Sent</string>
+
+    <!--Sample data strings-->
+    <string name="requestSampleDataTitle">I need dry food</string>
+    <string name="requestSampleDataName">Minoli Hansika</string>
+    <string name="requestSampleDataPubDate">2023/03/10</string>
+    <string name="requestSampleDataCity">Galle</string>
+    <string name="requestSampleDataContactNumber">073225462</string>
+    <string name="requestSampleDataDes">"I am in need of dry food items that can be stored without refrigeration and can be consumed without cooking since I cannot afford to buy food due to the ongoing economic crisis. Specifically, I am looking for non-perishable items such as rice, dhal, milk powder, biscuits, and other similar items. Any donations of such items would be greatly appreciated and help me get through this difficult time. Thank you in advance for your support and kindness. If you have any questions or need any further information from me, please feel free to ask."</string>
+    <string name="requestSampleDataBankDetails">BOC Malabe branch\nName: Minoli Hansika\nAcc Num: 11234568</string>
+
+
+    <string name="frTitle">Donate a CT scanner</string>
+    <string name="frName">Leo Club Sliit</string>
+    <string name="frPubDate">2023/03/10</string>
+    <string name="frDes">The Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to the Maharagama Apeksha Cancer Hospital. The hospital provides essential cancer care to patients who cannot afford it, and we believe that the donation of a CT scanner will help improve the quality of care for these patients.\n\nOur fundraising goal is to raise Rs. 200,000 in total, and we have already collected Rs. 90,000. However, we still have a long way to go to reach our goal, and we are seeking contributions from anyone who is willing to help us.\n\nBy donating to our fundraiser, you can play a vital role in helping us provide better care to cancer patients in Sri Lanka. Your contribution will go towards the purchase of a CT scanner that will make a significant difference in the lives of those in need at the Maharagama Apeksha Cancer Hospital.\n\nTo contribute, please visit our fundraiser page. We appreciate any support you can provide, no matter how small. Together, we can make difference and help those who are i need.\n\nThank you in advance for your generosity and support. If you have any questions or need any further information about the fundraiser, please feel free to reach out to us.</string>
+    <string name="frCity">Island wide</string>
+    <string name="frTotAmt">2000000</string>
+    <string name="frCollectedAmt">100000</string>
+    <string name="frContactNumber">073225462</string>
+    <string name="frEmail">leo@sliit.lk</string>
+    <string name="frWebSite">leo.sliit.lk</string>
+    <string name="frBankDetails">BOC Malabe branch\nName: Leo Sliit\nAcc Num: 11234568</string>
+
+    <string name="senrReqSampleDataTitle">Dry food donation</string>
+    <string name="senrReqSampleDataName">Minoli Hansika</string>
+    <string name="senrReqSampleDataPubDate">2023/03/10</string>
+    <string name="senrReqSampleDataCity">Galle</string>
+    <string name="senrReqtSampleDataContactNumber">073225462</string>
+    <string name="senrReqSampleDataDes">I do not have enough money to feed my children. Could you help me with my food needs.</string>
+
+    <string name="donSampleDataTitle">Dry food donation</string>
+    <string name="donSampleDataName">Hirunika Premachandra</string>
+    <string name="donSampleDataPubDate">2023/03/10</string>
+    <string name="donSampleDataCity">Kolonnawa</string>
+    <string name="dontSampleDataContactNumber">073225462</string>
+    <string name="donSampleDataDes">"I have some dry food items that I would like to donate to those in need. The items include rice, dhal, milk powder, biscuits, and other non-perishable items. I am willing to donate these items to anyone who needs them, and I am happy to deliver them to the person in need. If you or someone you know is in need of these items, please let me know, and I will do my best to help. I understand that times are tough, and I want to do my part in helping the community during these challenging times. Thank you for considering my offer, and please let me know if you have any questions or need any further information from me."</string>
+
+    <!-- Form Hints-->
+    <string name="reqHintTitle">Title</string>
+    <string name="reqHintName">Name</string>
+    <string name="reqHintCity">City</string>
+    <string name="reqHintContactNumber">Contact Number</string>
+    <string name="reqHintDes">Description</string>
+    <string name="reqHintBankDetails">Bank Details</string>
+
+
+    <string name="donHintTitle">Title</string>
+    <string name="donHintName">Donor Name</string>
+    <string name="donHintCity">City</string>
+    <string name="donHintContactNumber">Contact Number</string>
+    <string name="donHintDes">Description</string>
+
+
+    <string name="FrTitle">Title</string>
+    <string name="FrUserName">Name</string>
+    <string name="FrDes">Description</string>
+    <string name="FrTotAmt">Expected Amount</string>
+    <string name="FrCurrAmt">Collected Amount</string>
+    <string name="FrConatctNo">Contact Number</string>
+    <string name="FrEmail">Email</string>
+    <string name="FrWebsite">Web Site</string>
+    <string name="FrBankDetails">Bank Details</string>
+
+
+    <string name="editAReqtitle">Title</string>
+    <string name="editAReqname">Name</string>
+    <string name="editAReqcity">City</string>
+    <string name="editAReqPhoneNo">Phone Number</string>
+    <string name="editAReqdescription">Description</string>
+    <string name="editAReqbtnUpdate">Update</string>
+    <string name="editAReqbtnCancel">Cancel</string>
+
+
+    <string name="reqFromDonHintName">Name</string>
+    <string name="reqFromDonHintCity">City</string>
+    <string name="reqFromDonContactNumber">Contact Number</string>
+    <string name="reqFromDonHintMsg">Message</string>
+
+    <string name="supReqHintName">Name</string>
+    <string name="supReqContactNumber">Contact Number</string>
+    <string name="supReqHintMsg">Message</string>
+
+
+    <!--Donations CardView -->
+    <string name="donTitle">I can donate ...</string>
+    <string name="donName">Saman Kumara</string>
+    <string name="donDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+    <string name="donLocation">Colombo</string>
+
+    <!--Donations CardView -->
+    <string name="frCardTitle">Little Hearts</string>
+    <string name="frCardName">Manusath Derana</string>
+    <string name="frCardLocation">Island wide</string>
+    <string name="frCardReqAmt">210000</string>
+    <string name="frCardTotAmt">250000</string>
+    <string name="frCardDes">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+
+
+    <!--Saved Items toast messages -->
+    <string name="itemAdded">Post added to saved</string>
+    <string name="itemRemoved">Post removed from saved</string>
+
+    <!--Delete dialog box text -->
+    <string name="dltBoxMsg">Are you sure you want to delete this item ?</string>
+
 
 
 

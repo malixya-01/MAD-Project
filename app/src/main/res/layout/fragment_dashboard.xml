@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dashboard_bg_colour"
-    tools:context=".DashboardFragment">
+    android:background="@color/app_bg_colour"
+    tools:context=".Fragments.Other.DashboardFragment">
 
 
     <ScrollView
@@ -44,14 +44,15 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/imUserDp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
+                    android:layout_marginEnd="40dp"
                     android:src="@drawable/profile"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                    app:layout_constraintTop_toTopOf="@+id/imageView2"
+                    app:layout_constraintVertical_bias="0.394" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -63,7 +64,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView3" />
+                    app:layout_constraintTop_toTopOf="@+id/imUserDp" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -74,7 +75,7 @@
                     android:textSize="25dp"
                     android:textStyle="bold"
 
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                    app:layout_constraintBottom_toBottomOf="@+id/imUserDp"
                     app:layout_constraintStart_toStartOf="@+id/textView"
                     app:layout_constraintTop_toBottomOf="@+id/textView"
                     app:layout_constraintVertical_bias="0.205" />
@@ -89,6 +90,7 @@
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView2"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
@@ -182,7 +184,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Donations"
+                android:id="@+id/myDonationsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
                 android:layout_marginLeft="8dp"
@@ -218,7 +220,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Fundrasings"
+                android:id="@+id/myFundrasingsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
                 android:layout_marginLeft="8dp"
