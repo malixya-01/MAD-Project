@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.supportapp.DataClasses.User
 import com.example.supportapp.databinding.ActivityCreateAccountBinding
@@ -16,12 +17,21 @@ class CreateAccountActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
 
+    private lateinit var image : ImageView
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //image picker implementation
+        binding.createAccDpCardView.setOnClickListener {
+            image = binding.ivCreateAccDp
+            uploadImage(image)
+        }
+
+
 
         //Initializing auth and database variables
         auth = FirebaseAuth.getInstance()
@@ -121,5 +131,21 @@ class CreateAccountActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    //upload image function
+    private fun uploadImage(image: ImageView) {
+        val intent = Intent()
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        startActivityForResult(intent, 1)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1){
+            image.setImageURI(data?.data)
+        }
+
     }
 }

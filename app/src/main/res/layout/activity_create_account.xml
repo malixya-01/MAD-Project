@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".createAccountActivity">
+    tools:context=".CreateAccountActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,7 +50,7 @@
             app:layout_constraintTop_toTopOf="@+id/imBg" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView4"
+            android:id="@+id/createAccDpCardView"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
@@ -62,7 +62,7 @@
             app:layout_constraintTop_toTopOf="@+id/imBg">
 
             <ImageView
-                android:id="@+id/createAccDp"
+                android:id="@+id/ivCreateAccDp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
@@ -81,7 +81,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView4">
+            app:layout_constraintTop_toBottomOf="@+id/createAccDpCardView">
 
             <EditText
                 android:id="@+id/etName"
