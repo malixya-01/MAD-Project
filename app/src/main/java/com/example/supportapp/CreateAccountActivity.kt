@@ -41,6 +41,8 @@ class CreateAccountActivity : AppCompatActivity() {
             val confirmPwd = binding.etConfirmPwd.text.toString()
 
             binding.signUpProgressbar.visibility = View.VISIBLE
+            binding.etPasswordLayout.isPasswordVisibilityToggleEnabled = true
+            binding.etConfirmPwdLayout.isPasswordVisibilityToggleEnabled = true
 
             //checking if the input fields are empty
             if(name.isEmpty() || email.isEmpty() || phone.isEmpty() || address.isEmpty() || password.isEmpty() || confirmPwd.isEmpty()){
@@ -58,18 +60,48 @@ class CreateAccountActivity : AppCompatActivity() {
                 }
                 if(password.isEmpty()){
                     binding.etPassword.error = "Enter your password"
+                    binding.etPasswordLayout.isPasswordVisibilityToggleEnabled = false
                 }
                 if(confirmPwd.isEmpty()){
                     binding.etConfirmPwd.error = "Re-enter your password"
+                    binding.etConfirmPwdLayout.isPasswordVisibilityToggleEnabled = false
                 }
                 Toast.makeText(this, "Enter valid details", Toast.LENGTH_SHORT).show()
                 binding.signUpProgressbar.visibility = View.GONE
             }
+
             //validate email pattern
             else if (!email.matches(emailPattern.toRegex())){
                 binding.etEmail.error = "Enter a valid email address"
                 binding.signUpProgressbar.visibility = View.GONE
             }
+
+            //validate phone number
+            else if (phone.length != 10){
+                binding.etPhone.error = "Enter a valid phone number"
+                binding.signUpProgressbar.visibility = View.GONE
+            }
+
+            //validate passwords
+            else if (password.length < 7){
+                binding.etPassword.error = "Password must be at least 7 characters."
+                binding.etPasswordLayout.isPasswordVisibilityToggleEnabled = false
+                binding.signUpProgressbar.visibility = View.GONE
+            }
+
+            else if (confirmPwd != password){
+                binding.etConfirmPwd.error = "Passwords do not match. Please try again."
+                binding.etConfirmPwdLayout.isPasswordVisibilityToggleEnabled = false
+                binding.signUpProgressbar.visibility = View.GONE
+            }
+
+
+
+
+
+
+
+
 
 
 
