@@ -61,6 +61,8 @@
     <!--Other features-->
     <color name="optionsTextColur">#3b608c</color>
     <color name="formIconsColour">#3B608C</color>
+    <color name="loadingProgressBar">#4958dc</color>
+
 
 
 
