@@ -21,7 +21,7 @@ class ViewProfileFragment : Fragment() {
 
         var resetPwd = view.findViewById<Button>(R.id.resetPwd)
         resetPwd.setOnClickListener {
-            findNavController().navigate(R.id.action_viewProfileFragment_to_resetPasswordFragment)
+            findNavController().navigate(R.id.action_viewProfileFragment_to_resetPasswordActivity)
         }
 
 
