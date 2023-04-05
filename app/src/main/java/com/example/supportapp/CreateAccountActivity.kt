@@ -1,9 +1,11 @@
 package com.example.supportapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.supportapp.DataClasses.User
 import com.example.supportapp.databinding.ActivityCreateAccountBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -94,6 +96,33 @@ class CreateAccountActivity : AppCompatActivity() {
                 binding.etConfirmPwdLayout.isPasswordVisibilityToggleEnabled = false
                 binding.signUpProgressbar.visibility = View.GONE
             }
+
+            else{
+                //creating a user
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
+                    if(it.isSuccessful){
+                        val databaseRef = database.reference.child("users").child(auth.currentUser!!.uid)
+                        val user: User = User(name, email, phone, address, auth.currentUser!!.uid)
+
+                        databaseRef.setValue(user).addOnCompleteListener {
+                            if (it.isSuccessful){
+                                Toast.makeText(this, "Account created successfully.", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, LoginActivity::class.java)
+                                startActivity(intent)
+                            }
+                            else{
+                                Toast.makeText(this, "Something went wrong, try again", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                    }else{
+                        Toast.makeText(this, "Something went wrong, try again", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+            }
+
+
 
 
 
