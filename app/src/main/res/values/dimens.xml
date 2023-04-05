@@ -70,7 +70,7 @@
     <!-- Other activities editText drawable padding -->
     <dimen name="eTdrawablePadding">10dp</dimen>
     <dimen name="signUpformEditTextHeight">48dp</dimen>
-    <dimen name="signUpformEditTextTopMargin">8dp</dimen>
+    <dimen name="signUpformEditTextTopMargin">4dp</dimen>
 
 
 
