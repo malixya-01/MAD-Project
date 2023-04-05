@@ -21,23 +21,44 @@
         android:id="@+id/tvCreateAccount"
         android:layout_width="183dp"
         android:layout_height="98dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="245dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
         android:text="Create Account"
-        android:textColor="#6672FE"
+        android:textColor="#3F51B5"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imBg" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="182dp"
+        app:cardCornerRadius="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imBg">
+
+        <ImageView
+            android:id="@+id/createAccDp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile" />
+
+    </androidx.cardview.widget.CardView>
+
     <EditText
         android:id="@+id/etName"
         android:layout_width="340dp"
         android:layout_height="@dimen/signUpformEditTextHeight"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:drawableStart="@drawable/card_view_person"
-        android:drawableTint="@color/formIconsColour"
         android:drawablePadding="@dimen/eTdrawablePadding"
+        android:drawableTint="@color/formIconsColour"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -45,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
 
     <EditText
@@ -53,10 +74,10 @@
         android:layout_width="340dp"
         android:layout_height="@dimen/signUpformEditTextHeight"
         android:layout_marginTop="@dimen/signUpformEditTextTopMargin"
-        android:ems="10"
         android:drawableStart="@drawable/baseline_email_24"
-        android:drawableTint="@color/formIconsColour"
         android:drawablePadding="@dimen/eTdrawablePadding"
+        android:drawableTint="@color/formIconsColour"
+        android:ems="10"
         android:hint="Emaill"
         android:inputType="textPersonName"
         android:text=""
