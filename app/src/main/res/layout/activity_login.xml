@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <ProgressBar
-        android:id="@+id/signInProgressbar"
+        android:id="@+id/loginProgressbar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:theme="@style/MyProgressbar"
@@ -57,7 +57,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/etloginEmail"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/email"
@@ -69,7 +69,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextPasswordLayout"
+        android:id="@+id/etloginPasswordLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -83,7 +83,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <EditText
-            android:id="@+id/etPwd"
+            android:id="@+id/etloginPassword"
             android:layout_width="338dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -105,8 +105,8 @@
         android:text="Forgot password ?"
         android:textColor="@color/optionsTextColur"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/editTextPasswordLayout"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLayout" />
+        app:layout_constraintStart_toStartOf="@+id/etloginPasswordLayout"
+        app:layout_constraintTop_toBottomOf="@+id/etloginPasswordLayout" />
 
     <ImageView
         android:id="@+id/loginBtn"
@@ -115,7 +115,7 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLayout"
+        app:layout_constraintTop_toBottomOf="@+id/etloginPasswordLayout"
         app:srcCompat="@drawable/btn_arraw1" />
 
     <TextView
