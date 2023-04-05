@@ -20,7 +20,7 @@
             android:name=".forgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".createAccountActivity"
+            android:name=".CreateAccountActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

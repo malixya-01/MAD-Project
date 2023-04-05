@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
         //set onclick listner on register tv
         binding.tvRegister.setOnClickListener() {
-            intent = Intent(applicationContext, createAccountActivity::class.java)
+            intent = Intent(applicationContext, CreateAccountActivity::class.java)
             startActivity(intent)
         }
 

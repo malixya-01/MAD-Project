@@ -63,10 +63,13 @@ class CreateAccountActivity : AppCompatActivity() {
                     binding.etConfirmPwd.error = "Re-enter your password"
                 }
                 Toast.makeText(this, "Enter valid details", Toast.LENGTH_SHORT).show()
-                binding.signUpProgressbar.visibility = View.VISIBLE
-
-             //validate email pattern
-            }else if ()
+                binding.signUpProgressbar.visibility = View.GONE
+            }
+            //validate email pattern
+            else if (!email.matches(emailPattern.toRegex())){
+                binding.etEmail.error = "Enter a valid email address"
+                binding.signUpProgressbar.visibility = View.GONE
+            }
 
 
 
