@@ -11,6 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ProgressBar
+            android:id="@+id/signUpProgressbar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            android:theme="@style/MyProgressbar"
+            android:visibility="gone"/>
+
+
         <ImageView
             android:id="@+id/imBg"
             android:layout_width="wrap_content"
@@ -62,8 +76,8 @@
             android:layout_height="@dimen/signUpformEditTextHeight"
             android:layout_marginTop="24dp"
             android:drawableStart="@drawable/name"
-            android:drawableTint="@color/formIconsColour"
             android:drawablePadding="@dimen/eTdrawablePadding"
+            android:drawableTint="@color/formIconsColour"
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
@@ -80,8 +94,8 @@
             android:layout_height="@dimen/signUpformEditTextHeight"
             android:layout_marginTop="@dimen/signUpformEditTextTopMargin"
             android:drawableStart="@drawable/email"
-            android:drawableTint="@color/formIconsColour"
             android:drawablePadding="@dimen/eTdrawablePadding"
+            android:drawableTint="@color/formIconsColour"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
@@ -128,8 +142,8 @@
             android:layout_height="@dimen/signUpformEditTextHeight"
             android:layout_marginTop="@dimen/signUpformEditTextTopMargin"
             android:drawableStart="@drawable/password"
-            android:drawableTint="@color/formIconsColour"
             android:drawablePadding="@dimen/eTdrawablePadding"
+            android:drawableTint="@color/formIconsColour"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
@@ -143,8 +157,8 @@
             android:layout_height="@dimen/signUpformEditTextHeight"
             android:layout_marginTop="@dimen/signUpformEditTextTopMargin"
             android:drawableStart="@drawable/password"
-            android:drawableTint="@color/formIconsColour"
             android:drawablePadding="@dimen/eTdrawablePadding"
+            android:drawableTint="@color/formIconsColour"
             android:ems="10"
             android:hint="Confirm Password"
             android:inputType="textPassword"
