@@ -176,7 +176,7 @@
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
         app:srcCompat="@drawable/delete"
-        app:tint="@color/deleteFabIconColor"/>
+        app:tint="@color/red"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnEdit"

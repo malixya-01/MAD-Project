@@ -43,7 +43,7 @@
 
     <color name="viewLayIconsColour">#857FFF</color>
 
-    <color name="deleteFabIconColor">#FF0000</color>
+    <color name="red">#EEFF0000</color>
     <color name="editFabIconColor">#F0373737</color>
 
     <color name="viewAPostAllUsersOptionBtn">#5A00FA</color>
