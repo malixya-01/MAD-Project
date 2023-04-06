@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- DashBoard dimens -->
+    <dimen name="dashboardBtnsIVSize">48dp</dimen>
+    <dimen name="dashboardBtnsIVTopBotPadding">8dp</dimen>
+
+
     <dimen name="form_items_left_right_margins">32dp</dimen>
     <dimen name="newFr_form_textBoxes_width">60dp</dimen>
     <dimen name="submitBtnsConorRadius">10dp</dimen>
