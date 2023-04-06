@@ -27,7 +27,7 @@ class ViewProfileFragment : Fragment() {
         //val view = inflater.inflate(R.layout.fragment_view_profile, container, false)
         binding = FragmentViewProfileBinding.inflate(inflater,container,false);
         val view = binding.root;
-
+/*
         //implementing logout
         binding.btnLogout.setOnClickListener {
             Firebase.auth.signOut()
@@ -45,7 +45,7 @@ class ViewProfileFragment : Fragment() {
             findNavController().navigate(R.id.action_viewProfileFragment_to_resetPasswordActivity)
         }
 
-
+*/
         return view
     }
 }
