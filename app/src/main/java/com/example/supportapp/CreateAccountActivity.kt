@@ -1,10 +1,12 @@
 package com.example.supportapp
 
+import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
@@ -17,6 +19,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
+
 class CreateAccountActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCreateAccountBinding
@@ -24,7 +27,7 @@ class CreateAccountActivity : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     private lateinit var storageReference: FirebaseStorage
     private lateinit var uri: Uri
-
+    private lateinit var dialog: Dialog
     //email pattern
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
@@ -172,4 +175,17 @@ class CreateAccountActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun showProgressBar(){
+        dialog = Dialog( this@CreateAccountActivity)
+        dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_wait)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+    private fun hideProgressBar(){
+        dialog.dismiss()
+    }
+
+
 }
