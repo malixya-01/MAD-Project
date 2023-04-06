@@ -24,7 +24,7 @@ class DashboardFragment : Fragment() {
         var myRequetsBtn = view.findViewById<ConstraintLayout>(R.id.myRequstsBtn)
         var myDonationsBtn = view.findViewById<ConstraintLayout>(R.id.myDonationsBtn)
         var myFundrasingsBtn = view.findViewById<ConstraintLayout>(R.id.myFundrasingsBtn)
-        var profileBtn = view.findViewById<ImageView>(R.id.imUserDp)
+        var profileBtn = view.findViewById<ImageView>(R.id.ivDashboardProfileDp)
 
 
         //rederecting
