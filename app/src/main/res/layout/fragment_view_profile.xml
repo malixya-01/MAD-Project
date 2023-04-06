@@ -66,7 +66,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/profile" />
+                android:src="@drawable/default_avatar" />
 
         </androidx.cardview.widget.CardView>
 
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="@string/requestSampleDataName"
+            android:text=""
             android:textColor="#ffffff"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -129,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="0725685327"
+                        android:text=""
                         android:textAlignment="viewStart"
                         android:textColor="@color/viewLayFontColour"
                         android:textSize="16sp" />
@@ -167,7 +167,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="benedward@gmail.com"
+                        android:text=""
                         android:textAlignment="viewStart"
                         android:textColor="@color/viewLayFontColour"
                         android:textSize="16sp" />
@@ -204,7 +204,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="8 Orchard Avenue, Eden Prairie, MN 55347"
+                        android:text=""
                         android:textAlignment="viewStart"
                         android:textColor="@color/viewLayFontColour"
                         android:textSize="16sp" />
