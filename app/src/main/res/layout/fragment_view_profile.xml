@@ -40,35 +40,47 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <ImageView
-        android:id="@+id/ivProfileDp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewProfileDpCardView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="98dp"
+        app:cardCornerRadius="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivViewProfileDp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/tvProfileUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Ben Edward"
+        android:text="@string/requestSampleDataName"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ivProfileDp"
-        app:layout_constraintStart_toStartOf="@+id/ivProfileDp"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfileDp" />
+        app:layout_constraintEnd_toEndOf="@+id/viewProfileDpCardView"
+        app:layout_constraintStart_toStartOf="@+id/viewProfileDpCardView"
+        app:layout_constraintTop_toBottomOf="@+id/viewProfileDpCardView"
+        tools:ignore="UnknownId" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="325dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/white_back"
         android:elevation="3dp"
@@ -181,8 +193,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:text="8 Orchard Avenue
-Eden Prairie, MN 55347"
+                    android:text="8 Orchard Avenue, Eden Prairie, MN 55347"
                     android:textAlignment="viewStart"
                     android:textColor="@color/viewLayFontColour"
                     android:textSize="16sp" />
