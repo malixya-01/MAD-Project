@@ -76,7 +76,7 @@ class CreateAccountActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString()
             val confirmPwd = binding.etConfirmPwd.text.toString()
 
-            binding.signUpProgressbar.visibility = View.VISIBLE
+            showProgressBar()
             binding.etPasswordLayout.isPasswordVisibilityToggleEnabled = true
             binding.etConfirmPwdLayout.isPasswordVisibilityToggleEnabled = true
 
@@ -103,30 +103,30 @@ class CreateAccountActivity : AppCompatActivity() {
                     binding.etConfirmPwdLayout.isPasswordVisibilityToggleEnabled = false
                 }
                 Toast.makeText(this, "Enter valid details", Toast.LENGTH_SHORT).show()
-                binding.signUpProgressbar.visibility = View.GONE
+                hideProgressBar()
             }
 
             //validate email pattern
             else if (!email.matches(emailPattern.toRegex())) {
                 binding.etEmail.error = "Enter a valid email address"
-                binding.signUpProgressbar.visibility = View.GONE
+                hideProgressBar()
             }
 
             //validate phone number
             else if (phone.length != 10) {
                 binding.etPhone.error = "Enter a valid phone number"
-                binding.signUpProgressbar.visibility = View.GONE
+                hideProgressBar()
             }
 
             //validate passwords
             else if (password.length < 7) {
                 binding.etPassword.error = "Password must be at least 7 characters."
                 binding.etPasswordLayout.isPasswordVisibilityToggleEnabled = false
-                binding.signUpProgressbar.visibility = View.GONE
+                hideProgressBar()
             } else if (confirmPwd != password) {
                 binding.etConfirmPwd.error = "Passwords do not match. Please try again."
                 binding.etConfirmPwdLayout.isPasswordVisibilityToggleEnabled = false
-                binding.signUpProgressbar.visibility = View.GONE
+                hideProgressBar()
             } else {
                 //creating an auth for the user
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
