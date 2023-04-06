@@ -114,13 +114,16 @@ class ViewProfileFragment : Fragment() {
     }
 
     private fun getUserProfilePicture() {
+        //find image named with the current uid
         storageReference = FirebaseStorage.getInstance().reference.child("Users/$uid")
+
+        //create temporary local file to store the retrieved image
         val localFile = File.createTempFile("tempImage", ".jpg")
 
-        //retrieve image
+        //retrieve image and store it to created temp file
         storageReference.getFile(localFile).addOnSuccessListener {
 
-            //covert it to bitmap
+            //covert temp file to bitmap
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
 
             //bind image
