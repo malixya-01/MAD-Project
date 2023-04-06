@@ -42,9 +42,19 @@ class ViewProfileFragment : Fragment() {
             Toast.makeText(getActivity(), "Successfully logged out", Toast.LENGTH_SHORT).show()
         }
 
-
+        //onclick listener to redirect to re-set password
         binding.btnResetPwd.setOnClickListener {
             findNavController().navigate(R.id.action_viewProfileFragment_to_resetPasswordActivity)
+        }
+
+        //onclick listener to redirect to editProfile
+        binding.btnUpdateProfileDetails.setOnClickListener {
+            Toast.makeText(getActivity(), "Update account", Toast.LENGTH_SHORT).show()
+        }
+
+        //onclick listener to delete account
+        binding.btnDeleteAcc.setOnClickListener {
+            Toast.makeText(getActivity(), "Account deleted", Toast.LENGTH_SHORT).show()
         }
 
 
