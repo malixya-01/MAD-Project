@@ -39,8 +39,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.donationsFragment,
                 R.id.fundrasingFragment,
                 R.id.dashboardFragment,
-                R.id.savedItemesFragment,
-                R.id.notificationsFragment
             )
         )
 
