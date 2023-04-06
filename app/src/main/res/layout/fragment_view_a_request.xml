@@ -201,7 +201,7 @@
         android:baselineAlignBottom="false"
         android:backgroundTint="@color/editFabBg"
         android:clickable="true"
-        app:tint="@color/deleteFabIconColor"
+        app:tint="@color/red"
         app:fabSize="mini"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
