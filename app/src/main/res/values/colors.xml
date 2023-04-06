@@ -63,6 +63,9 @@
     <color name="formIconsColour">#3B608C</color>
     <color name="loadingProgressBar">#4958dc</color>
 
+    <!--View Profile devider-->
+    <color name="divider">#D9D9D9</color>
+
 
 
 

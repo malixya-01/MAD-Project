@@ -72,6 +72,14 @@
     <dimen name="signUpformEditTextHeight">48dp</dimen>
     <dimen name="signUpformEditTextTopMargin">4dp</dimen>
 
+    <!--View Profile-->
+    <dimen name="dividerLeftRightMargins">4dp</dimen>
+    <dimen name="dividerTopMargin">4dp</dimen>
+    <dimen name="dividerBottomMargin">4dp</dimen>
+    <dimen name="detailsPadding">12dp</dimen>
+
+
+
 
 
 
