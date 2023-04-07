@@ -29,7 +29,6 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
     inner class FundraisingViewHolder(itemView: View, listner: FundraisingAdapter.onItemClickListner) :RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.tvTitle)
         val username: TextView = itemView.findViewById(R.id.tvUserName)
-        val location: TextView = itemView.findViewById(R.id.tvLocation)
         val totAmt: TextView = itemView.findViewById(R.id.tvTotAmt)
         val reqAmt: TextView = itemView.findViewById(R.id.tvReqAmt)
         val des: TextView = itemView.findViewById(R.id.tvDes)
@@ -55,9 +54,8 @@ class FundraisingAdapter(var mList: List<FundraisingData>) :
     override fun onBindViewHolder(holder: FundraisingViewHolder, position: Int) {
         holder.title.text = mList[position].title
         holder.username.text = mList[position].username
-        holder.location.text = mList[position].location
-        holder.totAmt.text = mList[position].totAmt
-        holder.reqAmt.text = mList[position].reqAmt
+        holder.totAmt.text = mList[position].expectedAmt
+        holder.reqAmt.text = mList[position].collectedAmt
         holder.des.text = mList[position].description
 
         //verification status logic
