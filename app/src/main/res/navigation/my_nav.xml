@@ -107,7 +107,11 @@
         android:id="@+id/viewProfileFragment"
         android:name="com.example.supportapp.Fragments.Other.ViewProfileFragment"
         android:label="@string/viewProfileToolbarTitle"
-        tools:layout="@layout/fragment_view_profile" />
+        tools:layout="@layout/fragment_view_profile" >
+        <action
+            android:id="@+id/action_viewProfileFragment_to_resetPasswordActivity"
+            app:destination="@id/resetPasswordActivity" />
+    </fragment>
     <fragment
         android:id="@+id/newFundraiserFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.NewFundraiserFragment"
@@ -253,4 +257,9 @@
         android:name="com.example.supportapp.Fragments.Other.SavedItemesFragment"
         android:label="@string/savedItemsToolbarTitle"
         tools:layout="@layout/fragment_saved_itemes" />
+    <activity
+        android:id="@+id/resetPasswordActivity"
+        android:name="com.example.supportapp.ResetPasswordActivity"
+        android:label="activity_reset_password"
+        tools:layout="@layout/activity_reset_password" />
 </navigation>

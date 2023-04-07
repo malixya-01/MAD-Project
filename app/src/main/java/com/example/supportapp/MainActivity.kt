@@ -1,5 +1,6 @@
 package com.example.supportapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -38,8 +39,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.donationsFragment,
                 R.id.fundrasingFragment,
                 R.id.dashboardFragment,
-                R.id.savedItemesFragment,
-                R.id.notificationsFragment
             )
         )
 
@@ -62,13 +61,15 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.notify -> {
                 // Navigate to notifications frag
-                navController.navigate(R.id.notificationsFragment)
+                intent = Intent(applicationContext, NotificationsActivity::class.java)
+                startActivity(intent)
                 true
             }
 
             R.id.Saved -> {
                 // Navigate to saved itemes frag
-                navController.navigate(R.id.savedItemesFragment)
+                intent = Intent(applicationContext, SavedItemesActivity::class.java)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)

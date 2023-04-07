@@ -13,4 +13,10 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="MyProgressbar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorSecondary">@color/loadingProgressBar</item>
+    </style>
+
+
 </resources>

@@ -13,46 +13,62 @@
         android:layout_height="match_parent"
         android:scrollbarDefaultDelayBeforeFade="400">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dashboardTopGradient"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:scrollbarDefaultDelayBeforeFade="400">
+                android:layout_height="360dp"
+                android:background="@drawable/top_background_gradient"
+                android:scrollbarDefaultDelayBeforeFade="400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imageView2"
+                <!-- <ImageView
+                    android:id="@+id/top_bg_gradient"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:src="@drawable/top_background_gradient"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintBottom_toBottomOf="@+id/top_bg_circles"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/top_bg_circles"
                     app:layout_constraintTop_toTopOf="parent" />
+                -->
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/top_background"
+                    android:layout_height="0dp"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/circles" />
 
-                <ImageView
-                    android:id="@+id/imUserDp"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dashboardDpCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginTop="64dp"
                     android:layout_marginEnd="40dp"
-                    android:src="@drawable/profile"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView2"
-                    app:layout_constraintVertical_bias="0.394" />
+                    app:layout_constraintTop_toTopOf="@+id/dashboardTopGradient">
+
+                    <ImageView
+                        android:id="@+id/ivDashboardProfileDp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_avatar" />
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:id="@+id/textView"
@@ -64,197 +80,161 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imUserDp" />
+                    app:layout_constraintTop_toTopOf="@+id/dashboardDpCardView" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/dashboardUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dashboard_username"
+                    android:text=""
                     android:textColor="@color/dashboard_text"
                     android:textSize="25dp"
                     android:textStyle="bold"
 
-                    app:layout_constraintBottom_toBottomOf="@+id/imUserDp"
+                    app:layout_constraintBottom_toBottomOf="@+id/dashboardDpCardView"
                     app:layout_constraintStart_toStartOf="@+id/textView"
                     app:layout_constraintTop_toBottomOf="@+id/textView"
                     app:layout_constraintVertical_bias="0.205" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_back"
+                android:elevation="3dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dashboardTopGradient">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:background="@drawable/white_top_buttons"
-                    android:elevation="4dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2">
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    >
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/myRequstsBtn"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
+                        android:layout_height="100sp"
+                        android:layout_marginLeft="8dp"
+
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/purple_top_buttons">
+
+                        <ImageView
+                            android:id="@+id/iv_dashboard_requsts"
+                            android:layout_width="@dimen/dashboardBtnsIVSize"
+                            android:layout_height="@dimen/dashboardBtnsIVSize"
+                            android:layout_marginStart="40dp"
+                            android:src="@drawable/unselected_requests"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.444" />
+
+                        <TextView
+                            android:id="@+id/tvdashboardRequests"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboardRequestsBtn"
+                            android:textColor="@color/dashboard_main_btns"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/myDonationsBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="100sp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="8dp"
                         android:background="@drawable/purple_top_buttons"
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ivNotify"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/notification" />
+                            android:id="@+id/iv_dashboard_donations"
+                            android:layout_width="@dimen/dashboardBtnsIVSize"
+                            android:layout_height="@dimen/dashboardBtnsIVSize"
+                            android:layout_marginStart="40dp"
+                            android:src="@drawable/unselected_donorads"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tvNotify"
-                            android:layout_width="match_parent"
+                            android:id="@+id/tvdashboardDonations"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="@string/dashboard_notification"
-                            android:textAlignment="center"
-                            android:textColor="@color/dashboard_text"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                            android:text="@string/dashboardDonationsBtn"
+                            android:textColor="@color/dashboard_main_btns"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <LinearLayout
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/myFundrasingsBtn"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
+                        android:layout_height="100sp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="8dp"
                         android:background="@drawable/purple_top_buttons"
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ivContactUs"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/voice_call" />
+                            android:id="@+id/iv_dashboard_fundrasings"
+                            android:layout_width="@dimen/dashboardBtnsIVSize"
+                            android:layout_height="@dimen/dashboardBtnsIVSize"
+                            android:layout_marginStart="40dp"
+                            android:src="@drawable/unselected_fundraising"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tvContactUs"
-                            android:layout_width="match_parent"
+                            android:id="@+id/tvdashboardFundrasings"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="@string/dashboard_contactUs"
-                            android:textAlignment="center"
-                            android:textColor="@color/dashboard_text"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                            android:text="@string/dashboardFundrasingsBtn"
+                            android:textColor="@color/dashboard_main_btns"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.55"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
                 </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/myRequstsBtn"
-                android:layout_width="match_parent"
-                android:layout_height="100sp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/purple_top_buttons">
-
-                <ImageView
-                    android:id="@+id/iv_dashboard_requsts"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="40dp"
-                    android:src="@drawable/unselected_requests"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.444" />
-
-                <TextView
-                    android:id="@+id/tvdashboardRequests"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dashboardRequestsBtn"
-                    android:textColor="@color/dashboard_main_btns"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/myDonationsBtn"
-                android:layout_width="match_parent"
-                android:layout_height="100sp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/purple_top_buttons"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/iv_dashboard_donations"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="40dp"
-                    android:src="@drawable/unselected_donorads"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvdashboardDonations"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dashboardDonationsBtn"
-                    android:textColor="@color/dashboard_main_btns"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/myFundrasingsBtn"
-                android:layout_width="match_parent"
-                android:layout_height="100sp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/purple_top_buttons"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/iv_dashboard_fundrasings"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="40dp"
-                    android:src="@drawable/unselected_fundraising"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvdashboardFundrasings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dashboardFundrasingsBtn"
-                    android:textColor="@color/dashboard_main_btns"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -15,6 +16,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures{
+        viewBinding true
     }
 
     buildTypes {
@@ -44,10 +49,16 @@ dependencies {
     implementation("androidx.navigation:navigation-dynamic-features-fragment:2.3.5")
 
     implementation('androidx.cardview:cardview:1.0.0')
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.3'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
+    implementation 'com.google.firebase:firebase-storage-ktx:+'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Progress Dialog Library
+    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
 
 
 }
