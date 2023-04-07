@@ -48,24 +48,10 @@
                     android:hint="@string/FrTitle">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="16dp"
-                    android:hint="@string/FrUserName">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"/>
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -78,6 +64,7 @@
                     android:hint="@string/FrDes">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top"
@@ -86,7 +73,7 @@
                         android:overScrollMode="always"
                         android:scrollbarStyle="insideInset"
                         android:scrollbars="vertical"
-                        android:scrollHorizontally="false"/>
+                        android:scrollHorizontally="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -99,9 +86,10 @@
                     android:hint="@string/FrTotAmt">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrExpectedAmt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"/>
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -115,9 +103,10 @@
                     android:hint="@string/FrCurrAmt">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrCollectedAmt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"/>
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -130,9 +119,10 @@
                     android:hint="@string/FrConatctNo">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrContactNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"/>
+                        android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -145,9 +135,10 @@
                     android:hint="@string/FrEmail">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"/>
+                        android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -160,9 +151,10 @@
                     android:hint="@string/FrWebsite">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrWebsite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"/>
+                        android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -175,6 +167,7 @@
                     android:hint="@string/FrBankDetails">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewFrBankDetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top"
@@ -183,18 +176,18 @@
                         android:overScrollMode="always"
                         android:scrollbarStyle="insideInset"
                         android:scrollbars="vertical"
-                        android:scrollHorizontally="false"/>
+                        android:scrollHorizontally="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <Button
-                    android:id="@+id/btnUpdate"
+                    android:id="@+id/btnNewFrSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="16dp"
-                    android:text="@string/btnUpdate"/>
+                    android:text="@string/SubmitBtn"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
