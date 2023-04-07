@@ -103,9 +103,9 @@
     <string name="frCity">Island wide</string>
     <string name="frTotAmt">2000000</string>
     <string name="frCollectedAmt">100000</string>
-    <string name="frContactNumber">073225462</string>
+    <string name="frContactNumber">0732254620</string>
     <string name="frEmail">leo@sliit.lk</string>
-    <string name="frWebSite">leo.sliit.lk</string>
+    <string name="frWebSite">www.leo.sliit.lk</string>
     <string name="frBankDetails">BOC Malabe branch\nName: Leo Sliit\nAcc Num: 11234568</string>
 
     <string name="senrReqSampleDataTitle">Dry food donation</string>
