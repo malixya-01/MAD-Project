@@ -14,6 +14,8 @@ class newFrFormData(
 ) {
 
     private var frMinimumAmount = 100000
+    private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+    private val urlPattern = "[(http(s)?):\\/\\/(www\\.)?a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)"
 
     fun validateTitle(): ValidationResult {
         return if(title.isEmpty()){
@@ -48,26 +50,41 @@ class newFrFormData(
             ValidationResult.Valid
         }
     }
-     /*fun validateDescription(): ValidationResult {
-        return if(description.isEmpty()){
-            ValidationResult.Empty("Description should not be empty")
+    fun validateContactNumber(): ValidationResult {
+        return if(contactNumber.isEmpty()){
+            ValidationResult.Empty("Contact number should not be empty")
+        } else if(contactNumber.length != 10) {
+            ValidationResult.Invalid("Enter a valid contact number")
         } else {
             ValidationResult.Valid
         }
     }
-    fun validateDescription(): ValidationResult {
-        return if(description.isEmpty()){
-            ValidationResult.Empty("Description should not be empty")
+
+    fun validateEmail(): ValidationResult {
+        return if(email.isEmpty()){
+            ValidationResult.Empty("Email address should not be empty")
+        } else if(!email.matches(emailPattern.toRegex())) {
+            ValidationResult.Invalid("Enter a valid email address")
         } else {
             ValidationResult.Valid
         }
     }
-    fun validateDescription(): ValidationResult {
-        return if(description.isEmpty()){
-            ValidationResult.Empty("Description should not be empty")
+
+    fun validateWebsite(): ValidationResult {
+        return if(!website.matches(urlPattern.toRegex())) {
+            ValidationResult.Invalid("Enter a valid website url")
         } else {
             ValidationResult.Valid
         }
-    }*/
+    }
+
+    fun validateBankDetails(): ValidationResult {
+        return if(bankDetails.isEmpty()){
+            ValidationResult.Empty("Bank details should not be empty")
+        } else {
+            ValidationResult.Valid
+        }
+    }
+
 
 }
