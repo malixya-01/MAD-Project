@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.supportapp.databinding.FragmentNewFundraiserBinding
-import com.example.supportapp.models.newFrFormData
+import com.example.supportapp.models.validations.newFrFormData
 import com.example.supportapp.models.validations.ValidationResult
-import kotlin.properties.Delegates
 
 class NewFundraiserFragment : Fragment() {
 

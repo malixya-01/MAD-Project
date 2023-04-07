@@ -1,6 +1,4 @@
-package com.example.supportapp.models
-
-import com.example.supportapp.models.validations.ValidationResult
+package com.example.supportapp.models.validations
 
 class newFrFormData(
     private var title: String,

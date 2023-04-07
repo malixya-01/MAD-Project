@@ -13,23 +13,32 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.FundraisingAdapter
 import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
+import com.example.supportapp.databinding.FragmentFundrasingBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class FundrasingFragment : Fragment() {
 
+    private lateinit var auth: FirebaseAuth
+    private lateinit var dataaseRef: DatabaseReference
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
     private var mList = ArrayList<FundraisingData>()
     private lateinit var adapter: FundraisingAdapter
+    private lateinit var binding: FragmentFundrasingBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_fundrasing, container, false)
+        binding = FragmentFundrasingBinding.inflate(inflater, container, false)
 
-        recyclerView = view.findViewById(R.id.recyclerView)
-        searchView = view.findViewById(R.id.searchView)
+
+        recyclerView = binding.recyclerView
+        searchView = binding.searchView
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
@@ -41,8 +50,7 @@ class FundrasingFragment : Fragment() {
         recyclerView.adapter = adapter
 
 
-        val btnAdd = view.findViewById<FloatingActionButton>(R.id.btnAdd)
-        btnAdd.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_fundrasingFragment_to_newFundraiserFragment)
         }
 
@@ -56,7 +64,23 @@ class FundrasingFragment : Fragment() {
 
 
 
-        return view
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+       // init(view)
+
+
+
+    }
+
+    private fun init(view: View) {
+        auth = FirebaseAuth.getInstance()
+        dataaseRef = FirebaseDatabase.getInstance().reference.child("fundraising")
+
+
     }
 
     private fun addDataToList(){
