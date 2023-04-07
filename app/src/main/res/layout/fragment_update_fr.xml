@@ -16,6 +16,7 @@
         android:orientation="vertical"
         tools:context=".Fragments.Fundraisings.UpdateFrFragment">
 
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,6 +49,7 @@
                     android:hint="@string/FrTitle">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -61,25 +63,10 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="@string/FrUserName">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:text="@string/frName" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="16dp"
                     android:hint="@string/FrDes">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top"
@@ -102,9 +89,10 @@
                     android:hint="@string/FrTotAmt">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrExpectedAmt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:text="@string/frTotAmt" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,9 +107,10 @@
                     android:hint="@string/FrCurrAmt">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrCollectedAmt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="numberDecimal"
                         android:text="@string/frCollectedAmt" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,9 +124,10 @@
                     android:hint="@string/FrConatctNo">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrContactNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="phone"
                         android:text="@string/frContactNumber" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -151,9 +141,10 @@
                     android:hint="@string/FrEmail">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="textEmailAddress"
                         android:text="@string/frEmail" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,9 +158,10 @@
                     android:hint="@string/FrWebsite">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrWebsite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="text"
                         android:text="@string/frWebSite" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -183,6 +175,7 @@
                     android:hint="@string/FrBankDetails">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUpdateFrBankDetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top"
@@ -197,16 +190,208 @@
 
 
                 <Button
-                    android:id="@+id/btnUpdate"
+                    android:id="@+id/btnUpdateFrSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="16dp"
-                    android:text="@string/btnUpdate" />
+                    android:text="@string/SubmitBtn" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- <androidx.cardview.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="8dp"
+             android:layout_marginTop="16dp"
+             android:layout_marginEnd="8dp"
+             android:layout_marginBottom="32dp"
+
+             app:cardCornerRadius="8dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent">
+
+             <LinearLayout
+                 android:id="@+id/linearLayout"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginTop="32dp"
+                 android:layout_marginBottom="32dp"
+                 android:orientation="vertical">
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="16dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrTitle">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="text"
+                         android:text="@string/frTitle" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrUserName">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="text"
+                         android:text="@string/frName" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrDes">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:gravity="top"
+                         android:inputType="textMultiLine"
+                         android:lines="6"
+                         android:overScrollMode="always"
+                         android:scrollbarStyle="insideInset"
+                         android:scrollbars="vertical"
+                         android:scrollHorizontally="false"
+                         android:text="@string/frDes" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrTotAmt">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="text"
+                         android:text="@string/frTotAmt" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrCurrAmt">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="text"
+                         android:text="@string/frCollectedAmt" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrConatctNo">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="number"
+                         android:text="@string/frContactNumber" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrEmail">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="number"
+                         android:text="@string/frEmail" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrWebsite">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="number"
+                         android:text="@string/frWebSite" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:hint="@string/FrBankDetails">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:gravity="top"
+                         android:inputType="textMultiLine"
+                         android:lines="6"
+                         android:overScrollMode="always"
+                         android:scrollbarStyle="insideInset"
+                         android:scrollbars="vertical"
+                         android:scrollHorizontally="false"
+                         android:text="@string/frBankDetails" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+
+                 <Button
+                     android:id="@+id/btnUpdate"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="6dp"
+                     android:layout_marginEnd="16dp"
+                     android:text="@string/btnUpdate" />
+
+             </LinearLayout>
+         </androidx.cardview.widget.CardView>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
