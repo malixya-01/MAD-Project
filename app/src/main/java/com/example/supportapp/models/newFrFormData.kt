@@ -15,8 +15,7 @@ class newFrFormData(
 
     private var frMinimumAmount = 100000
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-    private val urlPattern = "[(http(s)?):\\/\\/(www\\.)?a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)"
-
+    private val urlPattern = "(http(s)?://)?([\\w-]+\\.)+[\\w-]+[.com]+(/[/?%&=]*)?"
     fun validateTitle(): ValidationResult {
         return if(title.isEmpty()){
             ValidationResult.Empty("Title should not be empty")
