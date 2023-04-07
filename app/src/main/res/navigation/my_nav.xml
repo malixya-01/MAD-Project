@@ -116,7 +116,11 @@
         android:id="@+id/newFundraiserFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.NewFundraiserFragment"
         android:label="@string/addNewFrToolbarTitle"
-        tools:layout="@layout/fragment_new_fundraiser" />
+        tools:layout="@layout/fragment_new_fundraiser" >
+        <action
+            android:id="@+id/action_newFundraiserFragment_to_fundrasingFragment"
+            app:destination="@id/fundrasingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newDonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.newDonationFragment"

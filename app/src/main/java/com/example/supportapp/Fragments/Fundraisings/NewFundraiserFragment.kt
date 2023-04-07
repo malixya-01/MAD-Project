@@ -6,35 +6,82 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.supportapp.DataClasses.FundraisingData
+import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentNewFundraiserBinding
 import com.example.supportapp.models.validations.newFrFormData
 import com.example.supportapp.models.validations.ValidationResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class NewFundraiserFragment : Fragment() {
 
     private lateinit var binding: FragmentNewFundraiserBinding
     private var isValidationSuccess = false
+    private lateinit var auth: FirebaseAuth
+    private lateinit var databaseRef: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentNewFundraiserBinding.inflate(inflater, container, false)
-        val view = binding.root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        init(view)
+        registerEvents()
+
+    }
+
+    private fun init(view: View) {
+        auth = FirebaseAuth.getInstance()
+        databaseRef = FirebaseDatabase.getInstance().reference
+            .child("fundraising").child(auth.currentUser?.uid.toString())
+
+
+
+
+    }
+
+    private fun registerEvents() {
 
         binding.btnNewFrSubmit.setOnClickListener {
             validateForm()
+            if (isValidationSuccess) {
 
-            if(isValidationSuccess){
-                Toast.makeText(activity, "Validations passed", Toast.LENGTH_SHORT).show()
+                var title = binding.etNewFrTitle.text.toString()
+                var description = binding.etNewFrDescription.text.toString()
+                var expectedAmt = binding.etNewFrExpectedAmt.text.toString()
+                var collectedAmt = binding.etNewFrCollectedAmt.text.toString()
+                var contactNo = binding.etNewFrContactNo.text.toString()
+                var email = binding.etNewFrEmail.text.toString()
+                var website = binding.etNewFrWebsite.text.toString()
+                var bankDetails = binding.etNewFrBankDetails.text.toString()
+                var username = auth.currentUser?.displayName.toString()
+                var verifiedStatus:Boolean = false
+
+                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, username, verifiedStatus)
+
+                databaseRef.push().setValue(fr).addOnCompleteListener {
+                    if (it.isSuccessful){
+                        Toast.makeText(context, "Your fundraiser added successfully", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_newFundraiserFragment_to_fundrasingFragment)
+                    } else {
+                        Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+                //Toast.makeText(activity, "Validations passed", Toast.LENGTH_SHORT).show()
             }
-
         }
-
-        return view
     }
 
-    fun validateForm(){
+    fun validateForm() {
         //set isValidationSuccess to false
         isValidationSuccess = false
 
@@ -152,7 +199,7 @@ class NewFundraiserFragment : Fragment() {
         }
 
         //set isValidationSuccess to true if all validations are success
-        if (count == 8){
+        if (count == 8) {
             isValidationSuccess = true
         }
 
