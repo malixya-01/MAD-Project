@@ -12,9 +12,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.supportapp.R
+import com.example.supportapp.databinding.FragmentViewAFrBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class viewAFrFragment : Fragment() {
+
+    private lateinit var binding: FragmentViewAFrBinding
 
     // variables to function progress bar
     lateinit var progressBar: ProgressBar
@@ -24,29 +27,40 @@ class viewAFrFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_view_a_fr, container, false)
+        binding = FragmentViewAFrBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        progressBar = view.findViewById(R.id.frProgressBar)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        init()
+        registerEvents()
+
+    }
+
+    private fun init() {
+
+        progressBar = binding.frProgressBar
         progressBar.progress = 165000
 
 
 
-        val updateBtn = view.findViewById<FloatingActionButton>(R.id.updateBtn)
-        updateBtn.setOnClickListener {
+
+
+    }
+
+    private fun registerEvents() {
+        binding.updateBtn.setOnClickListener {
             findNavController().navigate(R.id.action_viewAFrFragment_to_updateFrFragment)
         }
 
-        val viewDonors = view.findViewById<FloatingActionButton>(R.id.viewDonors)
-        viewDonors.setOnClickListener {
+        binding.viewDonors.setOnClickListener {
             findNavController().navigate(R.id.action_viewAFrFragment_to_viewAllDonorsToAFrFragment)
         }
 
-        val deleteBtn = view.findViewById<FloatingActionButton>(R.id.btnDlt)
-        deleteBtn.setOnClickListener {
+        binding.btnDlt.setOnClickListener {
             showDeleteConfirmationDialog()
         }
-
-        return view
     }
 
     private fun showDeleteConfirmationDialog() {
