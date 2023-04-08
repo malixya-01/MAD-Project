@@ -69,9 +69,8 @@ class NewFundraiserFragment : Fragment() {
         binding.btnNewFrSubmit.setOnClickListener {
             validateForm()
             if (isValidationSuccess) {
-
                 showProgressBar()
-
+                //initialize variables
                 var title = binding.etNewFrTitle.text.toString()
                 var description = binding.etNewFrDescription.text.toString()
                 var expectedAmt = binding.etNewFrExpectedAmt.text.toString()
@@ -80,11 +79,15 @@ class NewFundraiserFragment : Fragment() {
                 var email = binding.etNewFrEmail.text.toString()
                 var website = binding.etNewFrWebsite.text.toString()
                 var bankDetails = binding.etNewFrBankDetails.text.toString()
+
                 var verifiedStatus:Boolean = false
+                var pushkey = databaseRef.push().key;
                 var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
-                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus, uid, date)
+                //create a FundraisingData object
+                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus, uid, date, pushkey)
 
+                //add new fr to database
                 databaseRef.push().setValue(fr).addOnCompleteListener {
                     if (it.isSuccessful){
                         hideProgressBar()
@@ -94,7 +97,6 @@ class NewFundraiserFragment : Fragment() {
                         Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
                     }
                 }
-                //Toast.makeText(activity, "Validations passed", Toast.LENGTH_SHORT).show()
             }
         }
     }

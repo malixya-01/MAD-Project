@@ -12,5 +12,6 @@ class FundraisingData(
     val username: String? = null,
     val verStatus: Boolean? = null,
     val uid: String? = null,
-    val date: String? = null
+    val date: String? = null,
+    val pushkey: String? = null
 )
