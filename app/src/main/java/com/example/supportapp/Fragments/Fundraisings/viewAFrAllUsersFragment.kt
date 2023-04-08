@@ -44,6 +44,7 @@ class viewAFrAllUsersFragment : Fragment() {
     private fun init() {
 
 
+        binding.vFrACollapsingToolbar.title = args.currentFr.title
 
         binding.tvName.text = args.currentFr.username
         binding.tvDate.text = args.currentFr.date
