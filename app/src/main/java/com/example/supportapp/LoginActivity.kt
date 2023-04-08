@@ -28,12 +28,6 @@ class LoginActivity : AppCompatActivity() {
         //Initializing auth
         auth = FirebaseAuth.getInstance()
 
-        //redirect user to the main activity if user is already logged in
-        if ( auth.currentUser != null ){
-            intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-        }
-
         //Hide action bar
         try {
             this.supportActionBar!!.hide()
