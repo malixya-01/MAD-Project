@@ -55,6 +55,10 @@ class viewAFrAllUsersFragment : Fragment() {
         binding.tvEmail.text = args.currentFr.email
         binding.tvBankDetails.text = args.currentFr.bankDetails
 
+        if(args.currentFr.website.isNullOrBlank()){
+            binding.viewAFrWebContainerLayout.visibility = View.GONE
+        }
+
         //handle progressbar
         var max = args.currentFr.expectedAmt!!.toInt()
         var progress = args.currentFr.collectedAmt!!.toInt()
@@ -101,6 +105,8 @@ class viewAFrAllUsersFragment : Fragment() {
             findNavController().navigate(R.id.action_viewAFrAllUsersFragment_to_sendSupportMsgToAFrFragment)
         }
     }
+
+
 
 
 }
