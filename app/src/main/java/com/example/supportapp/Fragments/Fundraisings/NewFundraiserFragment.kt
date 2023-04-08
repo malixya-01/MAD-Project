@@ -17,6 +17,8 @@ import com.example.supportapp.models.validations.newFrFormData
 import com.example.supportapp.models.validations.ValidationResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class NewFundraiserFragment : Fragment() {
 
@@ -79,8 +81,9 @@ class NewFundraiserFragment : Fragment() {
                 var website = binding.etNewFrWebsite.text.toString()
                 var bankDetails = binding.etNewFrBankDetails.text.toString()
                 var verifiedStatus:Boolean = false
+                var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
-                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus, uid)
+                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus, uid, date)
 
                 databaseRef.push().setValue(fr).addOnCompleteListener {
                     if (it.isSuccessful){
