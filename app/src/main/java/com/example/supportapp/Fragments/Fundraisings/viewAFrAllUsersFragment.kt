@@ -43,9 +43,8 @@ class viewAFrAllUsersFragment : Fragment() {
     }
     private fun init() {
 
-
+        //binding data
         binding.vFrACollapsingToolbar.title = args.currentFr.title
-
         binding.tvName.text = args.currentFr.username
         binding.tvDate.text = args.currentFr.date
         binding.tvTotAmt.text = args.currentFr.expectedAmt
@@ -56,18 +55,25 @@ class viewAFrAllUsersFragment : Fragment() {
         binding.tvEmail.text = args.currentFr.email
         binding.tvBankDetails.text = args.currentFr.bankDetails
 
-        var expectedAmt = args.currentFr.expectedAmt!!.toInt()
-        var collectedAmt = args.currentFr.collectedAmt!!.toInt()
-
-        progressbar(expectedAmt, collectedAmt)
-
-    }
-
-    private fun progressbar( max: Int, progress: Int) {
+        //handle progressbar
+        var max = args.currentFr.expectedAmt!!.toInt()
+        var progress = args.currentFr.collectedAmt!!.toInt()
         progressBar = binding.frProgressBar
         progressBar.max = max
         progressBar.progress = progress
+
+        //handle verified status
+        binding.ivIsVerified.visibility = View.GONE;
+        if (args.currentFr.verStatus == true) {
+            binding.ivIsVerified.visibility = View.VISIBLE;
+
+        }
     }
+
+
+
+
+
 
     private fun registerEvents() {
 
