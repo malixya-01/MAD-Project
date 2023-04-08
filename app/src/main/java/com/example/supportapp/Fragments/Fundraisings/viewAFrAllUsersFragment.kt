@@ -42,7 +42,8 @@ class viewAFrAllUsersFragment : Fragment() {
         registerEvents()
     }
     private fun init() {
-        progressbar()
+
+
 
         binding.tvName.text = args.currentFr.username
         binding.tvDate.text = args.currentFr.date
@@ -54,12 +55,17 @@ class viewAFrAllUsersFragment : Fragment() {
         binding.tvEmail.text = args.currentFr.email
         binding.tvBankDetails.text = args.currentFr.bankDetails
 
+        var expectedAmt = args.currentFr.expectedAmt!!.toInt()
+        var collectedAmt = args.currentFr.collectedAmt!!.toInt()
+
+        progressbar(expectedAmt, collectedAmt)
+
     }
 
-    private fun progressbar() {
+    private fun progressbar( max: Int, progress: Int) {
         progressBar = binding.frProgressBar
-        progressBar.max = 500000
-        progressBar.progress = 210000
+        progressBar.max = max
+        progressBar.progress = progress
     }
 
     private fun registerEvents() {
