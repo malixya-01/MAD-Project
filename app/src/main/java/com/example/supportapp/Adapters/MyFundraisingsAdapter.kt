@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.DataClasses.MyFundraisingsData
 import com.example.supportapp.R
 
-class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
+class MyFundraisingsAdapter(var mList: List<FundraisingData>) :
     RecyclerView.Adapter<MyFundraisingsAdapter.MyFundraisingsViewHolder>() {
 
 
@@ -46,7 +47,6 @@ class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
     }
 
     override fun onBindViewHolder(holder: MyFundraisingsViewHolder, position: Int) {
-        holder.logo.setImageResource(mList[position].logo)
         holder.titleTv.text = mList[position].title
     }
 }
