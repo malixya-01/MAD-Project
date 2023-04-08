@@ -205,7 +205,11 @@
         android:id="@+id/updateFrFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.UpdateFrFragment"
         android:label="Edit Fundraiser"
-        tools:layout="@layout/fragment_update_fr" />
+        tools:layout="@layout/fragment_update_fr" >
+        <argument
+            android:name="currentFrId"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/myRequestsFragment"
         android:name="com.example.supportapp.Fragments.Requests.myRequestsFragment"

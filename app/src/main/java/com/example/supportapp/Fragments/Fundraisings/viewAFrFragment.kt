@@ -99,7 +99,8 @@ class viewAFrFragment : Fragment() {
 
     private fun registerEvents() {
         binding.updateBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_viewAFrFragment_to_updateFrFragment)
+            var action = viewAFrFragmentDirections.actionViewAFrFragmentToUpdateFrFragment(args.currentFr.frId.toString())
+            findNavController().navigate(action)
         }
 
         binding.viewDonors.setOnClickListener {
