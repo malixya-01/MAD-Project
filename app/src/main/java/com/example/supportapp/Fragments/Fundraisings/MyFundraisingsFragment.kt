@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.MyFundraisingsAdapter
 import com.example.supportapp.DataClasses.FundraisingData
-import com.example.supportapp.DataClasses.MyFundraisingsData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentMyFundraisingsBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -101,7 +100,10 @@ class MyFundraisingsFragment : Fragment() {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: MyFundraisingsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_myFundraisingsFragment_to_viewAFrFragment)
+                val myFrData =  mList[position]
+                val action = MyFundraisingsFragmentDirections.actionMyFundraisingsFragmentToViewAFrFragment(myFrData)
+                findNavController().navigate(action)
+
             }
 
         })
