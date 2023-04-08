@@ -50,7 +50,7 @@ class NewFundraiserFragment : Fragment() {
 
         //to access the fundraising
         databaseRef = FirebaseDatabase.getInstance().reference
-            .child("fundraising").child(uid)
+            .child("fundraising")
 
         //to access the users
         databaseRef2 = FirebaseDatabase.getInstance().getReference("users")
@@ -80,7 +80,7 @@ class NewFundraiserFragment : Fragment() {
                 var bankDetails = binding.etNewFrBankDetails.text.toString()
                 var verifiedStatus:Boolean = false
 
-                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus)
+                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus, uid)
 
                 databaseRef.push().setValue(fr).addOnCompleteListener {
                     if (it.isSuccessful){

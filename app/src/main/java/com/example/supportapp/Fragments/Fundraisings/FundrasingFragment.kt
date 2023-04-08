@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,8 +15,7 @@ import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentFundrasingBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class FundrasingFragment : Fragment() {
 
@@ -26,6 +26,9 @@ class FundrasingFragment : Fragment() {
     private var mList = ArrayList<FundraisingData>()
     private lateinit var adapter: FundraisingAdapter
     private lateinit var binding: FragmentFundrasingBinding
+    private lateinit var uid: String
+    private lateinit var frData: FundraisingData
+
 
 
     override fun onCreateView(
@@ -33,20 +36,53 @@ class FundrasingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFundrasingBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        init(view)
+        //addDataToList()
+        retrieveFrs()
+        registerEvents()
+    }
+    private fun init(view: View) {
+        auth = FirebaseAuth.getInstance()
+        uid = auth.currentUser?.uid.toString()
+        databaseRef = FirebaseDatabase.getInstance().reference.child("fundraising")
 
         recyclerView = binding.recyclerView
         searchView = binding.searchView
 
         recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(getActivity());
-
-        addDataToList()
-
+        recyclerView.layoutManager = LinearLayoutManager(context);
 
         adapter = FundraisingAdapter(mList)
         recyclerView.adapter = adapter
 
+    }
+    private fun retrieveFrs() {
+        databaseRef.addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                mList.clear()
+                for ( frSnapshot in snapshot.children){
+                    val fr = frSnapshot.getValue(FundraisingData::class.java)!!
+                    if( fr != null){
+                        mList.add(fr)
+                    }
+                }
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
+    private fun registerEvents() {
 
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_fundrasingFragment_to_newFundraiserFragment)
@@ -57,33 +93,14 @@ class FundrasingFragment : Fragment() {
             override fun onItemClick(position: Int) {
                 findNavController().navigate(R.id.action_fundrasingFragment_to_viewAFrAllUsersFragment)
             }
-
         })
-
-
-
-        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-       // init(view)
-
-
-
-    }
-
-    private fun init(view: View) {
-        auth = FirebaseAuth.getInstance()
-        databaseRef = FirebaseDatabase.getInstance().reference.child("fundraising")
-
-
-    }
 
     private fun addDataToList(){
-        mList.add(FundraisingData("Donate a CT scanner", "he Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to","2000000", "10000", "0732254620", "leo@sliit.lk", "www.leo.sliit.lk", "BOC Malabe branch", "Leo Club Sliit", false))
-        mList.add(FundraisingData("Donate a CT scanner", "he Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to","2000000", "10000", "0732254620", "leo@sliit.lk", "www.leo.sliit.lk", "BOC Malabe branch", "Leo Club Sliit", false))
-        mList.add(FundraisingData("Donate a CT scanner", "he Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to","2000000", "10000", "0732254620", "leo@sliit.lk", "www.leo.sliit.lk", "BOC Malabe branch", "Leo Club Sliit", false))
+        mList.add(FundraisingData("Donate a CT scanner", "he Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to","2000000", "10000", "0732254620", "leo@sliit.lk", "www.leo.sliit.lk", "BOC Malabe branch", "Leo Club Sliit", false, "abcd"))
+        mList.add(FundraisingData("Donate a CT scanner", "he Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to","2000000", "10000", "0732254620", "leo@sliit.lk", "www.leo.sliit.lk", "BOC Malabe branch", "Leo Club Sliit", false, "abcd"))
+        mList.add(FundraisingData("Donate a CT scanner", "he Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to","2000000", "10000", "0732254620", "leo@sliit.lk", "www.leo.sliit.lk", "BOC Malabe branch", "Leo Club Sliit", false, "abcd"))
     }
 }
