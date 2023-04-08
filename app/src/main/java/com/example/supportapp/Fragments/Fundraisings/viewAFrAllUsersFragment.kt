@@ -37,10 +37,17 @@ class viewAFrAllUsersFragment : Fragment() {
         registerEvents()
     }
     private fun init() {
+        progressbar()
+
+
+    }
+
+    private fun progressbar() {
         progressBar = binding.frProgressBar
         progressBar.max = 500000
         progressBar.progress = 210000
     }
+
     private fun registerEvents() {
 
         //toggle saved items
