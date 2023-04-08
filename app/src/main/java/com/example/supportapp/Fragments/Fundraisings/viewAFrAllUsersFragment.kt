@@ -38,6 +38,7 @@ class viewAFrAllUsersFragment : Fragment() {
     }
     private fun init() {
         progressBar = binding.frProgressBar
+        progressBar.max = 500000
         progressBar.progress = 210000
     }
     private fun registerEvents() {
