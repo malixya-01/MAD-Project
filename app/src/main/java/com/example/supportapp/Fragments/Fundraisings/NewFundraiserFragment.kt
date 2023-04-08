@@ -30,7 +30,10 @@ class NewFundraiserFragment : Fragment() {
     private lateinit var uid: String
     private lateinit var user: User
     private var isValidationSuccess = false
+
+    //to store retrieved data from the users
     private var userName: String? = null
+    private var isVerified: Boolean? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,7 +83,7 @@ class NewFundraiserFragment : Fragment() {
                 var website = binding.etNewFrWebsite.text.toString()
                 var bankDetails = binding.etNewFrBankDetails.text.toString()
 
-                var verifiedStatus:Boolean = false
+                var verifiedStatus = isVerified
                 var pushkey = databaseRef.push().key;
                 var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
@@ -108,6 +111,7 @@ class NewFundraiserFragment : Fragment() {
                 //retrieve values from the db and convert them to user data class
                 user = snapshot.getValue(User::class.java)!!
                 userName = user.name
+                isVerified = user.isVerified
             }
 
             override fun onCancelled(error: DatabaseError) {

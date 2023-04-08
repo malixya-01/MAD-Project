@@ -75,6 +75,7 @@ class CreateAccountActivity : AppCompatActivity() {
             val address = binding.etAddress.text.toString()
             val password = binding.etPassword.text.toString()
             val confirmPwd = binding.etConfirmPwd.text.toString()
+            val isVerified = false
 
             showProgressBar()
             binding.etPasswordLayout.isPasswordVisibilityToggleEnabled = true
@@ -135,7 +136,7 @@ class CreateAccountActivity : AppCompatActivity() {
                         //store user details in the database
                         val databaseRef =
                             database.reference.child("users").child(auth.currentUser!!.uid)
-                        val user: User = User(name, email, phone, address, auth.currentUser!!.uid)
+                        val user: User = User(name, email, phone, address, auth.currentUser!!.uid, isVerified)
                         databaseRef.setValue(user).addOnCompleteListener {
                             if (it.isSuccessful) {
                                 //Upload profile picture to firebase storage
