@@ -1,10 +1,12 @@
 package com.example.supportapp.Fragments.Fundraisings
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
@@ -27,7 +29,7 @@ class FundrasingFragment : Fragment() {
     private lateinit var adapter: FundraisingAdapter
     private lateinit var binding: FragmentFundrasingBinding
     private lateinit var uid: String
-    private lateinit var frData: FundraisingData
+    private lateinit var dialog: Dialog
 
 
 
@@ -63,6 +65,7 @@ class FundrasingFragment : Fragment() {
 
     }
     private fun retrieveFrs() {
+        showProgressBar()
         databaseRef.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 mList.clear()
@@ -73,9 +76,11 @@ class FundrasingFragment : Fragment() {
                     }
                 }
                 adapter.notifyDataSetChanged()
+                hideProgressBar()
             }
 
             override fun onCancelled(error: DatabaseError) {
+                hideProgressBar()
                 Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
             }
 
@@ -96,6 +101,16 @@ class FundrasingFragment : Fragment() {
         })
     }
 
+    private fun showProgressBar(){
+        dialog = Dialog(this@FundrasingFragment.requireContext())
+        dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_wait)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+    private fun hideProgressBar(){
+        dialog.dismiss()
+    }
 
 
     private fun addDataToList(){
