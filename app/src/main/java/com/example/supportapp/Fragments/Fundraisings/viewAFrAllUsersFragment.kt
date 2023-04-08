@@ -9,7 +9,9 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavArgs
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewAFrAllUsersBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -17,6 +19,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class viewAFrAllUsersFragment : Fragment() {
 
     private lateinit var binding: FragmentViewAFrAllUsersBinding
+
+    //safe args
+    private val args by navArgs<viewAFrAllUsersFragmentArgs>()
 
     // variables to function progress bar
     lateinit var progressBar: ProgressBar
@@ -39,6 +44,15 @@ class viewAFrAllUsersFragment : Fragment() {
     private fun init() {
         progressbar()
 
+        binding.tvName.text = args.currentFr.username
+        binding.tvDate.text = args.currentFr.date
+        binding.tvTotAmt.text = args.currentFr.expectedAmt
+        binding.tvReqAmt.text = args.currentFr.collectedAmt
+        binding.tvDes.text = args.currentFr.description
+        binding.tvPhone.text = args.currentFr.contactNo
+        binding.tvWeb.text = args.currentFr.website
+        binding.tvEmail.text = args.currentFr.email
+        binding.tvBankDetails.text = args.currentFr.bankDetails
 
     }
 

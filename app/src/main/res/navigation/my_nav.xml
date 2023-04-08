@@ -151,6 +151,9 @@
         <action
             android:id="@+id/action_viewAFrAllUsersFragment_to_sendSupportMsgToAFrFragment"
             app:destination="@id/sendSupportMsgToAFrFragment" />
+        <argument
+            android:name="currentFr"
+            app:argType="com.example.supportapp.DataClasses.FundraisingData" />
     </fragment>
     <fragment
         android:id="@+id/viewADonationFragment"

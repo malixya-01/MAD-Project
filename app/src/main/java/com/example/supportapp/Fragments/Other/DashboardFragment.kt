@@ -91,7 +91,7 @@ class DashboardFragment : Fragment() {
                 user = snapshot.getValue(User::class.java)!!
 
                 //binding data
-                dashboardUserName.setText(user.name)
+                dashboardUserName.text = user.name
 
                 //retrieve user profile picture
                 getUserProfilePicture()

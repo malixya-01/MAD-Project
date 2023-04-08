@@ -30,6 +30,7 @@ class FundrasingFragment : Fragment() {
     private lateinit var binding: FragmentFundrasingBinding
     private lateinit var uid: String
     private lateinit var dialog: Dialog
+    //private lateinit var fr: FundraisingData
 
 
 
@@ -96,7 +97,10 @@ class FundrasingFragment : Fragment() {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: FundraisingAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_fundrasingFragment_to_viewAFrAllUsersFragment)
+                val frData =  mList[position]
+
+            val action = FundrasingFragmentDirections.actionFundrasingFragmentToViewAFrAllUsersFragment(frData)
+            findNavController().navigate(action)
             }
         })
     }
