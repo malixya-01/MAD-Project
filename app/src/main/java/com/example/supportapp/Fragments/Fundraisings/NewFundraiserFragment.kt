@@ -84,14 +84,13 @@ class NewFundraiserFragment : Fragment() {
                 var bankDetails = binding.etNewFrBankDetails.text.toString()
 
                 var verifiedStatus = isVerified
-                var pushkey = databaseRef.push().key;
                 var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
+                //Id for new fr
+                var frId = databaseRef.push().key!!
                 //create a FundraisingData object
-                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus, uid, date, pushkey)
-
-                //add new fr to database
-                databaseRef.push().setValue(fr).addOnCompleteListener {
+                val fr = FundraisingData(title, description, expectedAmt, collectedAmt, contactNo, email, website, bankDetails, userName, verifiedStatus, uid, date, frId)
+                databaseRef.child(frId).setValue(fr).addOnCompleteListener {
                     if (it.isSuccessful){
                         hideProgressBar()
                         findNavController().navigate(R.id.action_newFundraiserFragment_to_fundrasingFragment)
