@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
@@ -25,10 +26,11 @@ class UpdateFrFragment : Fragment() {
     private lateinit var databaseReference: DatabaseReference
     private lateinit var dialog: Dialog
     private lateinit var currentFr: FundraisingData
-
-
     private var isValidationSuccess = false
+
+
     private val args : UpdateFrFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,9 +63,9 @@ class UpdateFrFragment : Fragment() {
 
     private fun getCurrentFundraiser() {
         showProgressBar()
-        var currentFrId = args.currentFrId
 
-        databaseReference.child(currentFrId).addValueEventListener(object : ValueEventListener{
+
+        databaseReference.child(args.currentFrId).addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 //retrieve values from the db and convert them to fr model class
                 currentFr = snapshot.getValue(FundraisingData::class.java)!!
@@ -98,7 +100,28 @@ class UpdateFrFragment : Fragment() {
             validateForm()
 
             if(isValidationSuccess){
-                Toast.makeText(activity, "Validations passed", Toast.LENGTH_SHORT).show()
+                //create hashMap to keep key and value pairs
+                val map = HashMap<String,Any>()
+
+                //add data to hashMap
+                map["title"] = binding.etUpdateFrTitle.text.toString()
+                map["description"] = binding.etUpdateFrDescription.text.toString()
+                map["expectedAmt"] = binding.etUpdateFrExpectedAmt.text.toString()
+                map["collectedAmt"] = binding.etUpdateFrCollectedAmt.text.toString()
+                map["contactNo"] = binding.etUpdateFrContactNo.text.toString()
+                map["email"] = binding.etUpdateFrEmail.text.toString()
+                map["website"] = binding.etUpdateFrWebsite.text.toString()
+                map["bankDetails"] = binding.etUpdateFrBankDetails.text.toString()
+
+                //update database from hashMap
+                databaseReference.child(args.currentFrId).updateChildren(map).addOnCompleteListener {
+                    if( it.isSuccessful){
+                        Toast.makeText(context, "Fundraiser updated", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_viewAFrFragment_to_updateFrFragment)
+                    } else {
+                        Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
     }

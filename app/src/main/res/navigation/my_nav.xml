@@ -209,6 +209,9 @@
         <argument
             android:name="currentFrId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_updateFrFragment_to_viewAFrFragment"
+            app:destination="@id/viewAFrFragment" />
     </fragment>
     <fragment
         android:id="@+id/myRequestsFragment"
