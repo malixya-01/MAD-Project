@@ -66,7 +66,9 @@ class FundrasingFragment : Fragment() {
 
     }
     private fun retrieveFrs() {
-        showProgressBar()
+        if (mList.isEmpty()){
+            showProgressBar()
+        }
         databaseRef.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 mList.clear()
