@@ -56,7 +56,7 @@ class MyFundraisingsAdapter(var mList: List<FundraisingData>) :
 
         holder.titleTv.text = mList[position].title
         holder.dateTv.text = mList[position].date
-        holder.donorCountTv.text = mList[position].donorCount
+        //holder.donorCountTv.text = mList[position].donorCount
         holder.shortAmtTv.text = shortAmt.toString()
 
     }

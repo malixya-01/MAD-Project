@@ -23,12 +23,15 @@ class MyFundraisingsFragment : Fragment() {
     private lateinit var binding: FragmentMyFundraisingsBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseRef: DatabaseReference
+    private lateinit var supFrDBRef: DatabaseReference
     private lateinit var uid: String
     private lateinit var dialog: Dialog
 
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<FundraisingData>()
     private lateinit var adapter: MyFundraisingsAdapter
+
+    private lateinit var fr: FundraisingData
 
 
     override fun onCreateView(
@@ -44,8 +47,8 @@ class MyFundraisingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         init()
-        //retrieveFrs()
-        addDataToList()
+        retrieveFrs()
+        //addDataToList()
         registerEvents()
 
     }
@@ -54,7 +57,9 @@ class MyFundraisingsFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
+
         databaseRef = FirebaseDatabase.getInstance().reference.child("fundraising")
+        supFrDBRef = FirebaseDatabase.getInstance().reference.child("supportFundraiser")
 
 
         recyclerView = binding.recyclerView
@@ -78,20 +83,32 @@ class MyFundraisingsFragment : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 mList.clear()
                 for ( myFrSnapshot in snapshot.children){
-                    val fr = myFrSnapshot.getValue(FundraisingData::class.java)!!
-                    if( fr != null){
-                        mList.add(fr)
-                    }
+                    fr = myFrSnapshot.getValue(FundraisingData::class.java)!!
+                    getDonorCount(fr.frId)
+                    mList.add(fr)
                 }
                 adapter.notifyDataSetChanged()
                 hideProgressBar()
             }
-
             override fun onCancelled(error: DatabaseError) {
                 hideProgressBar()
                 Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
             }
 
+        })
+    }
+
+    private fun getDonorCount(frId: String?) {
+        //get support messages count for each fr
+        supFrDBRef.child(frId!!).addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    fr.donorCount = snapshot.childrenCount.toString()
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
+            }
         })
     }
 

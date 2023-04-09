@@ -18,5 +18,5 @@ class FundraisingData(
     val uid: String? = null,
     val date: String? = null,
     val frId: String? = null,
-    val donorCount: String? = null
+    var donorCount: String? = null
 ): Parcelable
