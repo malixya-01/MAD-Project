@@ -193,7 +193,8 @@
         tools:layout="@layout/fragment_view_a_fr">
         <action
             android:id="@+id/action_viewAFrFragment_to_updateFrFragment"
-            app:destination="@id/updateFrFragment" />
+            app:destination="@id/updateFrFragment"
+            app:popUpTo="@id/viewAFrFragment" />
         <action
             android:id="@+id/action_viewAFrFragment_to_viewAllDonorsToAFrFragment"
             app:destination="@id/viewAllDonorsToAFrFragment" />
@@ -213,8 +214,9 @@
             android:name="currentFrId"
             app:argType="string" />
         <action
-            android:id="@+id/action_updateFrFragment_to_viewAFrFragment"
-            app:destination="@id/viewAFrFragment" />
+            android:id="@+id/action_updateFrFragment_to_myFundraisingsFragment"
+            app:destination="@id/myFundraisingsFragment"
+            app:popUpTo="@id/dashboardFragment" />
     </fragment>
     <fragment
         android:id="@+id/myRequestsFragment"
