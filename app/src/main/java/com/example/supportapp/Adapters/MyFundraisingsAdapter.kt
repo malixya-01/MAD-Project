@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.DataClasses.FundraisingData
-import com.example.supportapp.DataClasses.MyFundraisingsData
 import com.example.supportapp.R
 
 class MyFundraisingsAdapter(var mList: List<FundraisingData>) :
@@ -38,7 +37,7 @@ class MyFundraisingsAdapter(var mList: List<FundraisingData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyFundraisingsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_reqs_and_dons, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_fundraisings, parent, false)
         return MyFundraisingsViewHolder(view, mListner)
     }
 
