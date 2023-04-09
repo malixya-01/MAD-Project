@@ -18,6 +18,8 @@ import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewAFrBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
@@ -33,6 +35,7 @@ class viewAFrFragment : Fragment() {
     private lateinit var fab: FloatingActionButton
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var databaseReference: DatabaseReference
     private lateinit var storageReference : StorageReference
     private lateinit var dialog: Dialog
 
@@ -54,6 +57,8 @@ class viewAFrFragment : Fragment() {
     }
 
     private fun init() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("fundraising")
 
         //retrieve user profile pic
         var frUid = args.currentFr.uid
@@ -160,7 +165,12 @@ class viewAFrFragment : Fragment() {
         }
 
         deleteButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show()
+            databaseReference.child(args.currentFr.frId!!).removeValue().addOnCompleteListener {
+                if( it.isSuccessful){
+                    Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_viewAFrFragment_to_myFundraisingsFragment)
+                }
+            }
             dialog.dismiss()
         }
 
