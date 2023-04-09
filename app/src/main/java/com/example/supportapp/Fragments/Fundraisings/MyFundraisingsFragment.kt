@@ -44,7 +44,8 @@ class MyFundraisingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         init()
-        retrieveFrs()
+        //retrieveFrs()
+        addDataToList()
         registerEvents()
 
     }
@@ -111,10 +112,24 @@ class MyFundraisingsFragment : Fragment() {
 
     }
 
-   /* private fun addDataToList(){
-        mList.add(MyFundraisingsData("My Fundraising 1", R.drawable.unselected_fundraising))
-        mList.add(MyFundraisingsData("My Fundraising 2", R.drawable.unselected_fundraising))
-    }*/
+    private fun addDataToList(){
+        mList.clear()
+        mList.add(FundraisingData(
+            "My Fundraising 1",
+            "The Leo Club of the SLIIT is organizing a fundraiser to donate a CT scanner to the Maharagama Apeksha Cancer Hospital. The hospital provides essential cancer care to patients who cannot afford it, and we believe that the donation of a CT scanner will help improve the quality of care for these patients.\\n\\nOur fundraising goal is to raise Rs. 200,000 in total,",
+            "175000",
+            "25000",
+            "",
+            "",
+            "",
+            "",
+            "",
+            false,
+            "",
+            "2023/04/09",
+            ""
+        ))
+    }
 
     private fun showProgressBar(){
         dialog = Dialog(this@MyFundraisingsFragment.requireContext())
