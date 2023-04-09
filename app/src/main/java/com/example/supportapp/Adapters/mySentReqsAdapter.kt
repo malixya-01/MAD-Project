@@ -23,7 +23,6 @@ class mySentReqsAdapter(var mList: List<mySentReqsData>) :
     }
 
     inner class mySentReqsViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
-        val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
 
         init{
@@ -35,7 +34,7 @@ class mySentReqsAdapter(var mList: List<mySentReqsData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): mySentReqsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_reqs_and_dons, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_reqs_and_dons_test, parent, false)
         return mySentReqsViewHolder(view)
     }
 
@@ -44,7 +43,6 @@ class mySentReqsAdapter(var mList: List<mySentReqsData>) :
     }
 
     override fun onBindViewHolder(holder: mySentReqsViewHolder, position: Int) {
-        holder.logo.setImageResource(mList[position].logo)
         holder.titleTv.text = mList[position].title
     }
 }

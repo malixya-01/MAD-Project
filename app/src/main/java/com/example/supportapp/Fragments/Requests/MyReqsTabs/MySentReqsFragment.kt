@@ -48,9 +48,10 @@ class mySentReqsFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(mySentReqsData("My request 1...", R.drawable.unselected_requests))
-        mList.add(mySentReqsData("My request 2...", R.drawable.unselected_requests))
-        mList.add(mySentReqsData("My request 2...", R.drawable.unselected_requests))
+        mList.clear()
+        mList.add(mySentReqsData("My request 1..."))
+        mList.add(mySentReqsData("My request 2..."))
+        mList.add(mySentReqsData("My request 3..."))
     }
 
 }
