@@ -117,7 +117,7 @@ class UpdateFrFragment : Fragment() {
                 databaseReference.child(args.currentFrId).updateChildren(map).addOnCompleteListener {
                     if( it.isSuccessful){
                         Toast.makeText(context, "Fundraiser updated", Toast.LENGTH_SHORT).show()
-                        findNavController().navigate(R.id.action_viewAFrFragment_to_updateFrFragment)
+                        //findNavController().navigate(R.id.action_updateFrFragment_to_viewAFrFragment)
                     } else {
                         Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
                     }

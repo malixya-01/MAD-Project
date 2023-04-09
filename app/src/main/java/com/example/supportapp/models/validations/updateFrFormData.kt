@@ -69,7 +69,7 @@ class updateFrFormData (
     }
 
     fun validateWebsite(): ValidationResult {
-        return if (website.isNotEmpty()){
+        return if (website.isNotEmpty() && !website.matches(urlPattern.toRegex())){
             ValidationResult.Invalid("Enter a valid website url")
         }  else {
             ValidationResult.Valid
