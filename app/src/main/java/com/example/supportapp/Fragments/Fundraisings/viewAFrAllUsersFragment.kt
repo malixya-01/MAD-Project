@@ -8,11 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavArgs
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.supportapp.R
@@ -118,7 +116,9 @@ class viewAFrAllUsersFragment : Fragment() {
         }
 
         binding.btnSup.setOnClickListener {
-            findNavController().navigate(R.id.action_viewAFrAllUsersFragment_to_sendSupportMsgToAFrFragment)
+            var currFrId = args.currentFr.frId
+            var action = viewAFrAllUsersFragmentDirections.actionViewAFrAllUsersFragmentToSendSupportMsgToAFrFragment(currFrId!!)
+            findNavController().navigate(action)
         }
     }
 
