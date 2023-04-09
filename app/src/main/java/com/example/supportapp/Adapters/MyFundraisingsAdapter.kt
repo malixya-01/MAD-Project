@@ -29,6 +29,7 @@ class MyFundraisingsAdapter(var mList: List<FundraisingData>) :
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
         val dateTv : TextView = itemView.findViewById(R.id.tvMyFrDate)
         val shortAmtTv : TextView = itemView.findViewById(R.id.tvMyFrShortAmt)
+        val donorCountTv : TextView = itemView.findViewById(R.id.tvDonorCount)
 
         init{
             itemView.setOnClickListener {
@@ -55,6 +56,7 @@ class MyFundraisingsAdapter(var mList: List<FundraisingData>) :
 
         holder.titleTv.text = mList[position].title
         holder.dateTv.text = mList[position].date
+        holder.donorCountTv.text = mList[position].donorCount
         holder.shortAmtTv.text = shortAmt.toString()
 
     }
