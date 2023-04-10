@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
-import com.example.supportapp.DataClasses.suppportFundraiserData
+import com.example.supportapp.DataClasses.supportFundraiserData
 import com.example.supportapp.DataClasses.validations.ValidationResult
 import com.example.supportapp.DataClasses.validations.sendMessageFormData
 import com.example.supportapp.R
@@ -68,7 +68,7 @@ class sendSupportMsgToAFrFragment : Fragment() {
                 var id = databaseReference.push().key!!
 
                 //supportFr object
-                var supFr = suppportFundraiserData(id, uid, email, phone, msg)
+                var supFr = supportFundraiserData(id, uid, email, phone, msg)
 
                 //push created object to the db
                 databaseReference.child(id).setValue(supFr).addOnCompleteListener {
