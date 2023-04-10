@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -18,9 +17,7 @@ import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewAFrBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
@@ -108,7 +105,8 @@ class viewAFrFragment : Fragment() {
         }
 
         binding.viewDonors.setOnClickListener {
-            findNavController().navigate(R.id.action_viewAFrFragment_to_viewAllDonorsToAFrFragment)
+            var action = viewAFrFragmentDirections.actionViewAFrFragmentToViewAllDonorsToAFrFragment(args.currFrId)
+            findNavController().navigate(action)
         }
 
         binding.btnDlt.setOnClickListener {

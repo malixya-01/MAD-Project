@@ -272,7 +272,11 @@
         android:id="@+id/viewAllDonorsToAFrFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.viewAllDonorsToAFrFragment"
         android:label="@string/viewAllDonorsToAFrToolbarTitle"
-        tools:layout="@layout/fragment_view_all_donors_to_a_fr" />
+        tools:layout="@layout/fragment_view_all_donors_to_a_fr" >
+        <argument
+            android:name="currFrId"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="com.example.supportapp.Fragments.Other.NotificationsFragment"

@@ -17,6 +17,8 @@ import com.example.supportapp.databinding.FragmentSendSupportMsgToAFrBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class sendSupportMsgToAFrFragment : Fragment() {
 
@@ -63,12 +65,13 @@ class sendSupportMsgToAFrFragment : Fragment() {
                 var phone = binding.etSupFrPhone.text.toString()
                 var email = binding.etSupFrEmail.text.toString()
                 var msg = binding.etSupFrMsg.text.toString()
+                var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
                 //Id for new record
                 var id = databaseReference.push().key!!
 
                 //supportFr object
-                var supFr = supportFundraiserData(id, uid, email, phone, msg)
+                var supFr = supportFundraiserData(id, uid, email, phone, msg, date)
 
                 //push created object to the db
                 databaseReference.child(id).setValue(supFr).addOnCompleteListener {
