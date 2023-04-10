@@ -57,6 +57,7 @@ class sendSupportMsgToAFrFragment : Fragment() {
         binding.btnSupFrSubmit.setOnClickListener {
             validateForm()
             if(isFormValidationSuccess){
+                Toast.makeText(context, "Validations passed", Toast.LENGTH_SHORT).show()
                 showProgressBar()
                 //initialize variables
                 var phone = binding.etSupFrPhone.text.toString()
@@ -89,8 +90,8 @@ class sendSupportMsgToAFrFragment : Fragment() {
 
         //variable to keep count of passed validations
         var emptyContactDetailsCount = 0 // to track contact details validity
-        var otherDetailsCount = 0 //to track other details validity
-        var totCount = 0 // to track all fields validity
+        var contactDetailsValidity = 0 // to track all fields validity
+        var otherDetailsValidity = 0 //to track other details validity
 
         //create a updateFrFormData class object
         var myForm = sendMessageFormData(
@@ -108,32 +109,37 @@ class sendSupportMsgToAFrFragment : Fragment() {
         when(contactNoValidation) {
             is ValidationResult.Empty -> emptyContactDetailsCount++
             is ValidationResult.Invalid -> binding.etSupFrPhone.error = contactNoValidation.errorMessage
-            is ValidationResult.Valid -> totCount++
+            is ValidationResult.Valid -> contactDetailsValidity++
         }
 
         when(emailValidation) {
             is ValidationResult.Empty -> emptyContactDetailsCount++
             is ValidationResult.Invalid -> binding.etSupFrEmail.error = emailValidation.errorMessage
-            is ValidationResult.Valid -> totCount++
+            is ValidationResult.Valid -> contactDetailsValidity++
         }
 
         when(messageValidation) {
             is ValidationResult.Empty -> binding.etSupFrMsg.error = messageValidation.errorMessage
             is ValidationResult.Invalid -> {}
-            is ValidationResult.Valid -> {
-                otherDetailsCount++
-                totCount++
-            }
+            is ValidationResult.Valid -> otherDetailsValidity++
         }
 
         //make sure any of the contact details is filled
-        if (emptyContactDetailsCount == 2 ){
-            Toast.makeText(context, "Please fill contact number or email", Toast.LENGTH_SHORT).show()
-        }
+        if (emptyContactDetailsCount != 2 ){
 
-        //set isValidationSuccess to true if all validations are success
-        if( (emptyContactDetailsCount != 2)  && (totCount >= 2) ) {
-            isFormValidationSuccess = true
+            //get number of entered contact fields
+            var enteredContactDetails = 0
+            when(emptyContactDetailsCount){
+                0 -> enteredContactDetails = 2
+                1 -> enteredContactDetails = 1
+            }
+
+            //set isValidationSuccess to true if all validations are success
+            if( (contactDetailsValidity == enteredContactDetails) && (otherDetailsValidity != 0)) {
+                isFormValidationSuccess = true
+            }
+        } else {
+            Toast.makeText(context, "Please fill contact number or email", Toast.LENGTH_SHORT).show()
         }
     }
 
