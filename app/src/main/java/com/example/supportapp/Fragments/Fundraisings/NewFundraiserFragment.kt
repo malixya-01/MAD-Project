@@ -13,8 +13,8 @@ import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.DataClasses.User
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentNewFundraiserBinding
-import com.example.supportapp.models.validations.newFrFormData
-import com.example.supportapp.models.validations.ValidationResult
+import com.example.supportapp.DataClasses.validations.newFrFormData
+import com.example.supportapp.DataClasses.validations.ValidationResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDateTime

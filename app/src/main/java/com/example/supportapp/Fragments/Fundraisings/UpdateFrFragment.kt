@@ -13,11 +13,10 @@ import androidx.navigation.fragment.navArgs
 import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentUpdateFrBinding
-import com.example.supportapp.models.validations.ValidationResult
-import com.example.supportapp.models.validations.updateFrFormData
+import com.example.supportapp.DataClasses.validations.ValidationResult
+import com.example.supportapp.DataClasses.validations.updateFrFormData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 
 class UpdateFrFragment : Fragment() {
 

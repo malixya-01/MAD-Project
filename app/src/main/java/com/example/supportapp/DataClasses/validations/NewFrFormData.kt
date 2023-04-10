@@ -1,4 +1,4 @@
-package com.example.supportapp.models.validations
+package com.example.supportapp.DataClasses.validations
 
 class newFrFormData(
     private var title: String,
