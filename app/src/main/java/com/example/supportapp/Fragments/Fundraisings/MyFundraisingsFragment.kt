@@ -119,8 +119,7 @@ class MyFundraisingsFragment : Fragment() {
         adapter.setOnItemClickListner(object: MyFundraisingsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
                 val myFrData =  mList[position]
-                val currFrId = mList[position].frId!!
-                val action = MyFundraisingsFragmentDirections.actionMyFundraisingsFragmentToViewAFrFragment(currFrId)
+                val action = MyFundraisingsFragmentDirections.actionMyFundraisingsFragmentToViewAFrFragment(myFrData)
                 findNavController().navigate(action)
 
             }

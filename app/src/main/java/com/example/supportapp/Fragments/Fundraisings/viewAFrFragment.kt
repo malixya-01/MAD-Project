@@ -10,14 +10,16 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewAFrBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.database.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
@@ -27,15 +29,15 @@ class viewAFrFragment : Fragment() {
     private lateinit var binding: FragmentViewAFrBinding
 
     //safe args
-    private val args: viewAFrFragmentArgs by navArgs()
+    private val args by navArgs<viewAFrAllUsersFragmentArgs>()
 
     lateinit var progressBar: ProgressBar
     private lateinit var fab: FloatingActionButton
 
+    private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
-    private lateinit var storageReference: StorageReference
+    private lateinit var storageReference : StorageReference
     private lateinit var dialog: Dialog
-    private lateinit var currentFundraiser: FundraisingData
 
 
     override fun onCreateView(
@@ -44,68 +46,64 @@ class viewAFrFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentViewAFrBinding.inflate(inflater, container, false)
-        return binding.root;
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
+        registerEvents()
+
+    }
+
+    private fun init() {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("fundraising")
 
-        databaseReference.child(args.currFrId).addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                currentFundraiser = snapshot.getValue(FundraisingData::class.java)!!
+        //retrieve user profile pic
+        var frUid = args.currentFr.uid
+        storageReference = FirebaseStorage.getInstance().reference.child("Users/$frUid")
+        getUserProfilePicture()
 
-                //retrieve user profile pic
-                var frUid = currentFundraiser.uid
-                storageReference = FirebaseStorage.getInstance().reference.child("Users/$frUid")
-                getUserProfilePicture()
+        //binding data
+        binding.vMyFrCollapsingToolbar.title = args.currentFr.title
 
-                //binding data
-                binding.vMyFrCollapsingToolbar.title = currentFundraiser.title
+        binding.tvName.text = args.currentFr.username
+        binding.tvDate.text = args.currentFr.date
+        binding.tvTotAmt.text = args.currentFr.expectedAmt
+        binding.tvReqAmt.text = args.currentFr.collectedAmt
+        binding.tvDes.text = args.currentFr.description
+        binding.tvPhone.text = args.currentFr.contactNo
+        binding.tvWeb.text = args.currentFr.website
+        binding.tvEmail.text = args.currentFr.email
+        binding.tvBankDetails.text = args.currentFr.bankDetails
 
-                binding.tvName.text = currentFundraiser.username
-                binding.tvDate.text = currentFundraiser.date
-                binding.tvTotAmt.text = currentFundraiser.expectedAmt
-                binding.tvReqAmt.text = currentFundraiser.collectedAmt
-                binding.tvDes.text = currentFundraiser.description
-                binding.tvPhone.text = currentFundraiser.contactNo
-                binding.tvWeb.text = currentFundraiser.website
-                binding.tvEmail.text = currentFundraiser.email
-                binding.tvBankDetails.text = currentFundraiser.bankDetails
+        if(args.currentFr.website.isNullOrBlank()){
+            binding.tvWeb.text = "No web site..."
+        }
 
-                if (currentFundraiser.website.isNullOrBlank()) {
-                    binding.tvWeb.text = "No web site..."
-                }
+        //handle progressbar
+        var max = args.currentFr.expectedAmt!!.toInt()
+        var progress = args.currentFr.collectedAmt!!.toInt()
+        progressBar = binding.frProgressBar
+        progressBar.max = max
+        progressBar.progress = progress
 
-                //handle progressbar
-                var max = currentFundraiser.expectedAmt!!.toInt()
-                var progress = currentFundraiser.collectedAmt!!.toInt()
-                progressBar = binding.frProgressBar
-                progressBar.max = max
-                progressBar.progress = progress
+        //handle verified status
+        binding.ivIsVerified.visibility = View.GONE;
+        if (args.currentFr.verStatus == true) {
+            binding.ivIsVerified.visibility = View.VISIBLE;
+        }
+    }
 
-                //handle verified status
-                binding.ivIsVerified.visibility = View.GONE;
-                if (currentFundraiser.verStatus == true) {
-                    binding.ivIsVerified.visibility = View.VISIBLE;
-                }
-
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
-            }
-        })
-
+    private fun registerEvents() {
         binding.updateBtn.setOnClickListener {
-            var action = viewAFrFragmentDirections.actionViewAFrFragmentToUpdateFrFragment(currentFundraiser.frId.toString())
+            var action = viewAFrFragmentDirections.actionViewAFrFragmentToUpdateFrFragment(args.currentFr.frId.toString())
             findNavController().navigate(action)
         }
 
         binding.viewDonors.setOnClickListener {
-            var action = viewAFrFragmentDirections.actionViewAFrFragmentToViewAllDonorsToAFrFragment(args.currFrId)
+            var action = viewAFrFragmentDirections.actionViewAFrFragmentToViewAllDonorsToAFrFragment(args.currentFr.frId!!)
             findNavController().navigate(action)
         }
 
@@ -131,21 +129,20 @@ class viewAFrFragment : Fragment() {
 
             hideProgressBar()
 
-        }.addOnFailureListener {
+        }.addOnFailureListener{
             hideProgressBar()
             Toast.makeText(activity, "Failed to retrieve user image", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun showProgressBar() {
+    private fun showProgressBar(){
         dialog = Dialog(this@viewAFrFragment.requireContext())
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.dialog_wait)
         dialog.setCanceledOnTouchOutside(false)
         dialog.show()
     }
-
-    private fun hideProgressBar() {
+    private fun hideProgressBar(){
         dialog.dismiss()
     }
 
@@ -162,7 +159,7 @@ class viewAFrFragment : Fragment() {
             dialog.dismiss()
         }
 
-        /*deleteButton.setOnClickListener {
+        deleteButton.setOnClickListener {
             databaseReference.child(args.currentFr.frId!!).removeValue().addOnCompleteListener {
                 if( it.isSuccessful){
                     Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show()
@@ -170,10 +167,8 @@ class viewAFrFragment : Fragment() {
                 }
             }
             dialog.dismiss()
-        }*/
+        }
 
         dialog.show()
     }
-
-
 }
