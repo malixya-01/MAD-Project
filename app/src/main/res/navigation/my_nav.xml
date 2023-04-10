@@ -5,7 +5,7 @@
     android:id="@+id/my_nav"
     android:label="@string/myFundraisingsToolbarTitle"
     android:background="@color/app_bg_colour"
-    app:startDestination="@id/fundrasingFragment">
+    app:startDestination="@id/myFundraisingsFragment">
     <fragment
         android:id="@+id/viewASingleReqAllUsersFragment2"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewARequestAllUsersFragment"
@@ -198,12 +198,12 @@
         <action
             android:id="@+id/action_viewAFrFragment_to_viewAllDonorsToAFrFragment"
             app:destination="@id/viewAllDonorsToAFrFragment" />
-        <argument
-            android:name="currentFr"
-            app:argType="com.example.supportapp.DataClasses.FundraisingData" />
         <action
             android:id="@+id/action_viewAFrFragment_to_myFundraisingsFragment"
             app:destination="@id/myFundraisingsFragment" />
+        <argument
+            android:name="currFrId"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/updateFrFragment"
