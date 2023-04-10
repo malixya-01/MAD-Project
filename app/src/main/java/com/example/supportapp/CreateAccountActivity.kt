@@ -39,7 +39,7 @@ class CreateAccountActivity : AppCompatActivity() {
         //initializing storage reference
         storageReference = FirebaseStorage.getInstance()
 
-        //image picker implementation
+        //image uri implementation
         val imageView = binding.ivCreateAccDp
         val galleryImage = registerForActivityResult(
             ActivityResultContracts.GetContent(),
@@ -50,6 +50,7 @@ class CreateAccountActivity : AppCompatActivity() {
                 }
             }
         )
+
 
         //launch gallery
         binding.createAccDpCardView.setOnClickListener {
@@ -140,21 +141,7 @@ class CreateAccountActivity : AppCompatActivity() {
                         databaseRef.setValue(user).addOnCompleteListener {
                             if (it.isSuccessful) {
                                 //Upload profile picture to firebase storage
-                                storageReference.getReference("Users").child(auth.currentUser!!.uid)
-                                    .putFile(uri)
-                                    .addOnSuccessListener {
-                                        Toast.makeText(
-                                            this,
-                                            "Account created successfully.",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    }.addOnFailureListener {
-                                        Toast.makeText(
-                                            this,
-                                            "Failed to upload the image.",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    }
+                                uploadImage()
 
                                 //redirect user to login activity
                                 val intent = Intent(this, LoginActivity::class.java)
@@ -175,6 +162,21 @@ class CreateAccountActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun uploadImage() {
+        //set a default image to upload if user have not selected a image
+        if(!this::uri.isInitialized){
+            uri = Uri.parse("android.resource://$packageName/${R.drawable.default_avatar}")
+        }
+
+
+        storageReference.getReference("Users").child(auth.currentUser!!.uid)
+            .putFile(uri).addOnSuccessListener {
+                Toast.makeText(this, "Account created successfully.", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener {
+                Toast.makeText(this, "Failed to upload the image.", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun showProgressBar(){
