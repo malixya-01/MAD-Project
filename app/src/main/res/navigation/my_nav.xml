@@ -5,7 +5,7 @@
     android:id="@+id/my_nav"
     android:label="@string/myFundraisingsToolbarTitle"
     android:background="@color/app_bg_colour"
-    app:startDestination="@id/viewADonationAllUserFragment">
+    app:startDestination="@id/requestsFragment">
     <fragment
         android:id="@+id/viewASingleReqAllUsersFragment2"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewARequestAllUsersFragment"
@@ -253,11 +253,7 @@
         android:id="@+id/sendSupportMsgToAFrFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.sendSupportMsgToAFrFragment"
         android:label="@string/sendSupMsgToAFrToolbarTitle"
-        tools:layout="@layout/fragment_send_support_msg_to_a_fr" >
-        <argument
-            android:name="currentFrId"
-            app:argType="string" />
-    </fragment>
+        tools:layout="@layout/fragment_send_support_msg_to_a_fr" />
     <fragment
         android:id="@+id/viewAllDonorsFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewAllDonorsFragment"

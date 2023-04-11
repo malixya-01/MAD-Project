@@ -13,27 +13,30 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.supportapp.DataClasses.supportFundraiserData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewAFrAllUsersBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-class viewAFrAllUsersFragment : Fragment() {
+class viewAFrAllUsersFragment : Fragment(),
+    sendSupportMsgToAFrFragment.dialogSubmitButtonClickedListner {
 
     private lateinit var binding: FragmentViewAFrAllUsersBinding
-
-    //safe args
+    private lateinit var popupFragment: sendSupportMsgToAFrFragment
     private val args by navArgs<viewAFrAllUsersFragmentArgs>()
-
     lateinit var progressBar: ProgressBar
-    private lateinit var fab: FloatingActionButton
-    private var unselectedIcon = true
-
     private lateinit var auth: FirebaseAuth
+    private var uid : String? = null
     private lateinit var storageReference : StorageReference
+    private lateinit var databaseReference: DatabaseReference
     private lateinit var dialog: Dialog
 
     override fun onCreateView(
@@ -51,9 +54,16 @@ class viewAFrAllUsersFragment : Fragment() {
     }
     private fun init() {
 
+        auth = FirebaseAuth.getInstance()   //initialize auth
+        uid = auth.currentUser?.uid //initialize current user
+
+        var frUid = args.currentFr.uid  //initialize current fr
+        databaseReference = FirebaseDatabase.getInstance().reference
+            .child("supportFundraiser").child(frUid!!)
+
         //retrieve user profile pic
-        var frUid = args.currentFr.uid
-        storageReference = FirebaseStorage.getInstance().reference.child("Users/$frUid")
+        storageReference = FirebaseStorage.getInstance().reference
+            .child("Users/$frUid")
         getUserProfilePicture()
 
 
@@ -88,16 +98,20 @@ class viewAFrAllUsersFragment : Fragment() {
         }
     }
 
-
-
-
-
-
     private fun registerEvents() {
 
+        //support btn
+        binding.btnSup.setOnClickListener {
+            popupFragment = sendSupportMsgToAFrFragment()   //instantiate pop up fragment
+            popupFragment.setListner(this)  //connect pop up fragment and host fragment
+            popupFragment.show(childFragmentManager, "sendSupportMsgToAFrFragment") //display fragment
+        }
+
         //toggle saved items
-        fab = binding.btnSave
-        fab.setOnClickListener {
+        var unselectedIcon = true
+        binding.btnSave.setOnClickListener {
+            var fab = binding.btnSave
+
             //varibles to hold toast msgs
             val itemAdded = resources.getString(R.string.itemAdded)
             val itemRemoved = resources.getString(R.string.itemRemoved)
@@ -115,10 +129,23 @@ class viewAFrAllUsersFragment : Fragment() {
             }
         }
 
-        binding.btnSup.setOnClickListener {
-            var currFrId = args.currentFr.frId
-            var action = viewAFrAllUsersFragmentDirections.actionViewAFrAllUsersFragmentToSendSupportMsgToAFrFragment(currFrId!!)
-            findNavController().navigate(action)
+    }
+
+    override fun onSave(phone: String?, email: String?, message: String) {
+
+        var id = databaseReference.push().key!! //Id for new record
+        var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+        var supFr = supportFundraiserData(id, uid, email, phone, message, date) // create new supportFr object
+
+        //push created object to the db
+        databaseReference.child(id).setValue(supFr).addOnCompleteListener {
+            if (it.isSuccessful){
+                hideProgressBar()
+                Toast.makeText(context, "Message sent", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+            }
+            popupFragment.dismiss()
         }
     }
 

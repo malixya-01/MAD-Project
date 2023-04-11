@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.navArgs
 import com.example.supportapp.DataClasses.supportFundraiserData
 import com.example.supportapp.DataClasses.validations.ValidationResult
 import com.example.supportapp.DataClasses.validations.sendMessageFormData
+import com.example.supportapp.Fragments.Requests.SentRequests.addReqtoTheDonorFragment
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentSendSupportMsgToAFrBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -20,15 +22,19 @@ import com.google.firebase.database.FirebaseDatabase
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class sendSupportMsgToAFrFragment : Fragment() {
+class sendSupportMsgToAFrFragment : DialogFragment() {
 
     private lateinit var binding: FragmentSendSupportMsgToAFrBinding
-    val args: sendSupportMsgToAFrFragmentArgs by navArgs()
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
     private lateinit var dialog: Dialog
     private var uid: String? = null
     private var isFormValidationSuccess = false
+    private lateinit var listner: dialogSubmitButtonClickedListner
+
+    fun setListner( listner: dialogSubmitButtonClickedListner){
+        this.listner = listner
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,56 +43,40 @@ class sendSupportMsgToAFrFragment : Fragment() {
         binding = FragmentSendSupportMsgToAFrBinding.inflate(inflater, container,false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
         registerEvents()
     }
 
-
-
-    private fun init(){
-        auth = FirebaseAuth.getInstance()
-        uid = auth.currentUser?.uid
-        //initialize db ref
-        databaseReference = FirebaseDatabase.getInstance().reference.child("supportFundraiser").child(args.currentFrId)
-    }
-
     private fun registerEvents(){
-
         //submit data
         binding.btnSupFrSubmit.setOnClickListener {
-            validateForm()
-            if(isFormValidationSuccess){
-                showProgressBar()
-                //initialize variables
-                var phone = binding.etSupFrPhone.text.toString()
-                var email = binding.etSupFrEmail.text.toString()
-                var msg = binding.etSupFrMsg.text.toString()
-                var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
-                //Id for new record
-                var id = databaseReference.push().key!!
+            //bind editText views to variables
+            val phoneNo = binding.etSupFrPhone.text.toString()
+            val email = binding.etSupFrEmail.text.toString()
+            val message = binding.etSupFrMsg.text.toString()
 
-                //supportFr object
-                var supFr = supportFundraiserData(id, uid, email, phone, msg, date)
+            //validate form
+            validateForm(phoneNo, email, message)
 
-                //push created object to the db
-                databaseReference.child(id).setValue(supFr).addOnCompleteListener {
-                    if (it.isSuccessful){
-                        hideProgressBar()
-                        Toast.makeText(context, "Message sent", Toast.LENGTH_SHORT).show()
-                        clearFormData()
-                    } else {
-                        Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
-                    }
-                }
+            //calling save method if validation is success
+            if (isFormValidationSuccess){
+                listner.onSave(phoneNo, email, message)
             }
+        }
+
+        //close btn
+        binding.btnClose.setOnClickListener {
+            dismiss()
         }
     }
 
-    private fun validateForm(){
+    interface dialogSubmitButtonClickedListner{
+        fun onSave(phone: String?, email: String?, message: String)
+    }
+
+    private fun validateForm(phone: String, email: String, message: String){
         //set isValidationSuccess to false
         isFormValidationSuccess = false
 
@@ -96,11 +86,7 @@ class sendSupportMsgToAFrFragment : Fragment() {
         var otherDetailsValidity = 0 //to track other details validity
 
         //create a updateFrFormData class object
-        var myForm = sendMessageFormData(
-            binding.etSupFrPhone.text.toString(),
-            binding.etSupFrEmail.text.toString(),
-            binding.etSupFrMsg.text.toString()
-        )
+        var myForm = sendMessageFormData(phone, email, message)
 
         //assign each validation method to variables
         val contactNoValidation = myForm.validateContactNumber()
@@ -145,21 +131,4 @@ class sendSupportMsgToAFrFragment : Fragment() {
         }
     }
 
-    private fun clearFormData() {
-        binding.etSupFrPhone.text = null
-        binding.etSupFrEmail.text = null
-        binding.etSupFrMsg.text = null
-    }
-
-
-    private fun showProgressBar(){
-        dialog = Dialog( this@sendSupportMsgToAFrFragment.requireContext())
-        dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.dialog_wait)
-        dialog.setCanceledOnTouchOutside(false)
-        dialog.show()
-    }
-    private fun hideProgressBar(){
-        dialog.dismiss()
-    }
 }
