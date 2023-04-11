@@ -59,7 +59,6 @@ class sendSupportMsgToAFrFragment : Fragment() {
         binding.btnSupFrSubmit.setOnClickListener {
             validateForm()
             if(isFormValidationSuccess){
-                Toast.makeText(context, "Validations passed", Toast.LENGTH_SHORT).show()
                 showProgressBar()
                 //initialize variables
                 var phone = binding.etSupFrPhone.text.toString()

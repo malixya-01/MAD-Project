@@ -5,7 +5,7 @@
     android:id="@+id/my_nav"
     android:label="@string/myFundraisingsToolbarTitle"
     android:background="@color/app_bg_colour"
-    app:startDestination="@id/myFundraisingsFragment">
+    app:startDestination="@id/viewADonationAllUserFragment">
     <fragment
         android:id="@+id/viewASingleReqAllUsersFragment2"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewARequestAllUsersFragment"

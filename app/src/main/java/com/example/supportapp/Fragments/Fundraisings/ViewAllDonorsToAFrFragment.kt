@@ -88,7 +88,6 @@ class viewAllDonorsToAFrFragment : Fragment() {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: viewAllDonorsFrAdapter.onItemClickListner {
             override fun onItemClick(position: Int) {
-                Toast.makeText(context, "${position}", Toast.LENGTH_SHORT).show()
             }
 
         })
