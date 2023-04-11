@@ -10,18 +10,42 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.supportapp.R
+import com.example.supportapp.databinding.FragmentViewADonationAllUserBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ViewADonationAllUserFragment : Fragment() {
+
+    private lateinit var binding : FragmentViewADonationAllUserBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_view_a_donation_all_user, container, false)
+        binding = FragmentViewADonationAllUserBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //init()
+        registerEvents()
+
+    }
+
+    private fun init() {
+        TODO("Not yet implemented")
+    }
+
+    private fun registerEvents() {
+
+        //request btn
+        binding.btnReq.setOnClickListener {
+            findNavController().navigate(R.id.action_viewADonationAllUserFragment_to_addReqtoTheDonorFragment)
+        }
+
 
         //Variables to set up FAB onclick icon change
-        val fab = view.findViewById<FloatingActionButton>(R.id.btnSave)
+        val fab = binding.btnSave
         var flag = true // true if first icon is visible, false if second one is visible.
 
         //varibles to hold toast msgs
@@ -42,12 +66,7 @@ class ViewADonationAllUserFragment : Fragment() {
             }
         }
 
-        val btnReq =view.findViewById<Button>(R.id.btnReq)
-        btnReq.setOnClickListener {
-            findNavController().navigate(R.id.action_viewADonationAllUserFragment_to_addReqtoTheDonorFragment)
-        }
 
-
-        return view
     }
+
 }
