@@ -1,13 +1,13 @@
 package com.example.supportapp.Adapters
 
-import android.graphics.Bitmap
+import android.content.Context
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.DataClasses.User
 import com.example.supportapp.DataClasses.supportFundraiserData
@@ -18,10 +18,14 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import java.io.File
-import kotlin.coroutines.coroutineContext
 
-class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
+class viewAllDonorsFrAdapter(var c: Context, var mList: List<supportFundraiserData>) :
     RecyclerView.Adapter<viewAllDonorsFrAdapter.ViewAllDonorsFrViewHolder>() {
+
+    private var popMenulistner : popupMenuOnItemClickInterface? = null
+    fun setPopMenulistner(popMenulistner: popupMenuOnItemClickInterface){
+        this.popMenulistner = popMenulistner
+    }
 
     private lateinit var mListner : onItemClickListner
 
@@ -41,14 +45,43 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
         val tvEmail : TextView = itemView.findViewById(R.id.tvEmail)
         val tvDescription : TextView = itemView.findViewById(R.id.tvDescription)
         val userDp : ImageView = itemView.findViewById(R.id.ivViewDp)
+        val moreBtn : ImageView = itemView.findViewById(R.id.btnMore)
 
         init{
             itemView.setOnClickListener {
                 listner.onItemClick(adapterPosition)
             }
+
+            moreBtn.setOnClickListener { popupMenus(it) }   //set onclick listeners on menu items
+        }
+
+        private fun popupMenus(v : View) {
+            val position = mList[adapterPosition]
+            val popupMenus = PopupMenu(c,v)
+            popupMenus.inflate(R.menu.popup_menu)
+            popupMenus.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.popup_edit -> {
+                        popMenulistner?.onEditBtnClicked(position)
+                        true
+                    }
+                    R.id.popup_delete->{
+                        popMenulistner?.onDeleteBtnClicked(position)
+                        true
+                    }
+                    else-> true
+                }
+            }
+            popupMenus.show()
+
         }
 
     }
+    interface popupMenuOnItemClickInterface{
+        fun onEditBtnClicked(supFrData: supportFundraiserData)
+        fun onDeleteBtnClicked(supFrData: supportFundraiserData)
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewAllDonorsFrViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_view_sup_msgs, parent, false)

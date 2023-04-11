@@ -20,7 +20,8 @@ import com.example.supportapp.databinding.FragmentViewAllDonorsToAFrBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class viewAllDonorsToAFrFragment : Fragment() {
+class viewAllDonorsToAFrFragment : Fragment(),
+    viewAllDonorsFrAdapter.popupMenuOnItemClickInterface {
 
     private lateinit var binding : FragmentViewAllDonorsToAFrBinding
     private val args: viewAllDonorsToAFrFragmentArgs by navArgs()
@@ -56,8 +57,9 @@ class viewAllDonorsToAFrFragment : Fragment() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(context);
 
-        adapter = viewAllDonorsFrAdapter(mList)
+        adapter = viewAllDonorsFrAdapter(requireContext(), mList)
         recyclerView.adapter = adapter
+        adapter.setPopMenulistner(this)
 
     }
 
@@ -91,6 +93,8 @@ class viewAllDonorsToAFrFragment : Fragment() {
             }
 
         })
+
+
     }
 
     private fun showProgressBar(){
@@ -102,6 +106,14 @@ class viewAllDonorsToAFrFragment : Fragment() {
     }
     private fun hideProgressBar(){
         dialog.dismiss()
+    }
+
+    override fun onEditBtnClicked(supFrData: supportFundraiserData) {
+        Toast.makeText(context, "Edit", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDeleteBtnClicked(supFrData: supportFundraiserData) {
+        Toast.makeText(context, "Delete ${supFrData.message}", Toast.LENGTH_SHORT).show()
     }
 
     /*private fun addData() {
