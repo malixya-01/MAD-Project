@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,19 +23,17 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class viewAllDonorsToAFrFragment : Fragment(),
-    viewAllDonorsFrAdapter.popupMenuOnItemClickInterface {
+    viewAllDonorsFrAdapter.popupMenuOnItemClickInterface, editRecyclerItem.onUpdateBtnClickeListner {
 
     private lateinit var binding : FragmentViewAllDonorsToAFrBinding
+    private var popupFragment: editRecyclerItem? = null
     private val args: viewAllDonorsToAFrFragmentArgs by navArgs()
     private var currFrId : String? = null
     private lateinit var databaseRef: DatabaseReference
     private lateinit var dialog: Dialog
-
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<supportFundraiserData>()
     private lateinit var adapter: viewAllDonorsFrAdapter
-
-    private lateinit var popupFragment: editRecyclerItem
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -93,10 +92,7 @@ class viewAllDonorsToAFrFragment : Fragment(),
         adapter.setOnItemClickListner(object: viewAllDonorsFrAdapter.onItemClickListner {
             override fun onItemClick(position: Int) {
             }
-
         })
-
-
     }
 
     private fun showProgressBar(){
@@ -111,16 +107,49 @@ class viewAllDonorsToAFrFragment : Fragment(),
     }
 
     override fun onEditBtnClicked(supFrData: supportFundraiserData) {
-        popupFragment = editRecyclerItem()   //instantiate pop up fragment
-        popupFragment.show(childFragmentManager, "editRecyclerItem") //display fragment
+        //pass arguments to the popup fragment
+        popupFragment = editRecyclerItem.newInstance(
+            supFrData.msgId!!,
+            supFrData.phoneNumber!!,
+            supFrData.email!!,
+            supFrData.message!!,
+            supFrData.supporterId!!,
+            supFrData.date!!
+        )
+
+        popupFragment!!.setListner(this)
+        popupFragment!!.show(childFragmentManager, editRecyclerItem.TAG)
+
     }
 
     override fun onDeleteBtnClicked(supFrData: supportFundraiserData) {
         Toast.makeText(context, "Delete ${supFrData.message}", Toast.LENGTH_SHORT).show()
     }
 
+    override fun onUpdate(updatedSupMsgData: supportFundraiserData) {
+
+        val map = HashMap<String, Any>() // create a hash map
+
+        //add elements to the hashmap
+        map["email"] = updatedSupMsgData.email!!
+        map["phoneNumber"] = updatedSupMsgData.phoneNumber!!
+        map["message"] = updatedSupMsgData.message!!
+
+        //update database
+        var currentMsgId = updatedSupMsgData.msgId
+        databaseRef.child(currentMsgId!!)
+            .updateChildren(map).addOnCompleteListener {
+            if( it.isSuccessful){
+                Toast.makeText(context, "Message updated", Toast.LENGTH_SHORT).show()
+                popupFragment!!.dismiss()
+            } else {
+                Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+            }
+    }
+
     /*private fun addData() {
         mList.clear()
         mList.add(supportFundraiserData("", "Nuwan Thushara", "kk@kk.com", "0712345678", "Yoooo yooo what's up", "2023/04/11"))
     }*/
-}
+    }
+    }

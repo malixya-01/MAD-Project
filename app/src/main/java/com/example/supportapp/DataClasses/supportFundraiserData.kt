@@ -1,5 +1,9 @@
 package com.example.supportapp.DataClasses
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class supportFundraiserData(
     var msgId: String? = null,
     var supporterId: String? = null,
@@ -8,4 +12,4 @@ data class supportFundraiserData(
     var message: String? = null,
     var date: String? = null
 
-)
+): Parcelable
