@@ -6,15 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import com.example.supportapp.DataClasses.validations.ValidationResult
 import com.example.supportapp.DataClasses.validations.sendMessageFormData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentAddReqtoTheDonorBinding
 
-class addReqtoTheDonorFragment : Fragment() {
+class addReqtoTheDonorFragment : DialogFragment() {
 
     private lateinit var binding: FragmentAddReqtoTheDonorBinding
+    private lateinit var listner: dialogSubmitButtonClickedListner
     var isFormValidationSuccess = false
+
+    fun setListner( listner: dialogSubmitButtonClickedListner){
+        this.listner = listner
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +38,8 @@ class addReqtoTheDonorFragment : Fragment() {
     }
 
     private fun registerEvents() {
+
+        //submit btn
         binding.btnSubmitReq.setOnClickListener {
 
             //bind editText views to variables
@@ -43,15 +51,23 @@ class addReqtoTheDonorFragment : Fragment() {
             validateForm(phoneNo, email, message)
 
             if (isFormValidationSuccess){
-                Toast.makeText(context, "Validations passed", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "Validations passed", Toast.LENGTH_SHORT).show()
+                listner.onSave(phoneNo, email, message)
+
             }
+        }
 
-
-
-
-
+        //close btn
+        binding.btnClose.setOnClickListener {
+            dismiss()
         }
     }
+
+    interface dialogSubmitButtonClickedListner{
+        fun onSave(phone: String?, email: String?, message: String)
+
+    }
+
 
     private fun validateForm(phone: String, email: String, message: String,){
         //set isValidationSuccess to false

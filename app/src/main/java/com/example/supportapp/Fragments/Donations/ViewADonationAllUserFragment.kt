@@ -9,13 +9,16 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.supportapp.Fragments.Requests.SentRequests.addReqtoTheDonorFragment
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewADonationAllUserBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ViewADonationAllUserFragment : Fragment() {
+class ViewADonationAllUserFragment : Fragment(),
+    addReqtoTheDonorFragment.dialogSubmitButtonClickedListner {
 
     private lateinit var binding : FragmentViewADonationAllUserBinding
+    private lateinit var popupFragment: addReqtoTheDonorFragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,19 +43,26 @@ class ViewADonationAllUserFragment : Fragment() {
 
         //request btn
         binding.btnReq.setOnClickListener {
-            findNavController().navigate(R.id.action_viewADonationAllUserFragment_to_addReqtoTheDonorFragment)
+
+            popupFragment = addReqtoTheDonorFragment()  //instantiate pop up fragment
+            popupFragment!!.setListner(this)    //connect pop up fragment and host fragment
+            popupFragment.show(childFragmentManager, "addReqtoTheDonorFragment")    //display fragment
         }
 
 
-        //Variables to set up FAB onclick icon change
-        val fab = binding.btnSave
-        var flag = true // true if first icon is visible, false if second one is visible.
 
-        //varibles to hold toast msgs
-        val itemAdded = resources.getString(R.string.itemAdded)
-        val itemRemoved = resources.getString(R.string.itemRemoved)
 
-        fab.setOnClickListener {
+
+        //save item btn
+        binding.btnSave.setOnClickListener {
+
+            //Variables to set up FAB onclick icon change
+            val fab = binding.btnSave
+            var flag = true // true if first icon is visible, false if second one is visible.
+
+            //varibles to hold toast msgs
+            val itemAdded = resources.getString(R.string.itemAdded)
+            val itemRemoved = resources.getString(R.string.itemRemoved)
             if (flag) {
                 fab.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.selected_bookmark))
                 flag = false
@@ -67,6 +77,10 @@ class ViewADonationAllUserFragment : Fragment() {
         }
 
 
+    }
+
+    override fun onSave(phone: String?, email: String?, message: String) {
+        TODO("Not yet implemented")
     }
 
 }
