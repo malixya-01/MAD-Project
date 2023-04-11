@@ -16,6 +16,7 @@ import com.example.supportapp.Adapters.viewAllDonorsFrAdapter
 import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.DataClasses.supportFundraiserData
 import com.example.supportapp.R
+import com.example.supportapp.databinding.FragmentEditRecyclerItemBinding
 import com.example.supportapp.databinding.FragmentViewAllDonorsToAFrBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -32,6 +33,8 @@ class viewAllDonorsToAFrFragment : Fragment(),
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<supportFundraiserData>()
     private lateinit var adapter: viewAllDonorsFrAdapter
+
+    private lateinit var popupFragment: editRecyclerItem
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,7 +63,6 @@ class viewAllDonorsToAFrFragment : Fragment(),
         adapter = viewAllDonorsFrAdapter(requireContext(), mList)
         recyclerView.adapter = adapter
         adapter.setPopMenulistner(this)
-
     }
 
     private fun retrieveData() {
@@ -109,7 +111,8 @@ class viewAllDonorsToAFrFragment : Fragment(),
     }
 
     override fun onEditBtnClicked(supFrData: supportFundraiserData) {
-        Toast.makeText(context, "Edit", Toast.LENGTH_SHORT).show()
+        popupFragment = editRecyclerItem()   //instantiate pop up fragment
+        popupFragment.show(childFragmentManager, "editRecyclerItem") //display fragment
     }
 
     override fun onDeleteBtnClicked(supFrData: supportFundraiserData) {
@@ -118,13 +121,6 @@ class viewAllDonorsToAFrFragment : Fragment(),
 
     /*private fun addData() {
         mList.clear()
-        mList.add(supportFundraiserData(
-            "",
-            "Nuwan Thushara",
-            "kk@kk.com",
-            "0712345678",
-            "Yoooo yooo what's up",
-            "2023/04/11"
-        ))
+        mList.add(supportFundraiserData("", "Nuwan Thushara", "kk@kk.com", "0712345678", "Yoooo yooo what's up", "2023/04/11"))
     }*/
 }
