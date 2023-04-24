@@ -134,9 +134,6 @@
         <action
             android:id="@+id/action_viewSingleRequestFragment_to_editARequestFragment2"
             app:destination="@id/editARequestFragment2" />
-        <action
-            android:id="@+id/action_viewSingleRequestFragment_to_viewAllDonorsFragment4"
-            app:destination="@id/viewAllDonorsFragment4" />
     </fragment>
     <fragment
         android:id="@+id/editARequestFragment2"
@@ -227,8 +224,8 @@
             android:id="@+id/action_myRequestsFragment_to_viewSingleRequestFragment"
             app:destination="@id/viewSingleRequestFragment" />
         <action
-            android:id="@+id/action_myRequestsFragment_to_readAreqSentToDonorFragment"
-            app:destination="@id/readAreqSentToDonorFragment" />
+            android:id="@+id/action_myRequestsFragment_to_viewAllDonorsFragment4"
+            app:destination="@id/viewAllDonorsFragment4" />
     </fragment>
     <fragment
         android:id="@+id/readAreqSentToDonorFragment"

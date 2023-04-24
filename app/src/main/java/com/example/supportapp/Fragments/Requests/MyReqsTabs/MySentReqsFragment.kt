@@ -37,7 +37,7 @@ class mySentReqsFragment : Fragment() {
         adapter.setOnItemClickListener(object : mySentReqsAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 val navController = Navigation.findNavController(requireActivity(), R.id.viewPager)
-                navController.navigate(R.id.action_myRequestsFragment_to_readAreqSentToDonorFragment)
+                navController.navigate(R.id.action_myRequestsFragment_to_viewAllDonorsFragment4)
             }
         })
 

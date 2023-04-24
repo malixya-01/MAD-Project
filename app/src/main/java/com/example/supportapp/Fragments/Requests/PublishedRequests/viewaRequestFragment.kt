@@ -28,7 +28,7 @@ class viewaRequestFragment : Fragment() {
 
         val viewDonors = view.findViewById<FloatingActionButton>(R.id.viewDonors)
         viewDonors.setOnClickListener {
-            findNavController().navigate(R.id.action_viewSingleRequestFragment_to_viewAllDonorsFragment4)
+            //findNavController().navigate(R.id.action_viewSingleRequestFragment_to_viewAllDonorsFragment4)
         }
 
         val deleteBtn = view.findViewById<FloatingActionButton>(R.id.btnDlt)
