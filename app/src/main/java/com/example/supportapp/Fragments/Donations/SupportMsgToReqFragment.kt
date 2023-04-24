@@ -5,14 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import com.example.supportapp.R
+import com.example.supportapp.databinding.FragmentSupportMsgToReqBinding
 
-class supportMsgToReqFragment : Fragment() {
+class supportMsgToReqFragment : DialogFragment() {
+
+    private lateinit var binding: FragmentSupportMsgToReqBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_support_msg_to_req, container, false)
+        binding = FragmentSupportMsgToReqBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        registerEvents()
+
+    }
+
+    private fun registerEvents() {
+        binding.btnClose.setOnClickListener {
+            dismiss()
+        }
     }
 }
