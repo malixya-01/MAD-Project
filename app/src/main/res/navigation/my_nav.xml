@@ -282,7 +282,7 @@
         tools:layout="@layout/activity_reset_password" />
     <fragment
         android:id="@+id/viewAllDonorsFragment4"
-        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.ViewAllDonorsFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.sentReqsFragment"
         android:label="Donors"
         tools:layout="@layout/fragment_view_all_donors" />
 </navigation>

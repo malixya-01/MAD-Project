@@ -1,6 +1,5 @@
 package com.example.supportapp.Fragments.Requests.PublishedRequests
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,23 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.viewAllDonorsFrAdapter
 import com.example.supportapp.Adapters.viewAllDonorsReqAdapter
-import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.DataClasses.supportFundraiserData
 import com.example.supportapp.Fragments.Fundraisings.editRecyclerItem
-import com.example.supportapp.Fragments.Fundraisings.viewAllDonorsToAFrFragmentArgs
 import com.example.supportapp.R
-import com.example.supportapp.databinding.FragmentEditRecyclerItemBinding
 import com.example.supportapp.databinding.FragmentViewAllDonorsBinding
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class ViewAllDonorsFragment : Fragment(),
+class sentReqsFragment : Fragment(),
     viewAllDonorsFrAdapter.popupMenuOnItemClickInterface, editRecyclerItem.onUpdateBtnClickeListner,
     viewAllDonorsReqAdapter.popupMenuOnItemClickInterface {
 
@@ -100,7 +93,7 @@ class ViewAllDonorsFragment : Fragment(),
     }
 
     private fun showProgressBar(){
-        dialog = Dialog(this@ViewAllDonorsFragment.requireContext())
+        dialog = Dialog(this@sentReqsFragment.requireContext())
         dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.dialog_wait)
         dialog.setCanceledOnTouchOutside(false)
