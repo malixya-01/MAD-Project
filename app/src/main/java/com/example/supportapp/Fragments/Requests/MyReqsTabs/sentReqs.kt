@@ -19,8 +19,7 @@ import com.example.supportapp.databinding.FragmentViewAllDonorsBinding
 import com.google.firebase.database.*
 
 class sentReqsFragment : Fragment(),
-    viewAllDonorsFrAdapter.popupMenuOnItemClickInterface, editRecyclerItem.onUpdateBtnClickeListner,
-    viewAllDonorsReqAdapter.popupMenuOnItemClickInterface {
+    viewAllDonorsReqAdapter.popupMenuOnItemClickInterface, editRecyclerItem.onUpdateBtnClickeListner{
 
     private lateinit var binding : FragmentViewAllDonorsBinding
     private var popupFragment: editRecyclerItem? = null
