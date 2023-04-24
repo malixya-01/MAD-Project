@@ -135,8 +135,8 @@
             android:id="@+id/action_viewSingleRequestFragment_to_editARequestFragment2"
             app:destination="@id/editARequestFragment2" />
         <action
-            android:id="@+id/action_viewSingleRequestFragment_to_viewAllDonorsFragment"
-            app:destination="@id/viewAllDonorsFragment" />
+            android:id="@+id/action_viewSingleRequestFragment_to_viewAllDonorsFragment4"
+            app:destination="@id/viewAllDonorsFragment4" />
     </fragment>
     <fragment
         android:id="@+id/editARequestFragment2"
@@ -255,11 +255,6 @@
         android:label="@string/sendSupMsgToAFrToolbarTitle"
         tools:layout="@layout/fragment_send_support_msg_to_a_fr" />
     <fragment
-        android:id="@+id/viewAllDonorsFragment"
-        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewAllDonorsFragment"
-        android:label="@string/viewAllDonorsToAReqToolbarTitle"
-        tools:layout="@layout/fragment_view_all_donors" />
-    <fragment
         android:id="@+id/viewAllReqsFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewAllReqsFragment"
         android:label="@string/viewAllRequestsToolbarTitle"
@@ -288,4 +283,9 @@
         android:name="com.example.supportapp.ResetPasswordActivity"
         android:label="activity_reset_password"
         tools:layout="@layout/activity_reset_password" />
+    <fragment
+        android:id="@+id/viewAllDonorsFragment4"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.ViewAllDonorsFragment"
+        android:label="Donors"
+        tools:layout="@layout/fragment_view_all_donors" />
 </navigation>
