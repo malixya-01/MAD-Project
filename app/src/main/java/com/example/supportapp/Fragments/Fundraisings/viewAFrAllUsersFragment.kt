@@ -57,13 +57,9 @@ class viewAFrAllUsersFragment : Fragment(),
         auth = FirebaseAuth.getInstance()   //initialize auth
         uid = auth.currentUser?.uid //initialize current user
 
-        var frUid = args.currentFr.uid  //initialize current fr
-        databaseReference = FirebaseDatabase.getInstance().reference
-            .child("supportFundraiser").child(frUid!!)
-
         //retrieve user profile pic
         storageReference = FirebaseStorage.getInstance().reference
-            .child("Users/$frUid")
+            .child("Users/$uid")
         getUserProfilePicture()
 
 
@@ -132,6 +128,10 @@ class viewAFrAllUsersFragment : Fragment(),
     }
 
     override fun onSave(phone: String?, email: String?, message: String) {
+
+        var currFrId = args.currentFr.frId  //initialize current frID
+        databaseReference = FirebaseDatabase.getInstance().reference
+            .child("supportFundraiser").child(currFrId!!)
 
         var id = databaseReference.push().key!! //Id for new record
         var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
