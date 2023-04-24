@@ -134,6 +134,9 @@
         <action
             android:id="@+id/action_viewSingleRequestFragment_to_editARequestFragment2"
             app:destination="@id/editARequestFragment2" />
+        <action
+            android:id="@+id/action_viewSingleRequestFragment_to_viewReqAllDonorsFragment"
+            app:destination="@id/viewReqAllDonorsFragment" />
     </fragment>
     <fragment
         android:id="@+id/editARequestFragment2"
@@ -283,6 +286,10 @@
     <fragment
         android:id="@+id/viewAllDonorsFragment4"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.sentReqsFragment"
-        android:label="Donors"
         tools:layout="@layout/fragment_view_all_donors" />
+    <fragment
+        android:id="@+id/viewReqAllDonorsFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.ViewReqAllDonorsFragment"
+        android:label="Donors"
+        tools:layout="@layout/fragment_view_req_all_donors" />
 </navigation>
