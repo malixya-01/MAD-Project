@@ -14,7 +14,7 @@ import com.example.supportapp.Fragments.Fundraisings.sendSupportMsgToAFrFragment
 import com.example.supportapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class viewARequestAllUsersFragment : Fragment() {
+class viewARequestAllUsersFragment : Fragment(), supportMsgToReqFragment.dialogSubmitButtonClickedListner {
 
     private lateinit var popupFragment: supportMsgToReqFragment
 
@@ -57,5 +57,9 @@ class viewARequestAllUsersFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onSave(phone: String?, email: String?, message: String) {
+        TODO("Not yet implemented")
     }
 }
