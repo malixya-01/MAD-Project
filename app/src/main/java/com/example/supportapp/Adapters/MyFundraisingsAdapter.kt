@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.DataClasses.MyFundraisingsData
+import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
 
-class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
+class MyFundraisingsAdapter(var mList: List<FundraisingData>) :
     RecyclerView.Adapter<MyFundraisingsAdapter.MyFundraisingsViewHolder>() {
 
 
@@ -26,8 +26,11 @@ class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
     }
 
     inner class MyFundraisingsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
-        val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
+        val dateTv : TextView = itemView.findViewById(R.id.tvMyFrDate)
+        val shortAmtTv : TextView = itemView.findViewById(R.id.tvMyFrShortAmt)
+        val donorCountTv : TextView = itemView.findViewById(R.id.tvDonorCount)
+
         init{
             itemView.setOnClickListener {
                 listner.onItemClick(adapterPosition)
@@ -37,7 +40,7 @@ class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyFundraisingsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_reqs_and_dons, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_my_fundraisings, parent, false)
         return MyFundraisingsViewHolder(view, mListner)
     }
 
@@ -46,7 +49,15 @@ class MyFundraisingsAdapter(var mList: List<MyFundraisingsData>) :
     }
 
     override fun onBindViewHolder(holder: MyFundraisingsViewHolder, position: Int) {
-        holder.logo.setImageResource(mList[position].logo)
+
+        var expectedAmt = mList[position].expectedAmt!!.toInt()
+        var collectedAmt = mList[position].collectedAmt!!.toInt()
+        var shortAmt = expectedAmt.minus(collectedAmt)
+
         holder.titleTv.text = mList[position].title
+        holder.dateTv.text = mList[position].date
+        //holder.donorCountTv.text = mList[position].donorCount
+        holder.shortAmtTv.text = shortAmt.toString()
+
     }
 }

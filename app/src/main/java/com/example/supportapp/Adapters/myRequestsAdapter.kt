@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.supportapp.Fragments.Requests.MyRequestsTabs.myPublishedReqsFragment
-import com.example.supportapp.Fragments.Requests.MyRequestsTabs.mySentReqsFragment
+import com.example.supportapp.Fragments.Requests.PublishedRequests.sentReqsFragment
 import com.example.supportapp.Fragments.Requests.myRequestsFragment
 
 
@@ -18,7 +18,7 @@ internal class myRequestsAdapter(var context: myRequestsFragment, fm: FragmentMa
             }
 
             1 -> {
-                mySentReqsFragment()
+                sentReqsFragment()
             }
 
             else -> getItem(position)

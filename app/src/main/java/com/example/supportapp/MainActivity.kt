@@ -11,6 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,10 +23,20 @@ class MainActivity : AppCompatActivity() {
     //variable to remove back icons from top level destinations
     lateinit var appBarConfiguration: AppBarConfiguration
 
+    private lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        auth = FirebaseAuth.getInstance()
+
+        //redirect user to the main activity if user is already logged in
+        if ( auth.currentUser == null ){
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         //Setting up navHost fragment
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragsContainer) as NavHostFragment

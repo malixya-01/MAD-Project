@@ -9,10 +9,14 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import com.example.supportapp.Fragments.Donations.supportMsgToReqFragment
+import com.example.supportapp.Fragments.Fundraisings.sendSupportMsgToAFrFragment
 import com.example.supportapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class viewARequestAllUsersFragment : Fragment() {
+class viewARequestAllUsersFragment : Fragment(), supportMsgToReqFragment.dialogSubmitButtonClickedListner {
+
+    private lateinit var popupFragment: supportMsgToReqFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,9 +50,16 @@ class viewARequestAllUsersFragment : Fragment() {
         }
 
         btnSup.setOnClickListener {
-            findNavController().navigate(R.id.action_viewASingleReqAllUsersFragment2_to_supportMsgToReqFragment)
+            popupFragment = supportMsgToReqFragment()   //instantiate pop up fragment
+            //popupFragment.setListner(this)  //connect pop up fragment and host fragment
+            popupFragment.show(childFragmentManager, "sendSupportMsgToAFrFragment") //display fragment
+
         }
 
         return view
+    }
+
+    override fun onSave(phone: String?, email: String?, message: String) {
+        TODO("Not yet implemented")
     }
 }

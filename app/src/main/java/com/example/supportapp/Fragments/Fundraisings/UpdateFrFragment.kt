@@ -1,39 +1,128 @@
 package com.example.supportapp.Fragments.Fundraisings
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentUpdateFrBinding
-import com.example.supportapp.models.validations.ValidationResult
-import com.example.supportapp.models.validations.updateFrFormData
+import com.example.supportapp.DataClasses.validations.ValidationResult
+import com.example.supportapp.DataClasses.validations.updateFrFormData
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 class UpdateFrFragment : Fragment() {
 
     private lateinit var binding: FragmentUpdateFrBinding
+    private lateinit var auth: FirebaseAuth
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var dialog: Dialog
+    private lateinit var currentFr: FundraisingData
     private var isValidationSuccess = false
+
+
+    private val args : UpdateFrFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentUpdateFrBinding.inflate(inflater, container, false)
-        val view = binding.root
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        init()
+        registerEvents()
+    }
+
+
+
+    private fun init() {
+        auth = FirebaseAuth.getInstance()
+        databaseReference = FirebaseDatabase.getInstance().reference
+            .child("fundraising")
+
+        //retrieve current fr data and populate editTexts
+        getCurrentFundraiser()
+
+
+
+    }
+
+    private fun getCurrentFundraiser() {
+        showProgressBar()
+
+
+        databaseReference.child(args.currentFrId).addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                //retrieve values from the db and convert them to fr model class
+                currentFr = snapshot.getValue(FundraisingData::class.java)!!
+                //bind data
+                bindData(currentFr)
+                hideProgressBar()
+            }
+            override fun onCancelled(error: DatabaseError) {
+                hideProgressBar()
+                Toast.makeText(activity, "Failed to retrieve current fundraiser", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+
+
+    }
+
+    private fun bindData(currentFr: FundraisingData) {
+        binding.etUpdateFrTitle.setText(currentFr.title.toString())
+        binding.etUpdateFrDescription.setText(currentFr.description.toString())
+        binding.etUpdateFrExpectedAmt.setText(currentFr.expectedAmt.toString())
+        binding.etUpdateFrCollectedAmt.setText(currentFr.collectedAmt.toString())
+        binding.etUpdateFrContactNo.setText(currentFr.contactNo.toString())
+        binding.etUpdateFrContactNo.setText(currentFr.contactNo.toString())
+        binding.etUpdateFrEmail.setText(currentFr.email.toString())
+        binding.etUpdateFrWebsite.setText(currentFr.website.toString())
+        binding.etUpdateFrBankDetails.setText(currentFr.bankDetails.toString())
+    }
+
+    private fun registerEvents() {
         binding.btnUpdateFrSubmit.setOnClickListener {
             validateForm()
 
             if(isValidationSuccess){
-                Toast.makeText(activity, "Validations passed", Toast.LENGTH_SHORT).show()
+                //create hashMap to keep key and value pairs
+                val map = HashMap<String,Any>()
+
+                //add data to hashMap
+                map["title"] = binding.etUpdateFrTitle.text.toString()
+                map["description"] = binding.etUpdateFrDescription.text.toString()
+                map["expectedAmt"] = binding.etUpdateFrExpectedAmt.text.toString()
+                map["collectedAmt"] = binding.etUpdateFrCollectedAmt.text.toString()
+                map["contactNo"] = binding.etUpdateFrContactNo.text.toString()
+                map["email"] = binding.etUpdateFrEmail.text.toString()
+                map["website"] = binding.etUpdateFrWebsite.text.toString()
+                map["bankDetails"] = binding.etUpdateFrBankDetails.text.toString()
+
+                //update database from hashMap
+                databaseReference.child(args.currentFrId).updateChildren(map).addOnCompleteListener {
+                    if( it.isSuccessful){
+                        Toast.makeText(context, "Fundraiser updated", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_updateFrFragment_to_myFundraisingsFragment)
+                    } else {
+                        Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
-
-
-
-        return view
     }
 
     fun validateForm(){
@@ -159,6 +248,17 @@ class UpdateFrFragment : Fragment() {
         }
 
 
+    }
+
+    private fun showProgressBar(){
+        dialog = Dialog(this@UpdateFrFragment.requireContext())
+        dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_wait)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+    private fun hideProgressBar(){
+        dialog.dismiss()
     }
 
 }

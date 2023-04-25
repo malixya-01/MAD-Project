@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".Fragments.Fundraisings.sendSupportMsgToAFrFragment">
+    tools:context=".Fragments.Fundraisings.editRecyclerItem">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="350dp"
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="Willing to support "
+            android:text="Edit message"
             android:textColor="@color/popupMenuTitles"
             android:textSize="24dp"
             android:textStyle="bold"
@@ -60,7 +60,7 @@
                 android:hint="@string/reqFromDonContactNumber">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etSupFrPhone"
+                    android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone" />
@@ -76,7 +76,7 @@
                 android:hint="Email">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etSupFrEmail"
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
@@ -92,7 +92,7 @@
                 android:hint="@string/reqFromDonHintMsg">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etSupFrMsg"
+                    android:id="@+id/etMsg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
@@ -106,13 +106,13 @@
 
 
             <Button
-                android:id="@+id/btnSupFrSubmit"
+                android:id="@+id/btnUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="6dp"
-                android:text="@string/btnSend" />
+                android:text="Update" />
 
         </LinearLayout>
 

@@ -116,7 +116,11 @@
         android:id="@+id/newFundraiserFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.NewFundraiserFragment"
         android:label="@string/addNewFrToolbarTitle"
-        tools:layout="@layout/fragment_new_fundraiser" />
+        tools:layout="@layout/fragment_new_fundraiser" >
+        <action
+            android:id="@+id/action_newFundraiserFragment_to_fundrasingFragment"
+            app:destination="@id/fundrasingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newDonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.newDonationFragment"
@@ -131,8 +135,8 @@
             android:id="@+id/action_viewSingleRequestFragment_to_editARequestFragment2"
             app:destination="@id/editARequestFragment2" />
         <action
-            android:id="@+id/action_viewSingleRequestFragment_to_viewAllDonorsFragment"
-            app:destination="@id/viewAllDonorsFragment" />
+            android:id="@+id/action_viewSingleRequestFragment_to_viewReqAllDonorsFragment"
+            app:destination="@id/viewReqAllDonorsFragment" />
     </fragment>
     <fragment
         android:id="@+id/editARequestFragment2"
@@ -147,6 +151,9 @@
         <action
             android:id="@+id/action_viewAFrAllUsersFragment_to_sendSupportMsgToAFrFragment"
             app:destination="@id/sendSupportMsgToAFrFragment" />
+        <argument
+            android:name="currentFr"
+            app:argType="com.example.supportapp.DataClasses.FundraisingData" />
     </fragment>
     <fragment
         android:id="@+id/viewADonationFragment"
@@ -186,16 +193,31 @@
         tools:layout="@layout/fragment_view_a_fr">
         <action
             android:id="@+id/action_viewAFrFragment_to_updateFrFragment"
-            app:destination="@id/updateFrFragment" />
+            app:destination="@id/updateFrFragment"
+            app:popUpTo="@id/viewAFrFragment" />
         <action
             android:id="@+id/action_viewAFrFragment_to_viewAllDonorsToAFrFragment"
             app:destination="@id/viewAllDonorsToAFrFragment" />
+        <action
+            android:id="@+id/action_viewAFrFragment_to_myFundraisingsFragment"
+            app:destination="@id/myFundraisingsFragment" />
+        <argument
+            android:name="currentFr"
+            app:argType="com.example.supportapp.DataClasses.FundraisingData" />
     </fragment>
     <fragment
         android:id="@+id/updateFrFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.UpdateFrFragment"
         android:label="Edit Fundraiser"
-        tools:layout="@layout/fragment_update_fr" />
+        tools:layout="@layout/fragment_update_fr" >
+        <argument
+            android:name="currentFrId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_updateFrFragment_to_myFundraisingsFragment"
+            app:destination="@id/myFundraisingsFragment"
+            app:popUpTo="@id/dashboardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myRequestsFragment"
         android:name="com.example.supportapp.Fragments.Requests.myRequestsFragment"
@@ -205,8 +227,8 @@
             android:id="@+id/action_myRequestsFragment_to_viewSingleRequestFragment"
             app:destination="@id/viewSingleRequestFragment" />
         <action
-            android:id="@+id/action_myRequestsFragment_to_readAreqSentToDonorFragment"
-            app:destination="@id/readAreqSentToDonorFragment" />
+            android:id="@+id/action_myRequestsFragment_to_viewAllDonorsFragment4"
+            app:destination="@id/viewAllDonorsFragment4" />
     </fragment>
     <fragment
         android:id="@+id/readAreqSentToDonorFragment"
@@ -233,11 +255,6 @@
         android:label="@string/sendSupMsgToAFrToolbarTitle"
         tools:layout="@layout/fragment_send_support_msg_to_a_fr" />
     <fragment
-        android:id="@+id/viewAllDonorsFragment"
-        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewAllDonorsFragment"
-        android:label="@string/viewAllDonorsToAReqToolbarTitle"
-        tools:layout="@layout/fragment_view_all_donors" />
-    <fragment
         android:id="@+id/viewAllReqsFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewAllReqsFragment"
         android:label="@string/viewAllRequestsToolbarTitle"
@@ -246,7 +263,11 @@
         android:id="@+id/viewAllDonorsToAFrFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.viewAllDonorsToAFrFragment"
         android:label="@string/viewAllDonorsToAFrToolbarTitle"
-        tools:layout="@layout/fragment_view_all_donors_to_a_fr" />
+        tools:layout="@layout/fragment_view_all_donors_to_a_fr" >
+        <argument
+            android:name="currFrId"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="com.example.supportapp.Fragments.Other.NotificationsFragment"
@@ -262,4 +283,13 @@
         android:name="com.example.supportapp.ResetPasswordActivity"
         android:label="activity_reset_password"
         tools:layout="@layout/activity_reset_password" />
+    <fragment
+        android:id="@+id/viewAllDonorsFragment4"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.sentReqsFragment"
+        tools:layout="@layout/fragment_view_all_donors" />
+    <fragment
+        android:id="@+id/viewReqAllDonorsFragment"
+        android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.ViewReqAllDonorsFragment"
+        android:label="Donors"
+        tools:layout="@layout/fragment_view_req_all_donors" />
 </navigation>

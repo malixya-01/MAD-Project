@@ -1,4 +1,4 @@
-package com.example.supportapp.models.validations
+package com.example.supportapp.DataClasses.validations
 
 class updateFrFormData (
     private var title: String,
@@ -69,9 +69,9 @@ class updateFrFormData (
     }
 
     fun validateWebsite(): ValidationResult {
-        return if(!website.matches(urlPattern.toRegex())) {
+        return if (website.isNotEmpty() && !website.matches(urlPattern.toRegex())){
             ValidationResult.Invalid("Enter a valid website url")
-        } else {
+        }  else {
             ValidationResult.Valid
         }
     }

@@ -1,6 +1,4 @@
-package com.example.supportapp.models
-
-import com.example.supportapp.models.validations.ValidationResult
+package com.example.supportapp.DataClasses.validations
 
 class newFrFormData(
     private var title: String,
@@ -70,9 +68,9 @@ class newFrFormData(
     }
 
     fun validateWebsite(): ValidationResult {
-        return if(!website.matches(urlPattern.toRegex())) {
+        return if (website.isNotEmpty() && !website.matches(urlPattern.toRegex())){
             ValidationResult.Invalid("Enter a valid website url")
-        } else {
+        }  else {
             ValidationResult.Valid
         }
     }

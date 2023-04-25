@@ -84,7 +84,7 @@
 
                 <TextView
                     android:id="@+id/dashboardUserName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textColor="@color/dashboard_text"
