@@ -13,9 +13,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.R
+import com.example.supportapp.databinding.FragmentNewRequestBinding
+import com.example.supportapp.databinding.FragmentRequestsBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RequestsFragment : Fragment() {
+    private lateinit var binding:FragmentRequestsBinding
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
@@ -29,11 +32,19 @@ class RequestsFragment : Fragment() {
 
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_requests, container, false)
+        binding = FragmentRequestsBinding.inflate(inflater,container,false)
+        return binding.root
+    }
 
-        recyclerView = view.findViewById(R.id.recyclerView)
-        searchView = view.findViewById(R.id.searchView)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        init()
+        registerEvents()
+    }
+
+    private fun init() {
+        val recyclerView = binding.recyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
 
@@ -51,13 +62,13 @@ class RequestsFragment : Fragment() {
             }
 
         })
+    }
 
-        val btnAdd = view.findViewById<FloatingActionButton>(R.id.btnAdd)
-        btnAdd.setOnClickListener {
+    private fun registerEvents() {
+        binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
 
-        return view
     }
 
     private fun addDataToList(){
