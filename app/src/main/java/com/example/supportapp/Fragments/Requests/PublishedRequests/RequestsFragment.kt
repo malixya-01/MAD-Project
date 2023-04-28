@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.Button
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -14,12 +13,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.RequestsAdapter
-import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.R
-import com.example.supportapp.databinding.FragmentNewRequestBinding
 import com.example.supportapp.databinding.FragmentRequestsBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -73,14 +69,6 @@ class RequestsFragment : Fragment() {
         //Passing data to adapter
         adapter = RequestsAdapter(mList)
         recyclerView.adapter = adapter
-
-        //Setting onclick on recyclerView each item
-        adapter.setOnItemClickListner(object: RequestsAdapter.onItemClickListner{
-            override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
-            }
-
-        })
     }
 
     private fun retrieveReqs() {
@@ -109,6 +97,17 @@ class RequestsFragment : Fragment() {
     }
 
     private fun registerEvents() {
+        //Setting onclick on recyclerView each item
+        adapter.setOnItemClickListner(object: RequestsAdapter.onItemClickListner{
+            override fun onItemClick(position: Int) {
+                //findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
+                val reqData = mList[position]
+                val action = RequestsFragmentDirections.actionRequestsFragmentToViewASingleReqAllUsersFragment2(reqData)
+                findNavController().navigate(action)
+            }
+
+        })
+
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }

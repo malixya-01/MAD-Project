@@ -15,6 +15,7 @@
         android:theme="@style/Theme.SupportApp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/viewAReqCollapsingToolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
@@ -214,19 +215,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/viewLay_FAB_dlt_margin_right"
-        android:backgroundTint="@color/editFabBg"
-        android:baselineAlignBottom="false"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="end|bottom"
-        app:srcCompat="@drawable/unselected_bookmark" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

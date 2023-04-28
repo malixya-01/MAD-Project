@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_viewASingleReqAllUsersFragment2_to_supportMsgToReqFragment"
             app:destination="@id/supportMsgToReqFragment" />
+        <argument
+            android:name="currentReq"
+            app:argType="com.example.supportapp.DataClasses.RequestsData" />
     </fragment>
     <fragment
         android:id="@+id/newRequestFragment"
