@@ -19,7 +19,11 @@
         android:id="@+id/newRequestFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.NewRequestFragment"
         android:label="New request"
-        tools:layout="@layout/fragment_new_request"/>
+        tools:layout="@layout/fragment_new_request">
+        <action
+            android:id="@+id/action_newRequestFragment_to_requestsFragment2"
+            app:destination="@id/requestsFragment" />
+    </fragment>
     <action
         android:id="@+id/action_requestsFragment_to_newRequestFragment"
         app:destination="@id/newRequestFragment" />
