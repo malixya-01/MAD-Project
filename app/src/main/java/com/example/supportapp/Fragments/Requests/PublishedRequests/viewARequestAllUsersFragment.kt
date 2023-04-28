@@ -43,6 +43,12 @@ class viewARequestAllUsersFragment : Fragment(), supportMsgToReqFragment.dialogS
     private fun init() {
         binding.viewAReqCollapsingToolbar.title = args.currentReq.title
         binding.tvName.text = args.currentReq.username
+        binding.tvLoc.text = args.currentReq.location
+        binding.tvDate.text = args.currentReq.date
+        binding.tvDesc.text = args.currentReq.description
+        binding.tvPhone.text = args.currentReq.phoneNo
+        binding.tvBankDetails.text = args.currentReq.bankDetails
+
     }
 
     private fun registerEvents() {
