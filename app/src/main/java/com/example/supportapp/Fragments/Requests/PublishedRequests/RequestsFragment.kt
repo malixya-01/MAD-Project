@@ -1,29 +1,43 @@
 package com.example.supportapp.Fragments.Requests.PublishedRequests
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.Button
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.RequestsAdapter
+import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentNewRequestBinding
 import com.example.supportapp.databinding.FragmentRequestsBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class RequestsFragment : Fragment() {
     private lateinit var binding:FragmentRequestsBinding
 
+    private lateinit var auth: FirebaseAuth
+    private lateinit var databaseRef: DatabaseReference
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
     private var mList = ArrayList<RequestsData>()
     private lateinit var adapter: RequestsAdapter
+    private lateinit var uid: String
+    private lateinit var dialog: Dialog
 
 
     override fun onCreateView(
@@ -40,16 +54,21 @@ class RequestsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         init()
+        retrieveReqs()
         registerEvents()
     }
 
+
+
     private fun init() {
+
+        auth = FirebaseAuth.getInstance()
+        uid = auth.currentUser?.uid.toString()
+        databaseRef = FirebaseDatabase.getInstance().reference.child("requests")
+
         val recyclerView = binding.recyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
-
-        //add data to data class
-        addDataToList()
 
         //Passing data to adapter
         adapter = RequestsAdapter(mList)
@@ -64,11 +83,47 @@ class RequestsFragment : Fragment() {
         })
     }
 
+    private fun retrieveReqs() {
+        if (mList.isEmpty()){
+            showProgressBar()
+        }
+        databaseRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                mList.clear()
+                for ( frSnapshot in snapshot.children){
+                    val req = frSnapshot.getValue(RequestsData::class.java)!!
+                    if( req != null){
+                        mList.add(req)
+                    }
+                }
+                adapter.notifyDataSetChanged()
+                hideProgressBar()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                hideProgressBar()
+                Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
     private fun registerEvents() {
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
 
+    }
+
+    private fun showProgressBar(){
+        dialog = Dialog(this@RequestsFragment.requireContext())
+        dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_wait)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+    private fun hideProgressBar(){
+        dialog.dismiss()
     }
 
     private fun addDataToList(){
