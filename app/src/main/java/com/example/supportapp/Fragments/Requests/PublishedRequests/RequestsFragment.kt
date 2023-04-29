@@ -62,7 +62,7 @@ class RequestsFragment : Fragment() {
         uid = auth.currentUser?.uid.toString()
         databaseRef = FirebaseDatabase.getInstance().reference.child("requests")
 
-        val recyclerView = binding.recyclerView
+        recyclerView = binding.recyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
 
