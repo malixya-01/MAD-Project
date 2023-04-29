@@ -15,6 +15,8 @@ import androidx.navigation.fragment.navArgs
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewARequestBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
@@ -23,6 +25,7 @@ class viewaRequestFragment : Fragment() {
 
     private lateinit var binding: FragmentViewARequestBinding
     private lateinit var storageReference : StorageReference
+    private lateinit var databaseReference: DatabaseReference
     private lateinit var auth: FirebaseAuth
     private lateinit var dialog: Dialog
     private var uid : String? = null
@@ -44,6 +47,9 @@ class viewaRequestFragment : Fragment() {
     }
 
     private fun init() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("requests")
+
         auth = FirebaseAuth.getInstance()   //initialize auth
         uid = auth.currentUser?.uid //initialize current user
         //retrieve user profile pic
@@ -90,7 +96,12 @@ class viewaRequestFragment : Fragment() {
         }
 
         deleteButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show()
+            databaseReference.child(args.currentReq.reqId!!).removeValue().addOnCompleteListener {
+                if( it.isSuccessful){
+                    Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_viewSingleRequestFragment_to_myRequestsFragment)
+                }
+            }
             dialog.dismiss()
         }
 
