@@ -4,13 +4,14 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class RequestsData(val title: String? = null,
-                        val username: String? = null,
-                        val location: String? = null,
-                        val description: String? = null,
-                        val phoneNo: String? = null,
-                        val uid: String? = null,
-                        val bankDetails: String? = null,
-                        val date: String? = null,
-                        val reqId: String? = null): Parcelable
+data class RequestsData(
+    var title: String? = null,
+    var username: String? = null,
+    var location: String? = null,
+    var description: String? = null,
+    var phoneNo: String? = null,
+    var uid: String? = null,
+    var bankDetails: String? = null,
+    var date: String? = null,
+    var reqId: String? = null): Parcelable
 
