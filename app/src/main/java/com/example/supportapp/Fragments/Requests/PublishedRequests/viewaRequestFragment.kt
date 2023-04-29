@@ -14,8 +14,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentViewARequestBinding
-import com.example.supportapp.databinding.FragmentViewASingleReqAllUsersBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -64,7 +62,8 @@ class viewaRequestFragment : Fragment() {
 
     private fun registerEvents() {
         binding.btnEditReq.setOnClickListener {
-            findNavController().navigate(R.id.action_viewSingleRequestFragment_to_editARequestFragment2)
+            var action = viewaRequestFragmentDirections.actionViewSingleRequestFragmentToEditARequestFragment2(args.currentReq)
+            findNavController().navigate(action)
         }
 
         binding.viewDonors.setOnClickListener {
