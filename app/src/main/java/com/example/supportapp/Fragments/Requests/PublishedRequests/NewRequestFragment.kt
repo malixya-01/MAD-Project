@@ -14,6 +14,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.supportapp.DataClasses.FundraisingData
 import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.DataClasses.User
+import com.example.supportapp.DataClasses.validations.NewRequestFormData
+import com.example.supportapp.DataClasses.validations.ValidationResult
+import com.example.supportapp.DataClasses.validations.newFrFormData
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentNewRequestBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -71,30 +74,33 @@ class NewRequestFragment : Fragment() {
 
     private fun registerEvents() {
         binding.btnSubmitNewReq.setOnClickListener {
-            showProgressBar()
+
             var title = binding.tvNewReqTitle.text.toString()
             var city = binding.tvNewReqCity.text.toString()
             var contactNo = binding.tvNewReqContactNumber.text.toString()
             var description = binding.tvNewReqDescription.text.toString()
             var bankDetails = binding.tvNewReqBankDetails.text.toString()
 
-            var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+            validateForm(title, city, contactNo, description, bankDetails)
 
-            //Id for new fr
-            var reqId = databaseRef.push().key!!
-            //create a FundraisingData object
-            val reqData = RequestsData(title,userName,city,description,contactNo,uid, bankDetails, date, reqId)
-            databaseRef.child(reqId).setValue(reqData).addOnCompleteListener {
-                if (it.isSuccessful){
-                    hideProgressBar()
-                    findNavController().navigate(R.id.action_newRequestFragment_to_requestsFragment2)
-                    Toast.makeText(context, "Your fundraiser added successfully", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+            if(isValidationSuccess){
+                showProgressBar()
+                var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+
+                //Id for new fr
+                var reqId = databaseRef.push().key!!
+                //create a FundraisingData object
+                val reqData = RequestsData(title,userName,city,description,contactNo,uid, bankDetails, date, reqId)
+                databaseRef.child(reqId).setValue(reqData).addOnCompleteListener {
+                    if (it.isSuccessful){
+                        hideProgressBar()
+                        findNavController().navigate(R.id.action_newRequestFragment_to_requestsFragment2)
+                        Toast.makeText(context, "Your fundraiser added successfully", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
-
-
         }
     }
 
@@ -113,6 +119,85 @@ class NewRequestFragment : Fragment() {
         })
     }
 
+    fun validateForm(title: String, location: String,phone: String, des: String,bank: String) {
+        //set isValidationSuccess to false
+        isValidationSuccess = false
+
+        //variable to keep count of passed validations
+        var count = 0
+
+        //create a newFrFormData class object
+        var myForm = NewRequestFormData(title, location, phone, des, bank)
+
+        //assign each validation method to variables
+        val titleValidation = myForm.validateTitle()
+        val locationValidation = myForm.validateLocation()
+        val contactNoValidation = myForm.validateContactNumber()
+        val descriptionValidation = myForm.validateDescription()
+        val bankDetailsValidation = myForm.validateBankDetails()
+
+        when (titleValidation) {
+            is ValidationResult.Empty -> {
+                binding.tvNewReqTitle.error = titleValidation.errorMessage
+            }
+            is ValidationResult.Valid -> {
+                count++
+            }
+            is ValidationResult.Invalid -> {}
+        }
+
+        when (locationValidation) {
+            is ValidationResult.Empty -> {
+                binding.tvNewReqCity.error = locationValidation.errorMessage
+            }
+            is ValidationResult.Valid -> {
+                count++
+            }
+            is ValidationResult.Invalid -> {}
+        }
+
+        when (contactNoValidation) {
+            is ValidationResult.Empty -> {
+                binding.tvNewReqContactNumber.error = contactNoValidation.errorMessage
+            }
+            is ValidationResult.Invalid -> {
+                binding.tvNewReqContactNumber.error = contactNoValidation.errorMessage
+            }
+            is ValidationResult.Valid -> {
+                count++
+            }
+        }
+        when (descriptionValidation) {
+            is ValidationResult.Empty -> {
+                binding.tvNewReqDescription.error = descriptionValidation.errorMessage
+            }
+            is ValidationResult.Valid -> {
+                count++
+            }
+            is ValidationResult.Invalid -> {}
+        }
+
+
+        when (bankDetailsValidation) {
+            is ValidationResult.Empty -> {
+                binding.tvNewReqBankDetails.error = bankDetailsValidation.errorMessage
+            }
+            is ValidationResult.Invalid -> {}
+            is ValidationResult.Valid -> {
+                count++
+            }
+        }
+
+        //set isValidationSuccess to true if all validations are success
+        if (count == 5) {
+            isValidationSuccess = true
+        }
+
+
+    }
+
+
+
     private fun showProgressBar(){
         dialog = Dialog( this@NewRequestFragment.requireContext())
         dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
@@ -123,5 +208,4 @@ class NewRequestFragment : Fragment() {
     private fun hideProgressBar(){
         dialog.dismiss()
     }
-
 }
