@@ -9,10 +9,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.supportapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class viewaRequestFragment : Fragment() {
+
+    private val args by navArgs<viewaRequestFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +38,6 @@ class viewaRequestFragment : Fragment() {
         deleteBtn.setOnClickListener {
             showDeleteConfirmationDialog()
         }
-
         return view
     }
 

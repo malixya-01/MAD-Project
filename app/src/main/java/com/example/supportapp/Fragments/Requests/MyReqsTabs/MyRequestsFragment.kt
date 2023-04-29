@@ -38,6 +38,8 @@ class myRequestsFragment : Fragment() {
         val adapter = myRequestsAdapter(this, childFragmentManager, tabLayout.tabCount)
         viewPager.adapter = adapter
 
+
+
         viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {

@@ -9,23 +9,19 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.Adapters.myPublishedReqsAdapter
 import com.example.supportapp.DataClasses.RequestsData
-import com.example.supportapp.DataClasses.myPublishedReqsData
-import com.example.supportapp.Fragments.Requests.PublishedRequests.RequestsFragmentDirections
+import com.example.supportapp.Fragments.Requests.myRequestsFragmentDirections
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentMyPublishedReqsBinding
-import com.example.supportapp.databinding.FragmentRequestsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.ValueEventListener
 
 class myPublishedReqsFragment : Fragment() {
@@ -99,8 +95,9 @@ class myPublishedReqsFragment : Fragment() {
     private fun registerEvents() {
         adapter.setOnItemClickListener(object : myPublishedReqsAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                val navController = Navigation.findNavController(requireActivity(), R.id.viewPager)
-                navController.navigate(R.id.action_myRequestsFragment_to_viewSingleRequestFragment)
+                val reqData = mList[position]
+                val action = myRequestsFragmentDirections.actionMyRequestsFragmentToViewSingleRequestFragment(reqData)
+                findNavController().navigate(action)
             }
         })
     }
