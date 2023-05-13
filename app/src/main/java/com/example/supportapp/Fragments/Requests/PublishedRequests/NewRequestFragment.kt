@@ -95,7 +95,7 @@ class NewRequestFragment : Fragment() {
                     if (it.isSuccessful){
                         hideProgressBar()
                         findNavController().navigate(R.id.action_newRequestFragment_to_requestsFragment2)
-                        Toast.makeText(context, "Your fundraiser added successfully", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Your request added successfully", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
                     }

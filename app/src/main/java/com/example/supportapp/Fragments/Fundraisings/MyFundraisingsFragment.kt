@@ -121,7 +121,6 @@ class MyFundraisingsFragment : Fragment() {
                 val myFrData =  mList[position]
                 val action = MyFundraisingsFragmentDirections.actionMyFundraisingsFragmentToViewAFrFragment(myFrData)
                 findNavController().navigate(action)
-
             }
 
         })

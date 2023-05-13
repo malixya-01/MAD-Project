@@ -1,3 +1,16 @@
 package com.example.supportapp.DataClasses
 
-data class DonationsData(val title: String,val username: String, val location: String, val description: String)
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+
+@Parcelize
+data class DonationsData(
+    var title: String? = null,
+    var username: String? = null,
+    var location: String? = null,
+    var description: String? = null,
+    var phoneNo: String? = null,
+    var uid: String? = null,
+    var date: String? = null,
+    var donId: String? = null): Parcelable
