@@ -20,21 +20,10 @@ import com.google.firebase.storage.FirebaseStorage
 import java.io.File
 import kotlin.coroutines.coroutineContext
 
-class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
-    RecyclerView.Adapter<viewAllDonorsFrAdapter.ViewAllDonorsFrViewHolder>() {
+class viewMessagesAdapter(var mList: List<supportFundraiserData>) :
+    RecyclerView.Adapter<viewMessagesAdapter.viewMessageViewHolder>() {
 
-    private lateinit var mListner : onItemClickListner
-
-    //Setting up onClick listner interface
-    interface onItemClickListner{
-        fun onItemClick( position: Int)
-    }
-
-    fun setOnItemClickListner(listner: onItemClickListner){
-        mListner = listner
-    }
-
-    inner class ViewAllDonorsFrViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
+    inner class viewMessageViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
         val tvUserName : TextView = itemView.findViewById(R.id.tvName)
         val tvDate : TextView = itemView.findViewById(R.id.tvDate)
         val tvPhone : TextView = itemView.findViewById(R.id.tvContactNumber)
@@ -42,26 +31,22 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
         val tvDescription : TextView = itemView.findViewById(R.id.tvDescription)
         val userDp : ImageView = itemView.findViewById(R.id.ivViewDp)
 
-        init{
-            itemView.setOnClickListener {
-                listner.onItemClick(adapterPosition)
-            }
-        }
+
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewAllDonorsFrViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewMessageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_view_sup_msgs, parent, false)
-        return ViewAllDonorsFrViewHolder(view, mListner)
+        return viewMessageViewHolder(view)
     }
 
     override fun getItemCount(): Int {
         return mList.size
     }
 
-    override fun onBindViewHolder(holder: ViewAllDonorsFrViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: viewMessageViewHolder, position: Int) {
         //retrieve user name and profile picture and bind to view holder
-        getUserDetails(position, holder)
+        /*positiongetUserDetails(position, holder)
 
         //display empty values as N/A
         if( !mList[position].phoneNumber.isNullOrBlank()){
@@ -74,7 +59,7 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
             holder.tvEmail.text = mList[position].email
         } else{
             holder.tvEmail.text = "N/A"
-        }
+        }*/
 
         holder.tvUserName.text = mList[position].supporterId
         holder.tvDate.text = mList[position].date
@@ -82,7 +67,7 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
 
     }
 
-    private fun getUserDetails(position : Int, holder: ViewAllDonorsFrViewHolder){
+    /*private fun getUserDetails(position : Int, holder: viewMessageViewHolder){
         var userId = mList[position].supporterId!!
 
         var databaseReference = FirebaseDatabase.getInstance().reference.child("users")
@@ -106,9 +91,9 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
 
         })
 
-    }
+    }*/
 
-    private fun getUserProfilePicture(uid: String, holder: ViewAllDonorsFrViewHolder){
+    /*private fun getUserProfilePicture(uid: String, holder: viewMessageViewHolder){
         //find image named with the current uid
         var storageReference = FirebaseStorage.getInstance().reference.child("Users/$uid")
 
@@ -126,6 +111,6 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
         }.addOnFailureListener{
 
         }
-    }
+    }*/
 
 }

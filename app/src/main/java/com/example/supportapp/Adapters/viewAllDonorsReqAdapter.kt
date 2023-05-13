@@ -1,13 +1,13 @@
 package com.example.supportapp.Adapters
 
-import android.graphics.Bitmap
+import android.content.Context
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.DataClasses.User
 import com.example.supportapp.DataClasses.supportFundraiserData
@@ -18,10 +18,14 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import java.io.File
-import kotlin.coroutines.coroutineContext
 
-class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
-    RecyclerView.Adapter<viewAllDonorsFrAdapter.ViewAllDonorsFrViewHolder>() {
+class viewAllDonorsReqAdapter(var c: Context, var mList: List<supportFundraiserData>) :
+    RecyclerView.Adapter<viewAllDonorsReqAdapter.ViewAllDonorsReqViewHolder>() {
+
+    private var popMenulistner : popupMenuOnItemClickInterface? = null
+    fun setPopMenulistner(popMenulistner: popupMenuOnItemClickInterface){
+        this.popMenulistner = popMenulistner
+    }
 
     private lateinit var mListner : onItemClickListner
 
@@ -34,34 +38,63 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
         mListner = listner
     }
 
-    inner class ViewAllDonorsFrViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
+    inner class ViewAllDonorsReqViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
         val tvUserName : TextView = itemView.findViewById(R.id.tvName)
         val tvDate : TextView = itemView.findViewById(R.id.tvDate)
         val tvPhone : TextView = itemView.findViewById(R.id.tvContactNumber)
         val tvEmail : TextView = itemView.findViewById(R.id.tvEmail)
         val tvDescription : TextView = itemView.findViewById(R.id.tvDescription)
         val userDp : ImageView = itemView.findViewById(R.id.ivViewDp)
+        val moreBtn : ImageView = itemView.findViewById(R.id.btnMore)
 
         init{
             itemView.setOnClickListener {
                 listner.onItemClick(adapterPosition)
             }
+
+            moreBtn.setOnClickListener { popupMenus(it) }   //set onclick listeners on menu items
+        }
+
+        private fun popupMenus(v : View) {
+            val position = mList[adapterPosition]
+            val popupMenus = PopupMenu(c,v)
+            popupMenus.inflate(R.menu.popup_menu)
+            popupMenus.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.popup_edit -> {
+                        popMenulistner?.onEditBtnClicked(position)
+                        true
+                    }
+                    R.id.popup_delete->{
+                        popMenulistner?.onDeleteBtnClicked(position)
+                        true
+                    }
+                    else-> true
+                }
+            }
+            popupMenus.show()
+
         }
 
     }
+    interface popupMenuOnItemClickInterface{
+        fun onEditBtnClicked(supFrData: supportFundraiserData)
+        fun onDeleteBtnClicked(supFrData: supportFundraiserData)
+    }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewAllDonorsFrViewHolder {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewAllDonorsReqViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item_view_sup_msgs, parent, false)
-        return ViewAllDonorsFrViewHolder(view, mListner)
+        return ViewAllDonorsReqViewHolder(view, mListner)
     }
 
     override fun getItemCount(): Int {
         return mList.size
     }
 
-    override fun onBindViewHolder(holder: ViewAllDonorsFrViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewAllDonorsReqViewHolder, position: Int) {
         //retrieve user name and profile picture and bind to view holder
-        getUserDetails(position, holder)
+        //getUserDetails(position, holder)
 
         //display empty values as N/A
         if( !mList[position].phoneNumber.isNullOrBlank()){
@@ -82,7 +115,7 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
 
     }
 
-    private fun getUserDetails(position : Int, holder: ViewAllDonorsFrViewHolder){
+   /* private fun getUserDetails(position : Int, holder: ViewAllDonorsReqViewHolder){
         var userId = mList[position].supporterId!!
 
         var databaseReference = FirebaseDatabase.getInstance().reference.child("users")
@@ -108,7 +141,7 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
 
     }
 
-    private fun getUserProfilePicture(uid: String, holder: ViewAllDonorsFrViewHolder){
+    private fun getUserProfilePicture(uid: String, holder: ViewAllDonorsReqViewHolder){
         //find image named with the current uid
         var storageReference = FirebaseStorage.getInstance().reference.child("Users/$uid")
 
@@ -126,6 +159,6 @@ class viewAllDonorsFrAdapter(var mList: List<supportFundraiserData>) :
         }.addOnFailureListener{
 
         }
-    }
+    }*/
 
 }

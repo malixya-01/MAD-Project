@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.DataClasses.myPublishedReqsData
 import com.example.supportapp.R
 
-class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
+class myPublishedReqsAdapter(var mList: List<RequestsData>) :
     RecyclerView.Adapter<myPublishedReqsAdapter.myPublishedReqsViewHolder>() {
 
     private var listener: OnItemClickListener? = null
@@ -47,6 +48,5 @@ class myPublishedReqsAdapter(var mList: List<myPublishedReqsData>) :
     override fun onBindViewHolder(holder: myPublishedReqsViewHolder, position: Int) {
         holder.titleTv.text = mList[position].title
         holder.dateTv.text = mList[position].date
-        holder.count.text = mList[position].count
     }
 }
