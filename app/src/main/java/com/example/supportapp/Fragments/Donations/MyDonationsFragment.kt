@@ -15,6 +15,7 @@ import com.example.supportapp.Adapters.myDonationsAdapter
 import com.example.supportapp.DataClasses.DonationsData
 import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.DataClasses.myDonationsData
+import com.example.supportapp.Fragments.Requests.myRequestsFragmentDirections
 import com.example.supportapp.R
 import com.example.supportapp.databinding.FragmentMyDonationsBinding
 import com.example.supportapp.databinding.FragmentMyPublishedReqsBinding
@@ -52,7 +53,11 @@ class myDonationsFragment : Fragment() {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: myDonationsAdapter.onItemClickListner {
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_myDonationsFragment_to_viewADonationFragment)
+                //findNavController().navigate(R.id.action_myDonationsFragment_to_viewADonationFragment)
+                val data = mList[position]
+                val action = myDonationsFragmentDirections.actionMyDonationsFragmentToViewADonationFragment(data)
+                findNavController().navigate(action)
+
             }
         })
     }

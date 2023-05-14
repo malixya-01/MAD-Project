@@ -200,6 +200,9 @@
         <argument
             android:name="currentDonation"
             app:argType="com.example.supportapp.DataClasses.DonationsData" />
+        <action
+            android:id="@+id/action_viewADonationFragment_to_myDonationsFragment"
+            app:destination="@id/myDonationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewADonationAllUserFragment"
@@ -217,7 +220,14 @@
         android:id="@+id/updateDonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.UpdateDonationFragment"
         android:label="@string/editMyDonToolbarTitle"
-        tools:layout="@layout/fragment_update_donation" />
+        tools:layout="@layout/fragment_update_donation" >
+        <argument
+            android:name="currentDon"
+            app:argType="com.example.supportapp.DataClasses.DonationsData" />
+        <action
+            android:id="@+id/action_updateDonationFragment_to_myDonationsFragment"
+            app:destination="@id/myDonationsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addReqtoTheDonorFragment"
         android:name="com.example.supportapp.Fragments.Requests.SentRequests.addReqtoTheDonorFragment"
