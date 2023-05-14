@@ -139,7 +139,7 @@ class ViewADonationAllUserFragment : Fragment(),
     override fun onSave(phone: String?, email: String?, message: String) {
         var currFrId = args.currentDon.donId  //initialize current frID
         databaseReference = FirebaseDatabase.getInstance().reference
-            .child("requestFromDonor").child(currFrId!!)
+            .child("requestFromDonor")
 
         var id = databaseReference.push().key!! //Id for new record
         var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
