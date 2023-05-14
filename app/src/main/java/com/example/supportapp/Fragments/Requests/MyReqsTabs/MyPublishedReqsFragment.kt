@@ -71,7 +71,9 @@ class myPublishedReqsFragment : Fragment() {
         if (mList.isEmpty()){
             showProgressBar()
         }
-        databaseRef.addValueEventListener(object : ValueEventListener {
+        val query = databaseRef.orderByChild("uid").equalTo(uid)
+
+        query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 mList.clear()
                 for ( frSnapshot in snapshot.children){

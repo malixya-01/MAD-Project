@@ -60,7 +60,7 @@ class DonationsFragment : Fragment(R.layout.fragment_donations) {
         uid = auth.currentUser?.uid.toString()
         databaseRef = FirebaseDatabase.getInstance().reference.child("donations")
 
-
+        //set up recyclerView
         recyclerView = binding.recyclerView
 
         recyclerView.setHasFixedSize(true)

@@ -96,10 +96,7 @@ class editARequestFragment : Fragment() {
                         Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
                     }
                 }
-
             }
-
-
         }
     }
 

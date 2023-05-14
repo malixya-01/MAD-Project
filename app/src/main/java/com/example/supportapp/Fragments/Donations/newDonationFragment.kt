@@ -50,7 +50,7 @@ class newDonationFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
 
-        //to access the fundraising
+        //to access the databse
         databaseRef = FirebaseDatabase.getInstance().reference
             .child("donations")
 
@@ -69,7 +69,6 @@ class newDonationFragment : Fragment() {
             var city = binding.newDonCitytv.text.toString()
             var contactNo = binding.newDonConNumtv.text.toString()
             var description = binding.newDonDesctv.text.toString()
-
 
             if(title.isEmpty() || city.isEmpty() || contactNo.isEmpty() || description.isEmpty()){
 
@@ -96,7 +95,7 @@ class newDonationFragment : Fragment() {
                 databaseRef.child(donId).setValue(reqData).addOnCompleteListener {
                     if (it.isSuccessful){
                         hideProgressBar()
-                        //findNavController().navigate(R.id.action_newRequestFragment_to_requestsFragment2)
+                        findNavController().navigate(R.id.action_newDonationFragment_to_donationsFragment)
                         Toast.makeText(context, "Your donation added successfully", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()

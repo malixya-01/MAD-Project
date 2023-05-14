@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.DataClasses.myDonationsData
+import com.example.supportapp.DataClasses.DonationsData
 import com.example.supportapp.R
 
-class myDonationsAdapter(var mList: List<myDonationsData>) :
+class myDonationsAdapter(var mList: List<DonationsData>) :
     RecyclerView.Adapter<myDonationsAdapter.myDonationsViewHolder>() {
 
 
@@ -49,6 +49,5 @@ class myDonationsAdapter(var mList: List<myDonationsData>) :
     override fun onBindViewHolder(holder: myDonationsViewHolder, position: Int) {
         holder.titleTv.text = mList[position].title
         holder.dateTv.text = mList[position].date
-        holder.count.text = mList[position].count
     }
 }

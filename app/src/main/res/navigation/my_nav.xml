@@ -132,7 +132,13 @@
         android:id="@+id/newDonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.newDonationFragment"
         android:label="Add new donation"
-        tools:layout="@layout/fragment_new_donation" />
+        tools:layout="@layout/fragment_new_donation" >
+        <action
+            android:id="@+id/action_newDonationFragment_to_donationsFragment"
+            app:destination="@id/donationsFragment"
+            app:popUpTo="@id/donationsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/viewSingleRequestFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewaRequestFragment"
