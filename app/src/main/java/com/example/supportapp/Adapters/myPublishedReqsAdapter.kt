@@ -24,7 +24,6 @@ class myPublishedReqsAdapter(var mList: List<RequestsData>) :
     }
 
     inner class myPublishedReqsViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
-        val count: TextView = itemView.findViewById(R.id.tvCount)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
         val dateTv : TextView = itemView.findViewById(R.id.tvDate)
 

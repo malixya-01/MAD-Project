@@ -26,7 +26,6 @@ class myDonationsAdapter(var mList: List<DonationsData>) :
     }
 
     inner class myDonationsViewHolder(itemView: View, listner: onItemClickListner) :RecyclerView.ViewHolder(itemView) {
-        val count: TextView = itemView.findViewById(R.id.tvCount)
         val titleTv : TextView = itemView.findViewById(R.id.titleTv)
         val dateTv : TextView = itemView.findViewById(R.id.tvDate)
         init{
