@@ -197,6 +197,9 @@
         <action
             android:id="@+id/action_viewADonationFragment_to_viewAllReqsFragment"
             app:destination="@id/viewAllReqsFragment" />
+        <argument
+            android:name="currentDonation"
+            app:argType="com.example.supportapp.DataClasses.DonationsData" />
     </fragment>
     <fragment
         android:id="@+id/viewADonationAllUserFragment"
@@ -206,6 +209,9 @@
         <action
             android:id="@+id/action_viewADonationAllUserFragment_to_addReqtoTheDonorFragment"
             app:destination="@id/addReqtoTheDonorFragment" />
+        <argument
+            android:name="currentDon"
+            app:argType="com.example.supportapp.DataClasses.DonationsData" />
     </fragment>
     <fragment
         android:id="@+id/updateDonationFragment"
@@ -300,16 +306,6 @@
             android:name="currFrId"
             app:argType="string" />
     </fragment>
-    <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="com.example.supportapp.Fragments.Other.NotificationsFragment"
-        android:label="@string/notificationsToolbarTitle"
-        tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/savedItemesFragment"
-        android:name="com.example.supportapp.Fragments.Other.SavedItemesFragment"
-        android:label="@string/savedItemsToolbarTitle"
-        tools:layout="@layout/fragment_saved_itemes" />
     <activity
         android:id="@+id/resetPasswordActivity"
         android:name="com.example.supportapp.ResetPasswordActivity"

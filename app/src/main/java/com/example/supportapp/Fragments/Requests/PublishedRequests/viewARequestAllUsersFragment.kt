@@ -57,7 +57,7 @@ class viewARequestAllUsersFragment : Fragment(), supportMsgToReqFragment.dialogS
         uid = auth.currentUser?.uid //initialize current user
         //retrieve user profile pic
         storageReference = FirebaseStorage.getInstance().reference
-            .child("Users/$uid")
+            .child("Users/${args.currentReq.uid}")
         getUserProfilePicture()
 
         binding.viewAReqCollapsingToolbar.title = args.currentReq.title
