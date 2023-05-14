@@ -13,6 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.supportapp.DataClasses.reqFromDonorData
+import com.example.supportapp.DataClasses.supportFundraiserData
 import com.example.supportapp.Fragments.Requests.PublishedRequests.viewARequestAllUsersFragmentArgs
 import com.example.supportapp.Fragments.Requests.SentRequests.addReqtoTheDonorFragment
 import com.example.supportapp.R
@@ -20,9 +22,13 @@ import com.example.supportapp.databinding.FragmentViewADonationAllUserBinding
 import com.example.supportapp.databinding.FragmentViewASingleReqAllUsersBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class ViewADonationAllUserFragment : Fragment(),
     addReqtoTheDonorFragment.dialogSubmitButtonClickedListner {
@@ -31,6 +37,7 @@ class ViewADonationAllUserFragment : Fragment(),
     private lateinit var popupFragment: addReqtoTheDonorFragment
     private val args by navArgs<ViewADonationAllUserFragmentArgs>()
     private lateinit var storageReference : StorageReference
+    private lateinit var databaseReference: DatabaseReference
     private lateinit var auth: FirebaseAuth
     private lateinit var dialog: Dialog
     private var uid : String? = null
@@ -130,7 +137,24 @@ class ViewADonationAllUserFragment : Fragment(),
     }
 
     override fun onSave(phone: String?, email: String?, message: String) {
-        TODO("Not yet implemented")
+        var currFrId = args.currentDon.donId  //initialize current frID
+        databaseReference = FirebaseDatabase.getInstance().reference
+            .child("requestFromDonor").child(currFrId!!)
+
+        var id = databaseReference.push().key!! //Id for new record
+        var date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+        var data = reqFromDonorData(id, uid, email, phone, message, date) // create new supportFr object
+
+        //push created object to the db
+        databaseReference.child(id).setValue(data).addOnCompleteListener {
+            if (it.isSuccessful){
+                hideProgressBar()
+                Toast.makeText(context, "Message sent", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+            }
+            popupFragment.dismiss()
+        }
     }
     private fun showProgressBar(){
         dialog = Dialog(this@ViewADonationAllUserFragment.requireContext())
