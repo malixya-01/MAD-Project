@@ -14,12 +14,19 @@
         <action
             android:id="@+id/action_viewASingleReqAllUsersFragment2_to_supportMsgToReqFragment"
             app:destination="@id/supportMsgToReqFragment" />
+        <argument
+            android:name="currentReq"
+            app:argType="com.example.supportapp.DataClasses.RequestsData" />
     </fragment>
     <fragment
         android:id="@+id/newRequestFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.NewRequestFragment"
         android:label="New request"
-        tools:layout="@layout/fragment_new_request"/>
+        tools:layout="@layout/fragment_new_request">
+        <action
+            android:id="@+id/action_newRequestFragment_to_requestsFragment2"
+            app:destination="@id/requestsFragment" />
+    </fragment>
     <action
         android:id="@+id/action_requestsFragment_to_newRequestFragment"
         app:destination="@id/newRequestFragment" />
@@ -125,7 +132,13 @@
         android:id="@+id/newDonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.newDonationFragment"
         android:label="Add new donation"
-        tools:layout="@layout/fragment_new_donation" />
+        tools:layout="@layout/fragment_new_donation" >
+        <action
+            android:id="@+id/action_newDonationFragment_to_donationsFragment"
+            app:destination="@id/donationsFragment"
+            app:popUpTo="@id/donationsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/viewSingleRequestFragment"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.viewaRequestFragment"
@@ -133,16 +146,34 @@
         tools:layout="@layout/fragment_view_a_request">
         <action
             android:id="@+id/action_viewSingleRequestFragment_to_editARequestFragment2"
-            app:destination="@id/editARequestFragment2" />
+            app:destination="@id/editARequestFragment2"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_viewSingleRequestFragment_to_viewReqAllDonorsFragment"
             app:destination="@id/viewReqAllDonorsFragment" />
+        <argument
+            android:name="currentReq"
+            app:argType="com.example.supportapp.DataClasses.RequestsData" />
+        <action
+            android:id="@+id/action_viewSingleRequestFragment_to_myRequestsFragment"
+            app:destination="@id/myRequestsFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editARequestFragment2"
         android:name="com.example.supportapp.Fragments.Requests.PublishedRequests.editARequestFragment"
         android:label="@string/myPubReqEdit"
-        tools:layout="@layout/fragment_edit_a_request" />
+        tools:layout="@layout/fragment_edit_a_request" >
+        <argument
+            android:name="currentReq"
+            app:argType="com.example.supportapp.DataClasses.RequestsData" />
+        <action
+            android:id="@+id/action_editARequestFragment2_to_viewSingleRequestFragment"
+            app:destination="@id/viewSingleRequestFragment"
+            app:popUpTo="@id/viewSingleRequestFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/viewAFrAllUsersFragment"
         android:name="com.example.supportapp.Fragments.Fundraisings.viewAFrAllUsersFragment"
@@ -166,6 +197,12 @@
         <action
             android:id="@+id/action_viewADonationFragment_to_viewAllReqsFragment"
             app:destination="@id/viewAllReqsFragment" />
+        <argument
+            android:name="currentDonation"
+            app:argType="com.example.supportapp.DataClasses.DonationsData" />
+        <action
+            android:id="@+id/action_viewADonationFragment_to_myDonationsFragment"
+            app:destination="@id/myDonationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewADonationAllUserFragment"
@@ -175,12 +212,22 @@
         <action
             android:id="@+id/action_viewADonationAllUserFragment_to_addReqtoTheDonorFragment"
             app:destination="@id/addReqtoTheDonorFragment" />
+        <argument
+            android:name="currentDon"
+            app:argType="com.example.supportapp.DataClasses.DonationsData" />
     </fragment>
     <fragment
         android:id="@+id/updateDonationFragment"
         android:name="com.example.supportapp.Fragments.Donations.UpdateDonationFragment"
         android:label="@string/editMyDonToolbarTitle"
-        tools:layout="@layout/fragment_update_donation" />
+        tools:layout="@layout/fragment_update_donation" >
+        <argument
+            android:name="currentDon"
+            app:argType="com.example.supportapp.DataClasses.DonationsData" />
+        <action
+            android:id="@+id/action_updateDonationFragment_to_myDonationsFragment"
+            app:destination="@id/myDonationsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addReqtoTheDonorFragment"
         android:name="com.example.supportapp.Fragments.Requests.SentRequests.addReqtoTheDonorFragment"
@@ -225,7 +272,8 @@
         tools:layout="@layout/fragment_my_requsts" >
         <action
             android:id="@+id/action_myRequestsFragment_to_viewSingleRequestFragment"
-            app:destination="@id/viewSingleRequestFragment" />
+            app:destination="@id/viewSingleRequestFragment"
+            app:popUpTo="@id/myRequestsFragment" />
         <action
             android:id="@+id/action_myRequestsFragment_to_viewAllDonorsFragment4"
             app:destination="@id/viewAllDonorsFragment4" />
@@ -268,16 +316,6 @@
             android:name="currFrId"
             app:argType="string" />
     </fragment>
-    <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="com.example.supportapp.Fragments.Other.NotificationsFragment"
-        android:label="@string/notificationsToolbarTitle"
-        tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/savedItemesFragment"
-        android:name="com.example.supportapp.Fragments.Other.SavedItemesFragment"
-        android:label="@string/savedItemsToolbarTitle"
-        tools:layout="@layout/fragment_saved_itemes" />
     <activity
         android:id="@+id/resetPasswordActivity"
         android:name="com.example.supportapp.ResetPasswordActivity"

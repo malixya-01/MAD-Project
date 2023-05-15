@@ -1,7 +1,6 @@
 package com.example.supportapp.Adapters
 
 import android.content.Context
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,17 +8,10 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.DataClasses.User
-import com.example.supportapp.DataClasses.supportFundraiserData
+import com.example.supportapp.DataClasses.reqFromDonorData
 import com.example.supportapp.R
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.storage.FirebaseStorage
-import java.io.File
 
-class viewAllDonorsReqAdapter(var c: Context, var mList: List<supportFundraiserData>) :
+class viewAllDonorsReqAdapter(var c: Context, var mList: List<reqFromDonorData>) :
     RecyclerView.Adapter<viewAllDonorsReqAdapter.ViewAllDonorsReqViewHolder>() {
 
     private var popMenulistner : popupMenuOnItemClickInterface? = null
@@ -78,8 +70,8 @@ class viewAllDonorsReqAdapter(var c: Context, var mList: List<supportFundraiserD
 
     }
     interface popupMenuOnItemClickInterface{
-        fun onEditBtnClicked(supFrData: supportFundraiserData)
-        fun onDeleteBtnClicked(supFrData: supportFundraiserData)
+        fun onEditBtnClicked(supFrData: reqFromDonorData)
+        fun onDeleteBtnClicked(supFrData: reqFromDonorData)
     }
 
 

@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //adding toolbar  menu
+   /* //adding toolbar  menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
+*/
 
     //to implement correct backward navigation
     override fun onSupportNavigateUp(): Boolean {

@@ -59,7 +59,7 @@ class viewAFrAllUsersFragment : Fragment(),
 
         //retrieve user profile pic
         storageReference = FirebaseStorage.getInstance().reference
-            .child("Users/$uid")
+            .child("Users/${args.currentFr.uid}")
         getUserProfilePicture()
 
 

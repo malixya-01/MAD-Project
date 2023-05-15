@@ -1,11 +1,13 @@
 package com.example.supportapp.Fragments.Requests.PublishedRequests
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.view.Window
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,14 +15,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.supportapp.Adapters.RequestsAdapter
 import com.example.supportapp.DataClasses.RequestsData
 import com.example.supportapp.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.supportapp.databinding.FragmentRequestsBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class RequestsFragment : Fragment() {
+    private lateinit var binding:FragmentRequestsBinding
 
+    private lateinit var auth: FirebaseAuth
+    private lateinit var databaseRef: DatabaseReference
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
     private var mList = ArrayList<RequestsData>()
     private lateinit var adapter: RequestsAdapter
+    private lateinit var uid: String
+    private lateinit var dialog: Dialog
 
 
     override fun onCreateView(
@@ -29,35 +42,87 @@ class RequestsFragment : Fragment() {
 
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_requests, container, false)
+        binding = FragmentRequestsBinding.inflate(inflater,container,false)
+        return binding.root
+    }
 
-        recyclerView = view.findViewById(R.id.recyclerView)
-        searchView = view.findViewById(R.id.searchView)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        init()
+        retrieveReqs()
+        registerEvents()
+    }
+
+
+
+    private fun init() {
+
+        auth = FirebaseAuth.getInstance()
+        uid = auth.currentUser?.uid.toString()
+        databaseRef = FirebaseDatabase.getInstance().reference.child("requests")
+
+        recyclerView = binding.recyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(getActivity());
-
-        //add data to data class
-        addDataToList()
 
         //Passing data to adapter
         adapter = RequestsAdapter(mList)
         recyclerView.adapter = adapter
+    }
 
+    private fun retrieveReqs() {
+        if (mList.isEmpty()){
+            showProgressBar()
+        }
+        databaseRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                mList.clear()
+                for ( frSnapshot in snapshot.children){
+                    val req = frSnapshot.getValue(RequestsData::class.java)!!
+                    if( req != null){
+                        mList.add(req)
+                    }
+                }
+                adapter.notifyDataSetChanged()
+                hideProgressBar()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                hideProgressBar()
+                Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
+    private fun registerEvents() {
         //Setting onclick on recyclerView each item
         adapter.setOnItemClickListner(object: RequestsAdapter.onItemClickListner{
             override fun onItemClick(position: Int) {
-                findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
+                //findNavController().navigate(R.id.action_requestsFragment_to_viewASingleReqAllUsersFragment2)
+                val reqData = mList[position]
+                val action = RequestsFragmentDirections.actionRequestsFragmentToViewASingleReqAllUsersFragment2(reqData)
+                findNavController().navigate(action)
             }
 
         })
 
-        val btnAdd = view.findViewById<FloatingActionButton>(R.id.btnAdd)
-        btnAdd.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_requestsFragment_to_newRequestFragment)
         }
 
-        return view
+    }
+
+    private fun showProgressBar(){
+        dialog = Dialog(this@RequestsFragment.requireContext())
+        dialog.requestWindowFeature (Window. FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_wait)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+    private fun hideProgressBar(){
+        dialog.dismiss()
     }
 
     private fun addDataToList(){

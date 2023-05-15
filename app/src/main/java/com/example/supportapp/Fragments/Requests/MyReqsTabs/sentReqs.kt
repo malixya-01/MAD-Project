@@ -8,10 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.supportapp.Adapters.viewAllDonorsFrAdapter
 import com.example.supportapp.Adapters.viewAllDonorsReqAdapter
+import com.example.supportapp.DataClasses.reqFromDonorData
 import com.example.supportapp.DataClasses.supportFundraiserData
 import com.example.supportapp.Fragments.Fundraisings.editRecyclerItem
 import com.example.supportapp.R
@@ -23,12 +24,12 @@ class sentReqsFragment : Fragment(),
 
     private lateinit var binding : FragmentViewAllDonorsBinding
     private var popupFragment: editRecyclerItem? = null
-//    private val args: viewAllDonorsToAFrFragmentArgs by navArgs()
+    //private val args: viewAllDonorsToAFrFragmentArgs by navArgs()
     private var currFrId : String? = null
     private lateinit var databaseRef: DatabaseReference
     private lateinit var dialog: Dialog
     private lateinit var recyclerView: RecyclerView
-    private var mList = ArrayList<supportFundraiserData>()
+    private var mList = ArrayList<reqFromDonorData>()
     private lateinit var adapter: viewAllDonorsReqAdapter
 
     override fun onCreateView(
@@ -43,24 +44,25 @@ class sentReqsFragment : Fragment(),
         super.onViewCreated(view, savedInstanceState)
 
         init()
-        //retrieveData()
+        retrieveData()
         registerEvents()
     }
 
     private fun init() {
 
        // currFrId = args.currFrId
-        //databaseRef = FirebaseDatabase.getInstance().reference.child("supportFundraiser").child(currFrId!!)
+        databaseRef = FirebaseDatabase.getInstance().reference.child("requestFromDonor")
         recyclerView = binding.recyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(context);
-        addData()
+        //addData()
+        retrieveData()
         adapter = viewAllDonorsReqAdapter(requireContext(), mList)
         recyclerView.adapter = adapter
         adapter.setPopMenulistner(this)
     }
 
-    /*private fun retrieveData() {
+    private fun retrieveData() {
         if (mList.isEmpty()){
             showProgressBar()
         }
@@ -69,7 +71,7 @@ class sentReqsFragment : Fragment(),
             override fun onDataChange(snapshot: DataSnapshot) {
                 mList.clear()
                 for ( myFrSnapshot in snapshot.children){
-                    val data = myFrSnapshot.getValue(supportFundraiserData::class.java)!!
+                    val data = myFrSnapshot.getValue(reqFromDonorData::class.java)!!
                     mList.add(data)
                 }
                 adapter.notifyDataSetChanged()
@@ -80,7 +82,7 @@ class sentReqsFragment : Fragment(),
                 Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
             }
         })
-    }*/
+    }
 
     private fun registerEvents() {
 
@@ -102,12 +104,12 @@ class sentReqsFragment : Fragment(),
         dialog.dismiss()
     }
 
-    private fun addData() {
+/*    private fun addData() {
         mList.clear()
         mList.add(supportFundraiserData("", "Nuwan Thushara", "kk@kk.com", "0712345678", "Yoooo yooo what's up", "2023/04/11"))
-    }
+    }*/
 
-    override fun onEditBtnClicked(supFrData: supportFundraiserData) {
+    override fun onEditBtnClicked(supFrData: reqFromDonorData) {
         //pass arguments to the popup fragment
         popupFragment = editRecyclerItem.newInstance(
             supFrData.msgId!!,
@@ -123,8 +125,15 @@ class sentReqsFragment : Fragment(),
 
     }
 
-    override fun onDeleteBtnClicked(supFrData: supportFundraiserData) {
-        Toast.makeText(context, "Delete ${supFrData.message}", Toast.LENGTH_SHORT).show()
+    override fun onDeleteBtnClicked(supFrData: reqFromDonorData) {
+        var currentMsgId = supFrData.msgId
+        databaseRef.child(currentMsgId!!).removeValue().addOnCompleteListener {
+            if( it.isSuccessful){
+                Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show()
+                //findNavController().navigate(R.id.action_viewAFrFragment_to_myFundraisingsFragment)
+            }
+        }
+        dialog.dismiss()
     }
 
     override fun onUpdate(updatedSupMsgData: supportFundraiserData) {
